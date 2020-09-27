@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Velleity</title>
+    <link rel="stylesheet" href="velleity.min.css">
+    <link rel="stylesheet" href="velleity.t.min.css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="velleity.js"></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <header>
+          <h1>Velleity</h1>
+          <h2>CSS Framework</h2>
+          <h3>Inline Text Semantics</h3>
+        </header>
+        <p>What is Velleity?</p>
+        <p>It's a mess. But it's in development. Also, it's a front-end framework used to build this website and all associated applications.</p>
+        <p>Lorem ipsum dolor sit amet. <a href="#">This is hyperlink</a>. Consectetur adipisicing elit, sed do eiusmod. <abbr title="This is an abbreviation">TIAA</abbr>. Tempor incididunt ut labore. <address>England, this is address</address>. Et dolore magna aliqua. <code>Code snippet</code>. Ut enim ad minim. <em>emphasised text</em>. Veniam, quis nostrud. <kbd>Control</kbd> & <kbd>B</kbd>. Exercitation ullamco laboris. <i>italic text</i>. Nisi ut aliquip ex ea. <s>This is a strike</s>. Commodo consequat. <samp>This is a sample output</samp>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu. <time>This is a time</time>. Fugiat nulla pariatur. <sup>Superscript</sup> and <sub>subscript</sub>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. <del>This is deleted</del> and <ins>this is inserted</ins>. Deserunt mollit. This is <var>variable</var>. Anim id est laborum. <mark>This is mark</mark>.</p>
+      </section>
+      <section id='lists'>
+        <h2>Lists</h2>
+        <p>Lists can be numbered or unnumbered.</p>
+        <h3>Ordered List</h3>
+        <ol>
+          <li><data value="000033">This is a data in a list item.</data></li>
+          <li>This is another list item.</li>
+        </ol>
+        <h3>Unordered List</h3>
+        <ul>
+          <li>This is a list item.</li>
+          <li>This is another list item.</li>
+        </ul>
+        <h3>Descriptive List</h3>
+        <dl>
+          <dt>This is a descriptive term in a descriptive list.</dt>
+          <dd>This is a descriptive definition.</dd>
+        </dl>
+        <h3>Details</h3>
+        <details class="col-12" open>
+          <summary>This element is for details, click to toggle close/open.</summary>
+          <p>This text should be shown if the details element is opened.</p>
+        </details>
+      </section>
+      <section id="tables">
+        <h2>Tables</h2>
+        <p>Data can be organsided into tables. Velleity allows you to sort tables.</p>
+        <table>
+          <caption>This is a table caption.</caption>
+          <thead>
+            <tr>
+              <th>This is a table heading in a table row.</th>
+              <th>This is a table heading.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>This is a table data.</td>
+              <td>This is another table data.</td>
+            </tr>
+            <tr>
+              <td>This is a table data.</td>
+              <td>This is another table data.</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>This is a table data.</td>
+              <td>This is another table data.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <section>
+        <h2>Form, Fieldset, Input</h2>
+        <form action="index.php" method="post">
+          <fieldset>
+            <legend>This is a legend</legend>
+            <div>
+              <label for="checkbox">Checkbox</label>
+              <input type="checkbox" name="checkbox" value="This is a checkbox."/>
+            </div>
+            <div>
+              <label for="colour">Colour</label>
+              <input type="color" name="colour" value="#999999"/>
+            </div>
+            <div>
+              <label for="date">Date</label>
+              <input type="date" name="date" value="2019-11-21"/>
+            </div>
+            <div>
+              <label for="datetime-local">Datetime-local</label>
+              <input type="datetime-local" name="datetime-local" placeholder=""/>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" name="email" placeholder="example@example.com"/>
+            </div>
+            <div>
+              <label for="file">File</label>
+              <input type="file" name="file" placeholder=""/>
+            </div>
+            <div>
+              <label for="month">Month</label>
+              <input type="month" name="month" placeholder=""/>
+            </div>
+            <div>
+              <label for="number">Number</label>
+              <input type="number" name="number" placeholder="42"/>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input type="password" name="password" placeholder="Password2019"/>
+            </div>
+            <div>
+              <label for="range">Range</label>
+              <input type="range" name="range" placeholder=""/>
+            </div>
+            <div>
+              <label for="radio">Radio</label>
+              <input type="radio" name="radio" placeholder=""/>
+            </div>
+            <div>
+              <label for="search">Search</label>
+              <input type="search" name="search" placeholder="Search..."/>
+            </div>
+            <div>
+              <label for="text">Text</label>
+              <input type="text" name="text" placeholder="Text..."/>
+            </div>
+            <div>
+              <label for="time">Time</label>
+              <input type="time" name="time" value=""/>
+            </div>
+            <div>
+              <label for="url">URL</label>
+              <input type="url" name="url" placeholder="www.google.co.uk/"/>
+            </div>
+            <div>
+              <label for="week">Week</label>
+              <input type="week" name="week" placeholder=""/>
+            </div>
+            <div>
+              <label for="browsers">Browsers</label>
+              <input name="browsers" list="browsers">
+            </div>
+            <datalist id="browsers">
+              <option value="Internet Explorer">
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Opera">
+              <option value="Safari">
+            </datalist>
+            <div>
+              <label for="textarea">Textarea</label>
+              <textarea name="textarea" rows="8" cols="80" placeholder="Write something..."></textarea>
+            </div>
+            <div>
+              <label for="select">Select</label>
+              <select name="select">
+                <optgroup label="A">
+                  <option value="1">This is an option.</option>
+                  <option value="2">This is an option.</option>
+                </optgroup>
+                <optgroup label="B">
+                  <option value="1">This is an option.</option>
+                  <option value="2">This is an option.</option>
+                </optgroup>
+              </select>
+            </div>
+            <input type="button" name="button" value="This is a button"/>
+            <input type="reset" name="reset" value="Reset Form"/>
+            <input type="submit" name="submit" value="Submit" disabled/>
+          </fieldset>
+          <output name="output">This is an output.</output>
+        </form>
+      </section>
+      <section>
+        <h2>Quotes</h2>
+        <blockquote cite="https://www.goodreads.com/quotes/144310-the-nitrogen-in-our-dna-the-calcium-in-our-teeth">The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.</blockquote>
+        <cite>This is a citation.</cite>
+        <q cite="http://reddit.com">This is quote.</q>
+        <h2>Directions</h2>
+        <details open>
+          <summary>details summary</summary>
+          <p>This is a paragraph in a details.</p>
+        </details>
+        <p>This is a meter.</p>
+        <meter value="50" min="0" max="100"></meter>
+        <p>This is a progress.</p>
+        <progress value="50" max="100">50%</progress>
+        <h2>Media</h2>
+        <p class="col-12">The <code>audio</code>element supports MP3, OGG, and WAV.</p>
+        <audio controls>
+          <source src="" type="audio/ogg"/>
+          <source src="" type="audio/mpeg"/>
+        </audio>
+        <video style="width: 50%;" poster="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" controls>
+          <source src="" type="video/mp4"/>
+        </video>
+        <h3>Images</h3>
+        <figure>
+          <figcaption>This is a figure caption in a figure.</figcaption>
+          <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
+        </figure>
+        <hr>
+        <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Planets" usemap="#planetmap">
+        <hr>
+        <map name="planetmap">
+          <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+          <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+          <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+        </map>
+        <picture>
+          <source media="(min-width: 650px)" srcset="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" width="150" height="250"/>
+          <source media="(min-width: 465px)" srcset="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg"/>
+          <img src="placeholder.png" alt="Flowers"/>
+        </picture>
+        <hr>
+        <svg>
+          <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+          <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+          <rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+          <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)"/>
+          <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </section>
+      <section id='javascript-functions'>
+        <h2>JavaScript Functions</h2>
+        <p>Velleity is a mix of JavaScript and JQuery but it will transition to JavaScript entirely over a period of time.</p>
+        <h3>Accordion</h3>
+        <div class="accordion">
+          <p>Acc 1</p>
+          <div>
+            <p>Content 1.</p>
+          </div>
+          <p>Acc 2</p>
+          <div>
+            <p>Content 2.</p>
+          </div>
+        </div>
+        <h3>Slideshow</h3>
+        <div class="slideshow">
+          <figure>
+            <figcaption>This is a figure caption</figcaption>
+            <img src="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg" alt="Batman: The Animated Series">
+            <img src="https://www.animationconnection.com/assets/artwork/1534965514-395-1010-top-cat-model-sheet.jpg" alt="Top Cat">
+            <div class="progress"></div>
+            </div>
+            <div class="controller-ss"></div>
+          </figure>
+        </div>
+        <h3>Tabs</h3>
+        <div class="tabs">
+          <ul>
+            <li>Tab 1</li>
+            <li>Tab 2</li>
+          </ul>
+          <div>
+            <p>Content 1.</p>
+          </div>
+          <div>
+            <p>Content 2.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

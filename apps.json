@@ -1,0 +1,20 @@
+[
+  {
+    "name": "JSONNE",
+    "description": "JSON file table editor.",
+    "link": "www.jsonne.sewards.me",
+    "show": true
+  },
+  {
+    "name": "Rise and Fall",
+    "description": "No description.",
+    "link": "www.riseandfall.sewards.me",
+    "show": false
+  },
+  {
+    "name": "Scenes",
+    "description": "No description.",
+    "link": "www.scenes.sewards.me",
+    "show": false
+  }
+]
