@@ -1,6 +1,6 @@
 :root {
   /*COLOURS*/
-  --theme-colour: #712B2B;
+  --theme-colour: #8AA753;
   --light-static: #FFF;
   --dark-static: #222;
   --lightest-colour: var(--light-static);
@@ -27,7 +27,7 @@
   font-size: var(--font-size);
   /*BOXING*/
   --padding: 0.75rem;
-  --padding-inline: 0.1rem 0.2rem;
+  --padding-inline: 0 0.2rem;
   --border: 0.1rem solid var(--border-colour);
   --box-shadow: 0 0 0 0 var(--border-colour);
   /*LAYOUT*/
@@ -44,18 +44,108 @@ body, body * {
   font-kerning: normal;
   font-size: var(--font-size);
   font-weight: normal;
-  letter-spacing: 0.01em;
-  transition: all 0.1s ease;
+  letter-spacing: 0.01rem;
+  transition: all 0.1s linear;
+  &::-webkit-scrollbar {
+    width: 1rem;
+    border-left: 1px solid black
+  }
+  &::-webkit-scrollbar-button{
+
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--background-colour);
+    border-left: 0.1rem solid var(--foreground-colour);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--theme-colour);
+    border-left: 0.1rem solid var(--foreground-colour);
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    &::selection {
+      background: rgba(0, 0, 0, 0.75);
+    }
+  }
 }
 body {
   background: var(--background-colour);
   color: var(--font-dark);
 }
 nav {
-  ul {
-    //background: linear-gradient(90deg, #277650, #29526D); //LOOK INTO LIBRARY FOR COLOUR DETECTION
-    background: var(--theme-colour);
-    color: var(--darkest-colour);
+  background: var(--theme-colour);
+  color: var(--font-light);
+  width: 100%;
+  > div {
+    max-width: var(--content-width);
+    margin: auto;
+  }
+  a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+@media(max-width: 30rem) {
+  nav {
+    > div > ul {
+      > li {
+        list-style-type: none;
+        > a {
+          cursor: pointer;
+          display: block;
+          padding: 1rem;
+        }
+        &.active, &:hover, &.active:hover {
+          background: black;
+        }
+        &.caution {
+          &:hover{
+            background-color: #bb2b2b !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media(min-width: 30rem) {
+  nav {
+    padding: 0 var(--padding);
+    > div {
+      display: flex;
+      justify-content: space-between;
+      max-width: var(--content-width);
+      margin: auto;
+      ul {
+        padding: 1em 0;
+        position: relative;
+        > li {
+          list-style-type: none;
+          display: inline;
+          position: relative;
+          padding: 1em 0;
+          > a {
+            padding: 1em;
+          }
+          &.active {
+            background: black;
+            padding: 1.375rem 0;
+          }
+          &:hover, &.active:hover {
+            background: black;
+            padding: 1rem 0;
+          }
+          &.caution {
+            padding: 1rem 0 !important;
+            &:hover{
+              background-color: #bb2b2b !important;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }
 main {
@@ -71,22 +161,6 @@ main {
     }
   }
 }
-div#search-bar, div#message-bar {
-  position: relative;
-  background: var(--foreground-colour);
-  > form {
-    display: flex;
-    padding: var(--padding);
-    margin: auto;
-    max-width: var(--content-width);
-    > input:nth-child(1) {
-      width: 100%;
-    }
-    > input:nth-child(2) {
-      width: auto;
-    }
-  }
-}
 footer {
   background: var(--background-colour);
   color: var(--light-static);
@@ -95,6 +169,7 @@ footer {
   max-width: var(--content-width);
   text-align: center;
 }
+aside {}
 aside#scroll-to-top {
   opacity: 0.65;
   clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 50%);
@@ -112,12 +187,13 @@ aside#scroll-to-top:hover {
 
 
 /*BASIC HTML*/
+header {}
 h1, h2, h2, h3, h4, h5, h6 {
   text-align: center;
 }
-header, h1, h2, h2, h3, h4, h5, h6, p {
+h2, h2, h3, h4, h5, h6, p {
+  margin: var(--padding) 0;
   + * {
-    //margin-top: var(--padding);
   }
 }
 h1, h1::before {
@@ -143,15 +219,24 @@ main p {
 }
 
 /*FORMATTING*/
-abbr, address, b, bdi, bdo, mark, span, time, var {
+a, abbr, acronym, address, b, bdi, bdo, code, del, dfn, em, i, ins, kbd, mark, s, samp, span, sub, sup, time, var {
   display: inline;
 }
-abbr {
+a {
+  &:link {
+    color: var(--font-dark);
+  }
+  &:visited {
+    color: var(--font-dark);
+  }
+}
+abbr, acronym {
   cursor: help;
-  display: inline;
   text-transform: uppercase !important;
 }
-address {}
+address {
+  display: none;
+}
 /*FORMATTING - QUOTES*/
 blockquote::before, cite::before, q::before {
   content: open-quote;
@@ -165,58 +250,56 @@ blockquote, cite, q {
 blockquote::after, cite::after, q::after {
   content: close-quote;
 }
-/*FORMATTING - CODE*/
 code {
-  display: inline;
-  background: var(--background-colour);
+  background: rgba(0, 0, 0, 0.1);
   color: var(--font-dark);
   padding: var(--padding-inline);
   white-space: pre;
   word-break: break-all;
 }
 data {}
-del, ins {
-  display: inline;
+del, ins, mark {
+  padding: var(--padding-inline);
   text-decoration: none;
-  &:before {
-    font-style: italic;
-  }
 }
 del { /*DELETED*/
-  color: var(--deleted-colour);
+  background: var(--deleted-colour);
   &:before {
-    content: "deleted: ";
+    content: "[delete start] ";
+  }
+  &:after {
+    content: " [delete end]";
   }
 }
 ins { /*INSERTED*/
-  color: var(--inserted-colour);
+  background: var(--inserted-colour);
   &:before {
-    content: "inserted: ";
+    content: "[insert start] ";
+  }
+  &:after {
+    content: " [insert end]";
   }
 }
 details {}
-dfn { /*DEFENITION*/
-  display: inline;
-}
+dfn { /*DEFENITION*/ }
 dialog {
-  display: none;
-  position: absolute;
+  position: fixed;
+  top: 0.25rem;
+  left: 0.25rem;
+  border: var(--border);
+  padding: var(--padding);
 }
-em, i {
-  display: inline;
-}
+em, i { }
 hr {
   border-bottom: var(--border);
-  margin: var(--padding) 0;
+  margin: var(--padding);
 }
 kbd { /*KEYBOARD INPUT*/
-  display: inline;
-  background: var(--background-colour);
+  background: rgba(0, 0, 0, 0.1);
   color: var(--font-dark);
   padding: var(--padding-inline);
-  border: var(--border);
-  border-radius: 1px;
-  box-shadow: 0 1px 0 0 var(--background-colour) inset;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 0 var(--theme-colour);
 }
 mark::before {
   content: " [highlight start] ";
@@ -227,25 +310,62 @@ mark {
 mark::after {
   content: " [highlight end] ";
 }
-meter, progress {
-  height: 10px;
+/*FORMATTING - CODE*/
+meter{
   display: block;
   width: 100%;
 }
-pre { /*PREFORMATTED TEXT*/ }
+progress{
+  cursor: progress;
+  display: block;
+  width: 100%
+}
+meter, progress {
+  -webkit-appearance: meter;
+  height: 3rem;
+  display: block;
+  width: 100%;
+}
+meter { //FOR MEASUREMENT
+  position: relative;
+  margin-top: 1.5rem;
+  &::before, &::after {
+    position: absolute;
+    top: -1rem;
+    margin: 0 1rem;
+  }
+  &::before {
+    content: 'Title';
+  }
+  &::after {
+    content: 'Meter Value';
+    right: 0;
+  }
+  &::-webkit-meter-optimum-value {
+    background-image: linear-gradient(90deg, #8bcf69 20%, #e6d450 20%, #e6d450 40%, #f28f68 40%, #f28f68 60%, #cf82bf 60%, #cf82bf 80%, #719fd1 80%, #719fd1 100%);
+  }
+  &::-webkit-meter-bar {
+    background: var(--background-colour);
+    border-radius: 0;
+    border: 0;
+  }
+}
+pre { //PREFORMATTED TEXT
+  font-size: 1em;
+  display: block;
+}
 s { /*STRIKE IF TEXT IS NO LONGER CORRECT*/
-  display: inline;
+  &:hover {
+    text-decoration: none;
+  }
 }
-samp { /*SAMPLE*/
-  display: inline;
-}
+samp { /*SAMPLE*/ }
 script {
   display: none !important;
 }
 summary {}
 sup, sub {
-  display: inline;
-  font-size: 80%;
+  font-size: 75%;
 }
 sup { /*SUPERSCRIPT*/
   vertical-align: super;
@@ -255,17 +375,16 @@ sub { /*SUBSCRIPT*/
 }
 
 
-/*MEDIA - IMAGES*/
+
+//MEDIA
 audio, img, video {
   margin: auto;
   width: 100%;
 }
-map {}
 area {}
 canvas {
   border: var(--border);
 }
-
 figure{
   color: var(--font-light);
   position: relative;
@@ -277,6 +396,7 @@ figure{
     position: absolute;
     top: var(--padding);
     padding: var(--padding);
+    font-style: italic;
   }
   @media(min-width: 41.5rem){
     figcaption{
@@ -284,7 +404,6 @@ figure{
     }
   }
 }
-
 /*
 figure {
   padding: var(--padding);
@@ -297,32 +416,20 @@ figure {
   }
 }
 */
+iframe {}
+map {}
 picture {
   margin: auto;
   border: 1px solid black;
 }
-svg {
-  margin: auto;
-}
-/*MEDIA - AUDIO/VIDEO*/
-iframe {}
 source {}
+svg {}
 track {}
+video {}
 
 
-/*LINKS
-a, a:link {
-  display: inline;
-  color: var(--font-dark);
-}
-a:visited {
-  color: var(--font-dark);
-}*/
-a {
-  display: inline;
-}
 
-/*LISTS*/
+//LISTS
 main {
   ol > li {
     list-style-type: decimal;
@@ -343,60 +450,19 @@ dl { /*DESCRIPTION LIST*/
 }
 
 
-table {
-  display: table;
-  border: var(--border);
-  width: 100%;
-  border-collapse: collapse;
-  overflow-x: scroll !important; //THIS DOESNT WORK
-  > caption { //TABLE CAPTION
-    display: table-caption;
-  }
-  > thead {
-    display: table-header-group;
-  }
-  > tbody {
-    display: table-row-group;
-  }
-  > tfoot {
-    display: table-footer-group;
-  }
-  tr {
-    display: table-row;
-    th, td {
-      display: table-cell;
-      padding: var(--padding);
-      &:nth-child(even) {
-        background: rgba(0, 0, 0, 0.1);
-      }
-    }
-    th {
-      font-weight: bold;
-    }
-    td {
-      border-top: var(--border);
-    }
-  }
-}
 
-
-/*OTHER CLASSES AND IDENTIFIERS*/
-#message::before {
-  content: "Message: ";
-}
-#message {
-  display: block;
-}
-
-
+//FORMS
 form {
   > fieldset {
     color: var(--font-dark);
+    padding: var(--padding);
+    border: var(--border);
     min-width: 0;
     width: 100%;
     > legend {
       padding: var(--padding);
       margin: auto;
+      margin-bottom: -1rem;
     }
     > p {
       padding: var(--padding);
@@ -408,12 +474,16 @@ form {
         margin-right: 0.1rem;
       }
     }
+    > button, > input {
+      margin-bottom: 0.2rem;
+    }
   }
 }
 label {
   white-space: nowrap;
   padding: var(--padding);
   border-bottom: var(--border);
+  vertical-align: middle;
 }
 button, input, select, textarea {
   outline: 0;
@@ -428,6 +498,10 @@ button, input, select, textarea {
   &:focus {
     background: var(--focus-colour);
   }
+  &:disabled {
+    cursor: not-allowed !important;
+    background: var(--disabled-colour) !important;
+  }
 }
 button, input[type="button"], input[type="checkbox"]::after, input[type="color"], input[type="radio"]::after, input[type="reset"], input[type='submit'] {
   cursor: pointer;
@@ -440,7 +514,7 @@ button:active, input:focus, input[type="button"]:active, input[type="checkbox"]:
   background: var(--foreground-colour);
   color: var(--font-dark);
 }
-button, .button, input[type="button"], input[type="reset"], input[type="submit"] {
+button, input[type="button"], input[type="reset"], input[type="submit"] {
   background: var(--darkest-colour);
   color: var(--font-light);
   display: inline;
@@ -453,10 +527,6 @@ button, .button, input[type="button"], input[type="reset"], input[type="submit"]
   &:active {
     background: var(--theme-colour);
   }
-}
-:disabled {
-  cursor: not-allowed !important;
-  background: var(--disabled-colour) !important;
 }
 input[type="checkbox"], input[type="radio"] {
   &::after {
@@ -475,10 +545,10 @@ input[type="checkbox"]::after {
 input[type="color"] {
   padding: var(--padding);
   height: 3rem;
-}
-::-webkit-color-swatch-wrapper, ::-webkit-color-swatch { /*INPUT COLOUR*/
-  padding: 0 !important;
-  border: 0 !important;
+  &::-webkit-color-swatch-wrapper, &::-webkit-color-swatch { /*INPUT COLOUR*/
+    padding: 0 !important;
+    border: 0 !important;
+  }
 }
 input[type='radio']:checked::after {
   cursor: default;
@@ -488,6 +558,7 @@ input[type='radio']::after {
   content: 'Deselected' !important;
 }
 input[type=range] {
+  cursor: e-resize;
   -webkit-appearance: none;
   padding: 0;
   &:focus {
@@ -525,167 +596,51 @@ datalist {
   display: none;
 }
 output {
+  padding: var(--padding);
   &::before {
     content: "Output: ";
   }
-  padding: var(--padding);
 }
 
 
-[id*="QR"] {
-  box-shadow: var(--box-shadow);
-  margin: 1em;
-}
-#chatroom, .chatroom {
-  > p {
-    background: #EEE !important;
+
+table {
+  display: table;
+  border: var(--border);
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: scroll !important; //THIS DOESNT WORK
+  > caption { //TABLE CAPTION
+    display: table-caption;
+    font-style: italic;
     padding: var(--padding);
-    width: auto;
-    margin-bottom: 0.5rem;
-    max-width: 75%;
   }
-}
-
-
-
-
-
-
-
-
-/*
-nav {
-  user-select: none;
-  display: flex;
-  #primary, #secondary {
-    background: var(--theme-colour);
-    color: var(--darkest-colour);
-    width: 100%;
-    text-align: center;
-    > p {
+  > thead {
+    display: table-header-group;
+  }
+  > tbody {
+    display: table-row-group;
+  }
+  > tfoot {
+    display: table-footer-group;
+  }
+  tr {
+    display: table-row;
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      display: table-cell;
+      padding: var(--padding);
+    }
+    th {
       font-weight: bold;
     }
-    p, a, li {
-      padding: 1rem;
-      &.active {
-        background: yellow;
-      }
-    }
-    > ul {
-      display: none;
-      > li {
-        &:nth-child(odd) {
-          background: rgba(0, 0, 0, 0.1);
-        }
-      }
-    }
-    &.active {
-      background: var(--foreground-colour);
-    }
-  }
-}
-
-@media(min-width: 30rem) {
-  nav {
-    #primary, #secondary {
-      &.active > ul {
-        display: flex;
-      }
-      &:hover > ul {
-        display: flex;
-      }
-    }
-  }
-  nav {
-    display: flex;
-    flex-direction: row;
-    > div {
-      display: flex;
-      :nth-child(-2), &:last-child {
-        margin-left: auto;
-      }
-      > div {
-        > ul {
-          display: none;
-        }
-        :hover {
-          background: purple !important;
-          > ul {
-            position: absolute;
-            display: block;
-          }
-        }
+    td {
+      border-top: var(--border);
+      &:hover {
+        background: rgba(0, 0, 0, 0.2w);
       }
     }
   }
 }
-@media(max-width: 30rem) {
-  nav {
-    #primary, #secondary {
-      &.active > ul {
-        display: block;
-      }
-      &:hover > ul {
-        display: block;
-      }
-    }
-  }
-  nav {
-    display: grid;
-    flex-direction: column;
-    > div {
-      width: 100%;
-      > ul {
-        position: relative;
-        left: 0;
-        border-left: 0.1rem solid #FFF;
-        margin-left: 0.9rem;
-        width: 100%;
-      }
-    }
-  }
-}
-nav {
-  top: 0;
-  z-index: 2;
-  background: var(--theme-colour);
-  color: var(--font-light);
-  width: 100%;
-  > div {
-    > div {
-      position: relative;
-      > p {
-        color: inherit;
-        padding: var(--padding-l) 0;
-        &:hover {
-          background: var(--hover-colour);
-        }
-      }
-      > ul {
-        background: var(--theme-colour);
-        > li {
-          cursor: pointer;
-          position: relative;
-          list-style-type: none;
-          > a {
-            display: block;
-            padding: var(--padding-l);
-            text-decoration: none;
-            white-space: nowrap;
-            &:hover {
-              background: var(--hover-colour);
-            }
-          }
-        }
-      }
-    }
-  }
-  a {
-    padding: var(--padding-l);
-    text-decoration: none;
-    &:link, &:visited {
-      color: inherit;
-    }
-  }
-}
-*/

@@ -9,16 +9,32 @@
     <script type="text/javascript" src="velleity.js"></script>
   </head>
   <body>
+    <nav>
+      <div>
+        <ul>
+          <li><a href="index.html">Index</a></li>
+        </ul>
+        <!--form id="search" action="search.php" method="post"> //OLD SEARCH BAR
+          <input id="search-bar" type="text" name="search" placeholder="Search..."/>
+          <input id="search-submit" type="submit" name="submit" value="Search!"/>
+        </form-->
+        <ul>
+          <li class="active"><a href="velleity.html">Velleity</a></li>
+          <li class='caution'><a href=''>Destory</a></li>
+        </ul>
+      </div>
+    </nav>
     <main>
       <section>
         <header>
-          <h1>Velleity</h1>
-          <h2>CSS Framework</h2>
-          <h3>Inline Text Semantics</h3>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
         </header>
-        <p>What is Velleity?</p>
-        <p>It's a mess. But it's in development. Also, it's a front-end framework used to build this website and all associated applications.</p>
-        <p>Lorem ipsum dolor sit amet. <a href="#">This is hyperlink</a>. Consectetur adipisicing elit, sed do eiusmod. <abbr title="This is an abbreviation">TIAA</abbr>. Tempor incididunt ut labore. <address>England, this is address</address>. Et dolore magna aliqua. <code>Code snippet</code>. Ut enim ad minim. <em>emphasised text</em>. Veniam, quis nostrud. <kbd>Control</kbd> & <kbd>B</kbd>. Exercitation ullamco laboris. <i>italic text</i>. Nisi ut aliquip ex ea. <s>This is a strike</s>. Commodo consequat. <samp>This is a sample output</samp>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu. <time>This is a time</time>. Fugiat nulla pariatur. <sup>Superscript</sup> and <sub>subscript</sub>. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. <del>This is deleted</del> and <ins>this is inserted</ins>. Deserunt mollit. This is <var>variable</var>. Anim id est laborum. <mark>This is mark</mark>.</p>
+        <p>Velleity is a front-end framework for content. It is used on this website and all associated apps. Lorem ipsum dolor sit amet. <a href="#">Hyperlink</a>. Consectetur adipisicing elit, sed do eiusmod. <abbr title="Abbreviation">Abbr</abbr><!--. Tempor incididunt ut labore. <address>Address</address-->. Et dolore magna aliqua. <code>Code</code>. Ut enim ad minim. <em>Emphasised text</em>. Veniam, quis nostrud. <kbd>Keyboard input</kbd>. Exercitation ullamco laboris. <i>Italic text</i>. Nisi ut aliquip ex ea. <s>Strike</s>. Commodo consequat. <samp>Sample output</samp>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu. <time>Time</time>. Fugiat nulla pariatur. <sup>Superscript</sup>. Quis nostrud exercitation ullamco. <sub>Subscript</sub>. Excepteur sint occaecat. <del>Deleted</del>. Sunt in culpa. <ins>Inserted</ins>. Deserunt mollit. <var>Variable</var>. Anim id est laborum. <mark>Mark</mark>.</p>
       </section>
       <section id='lists'>
         <h2>Lists</h2>
@@ -38,14 +54,13 @@
           <dt>This is a descriptive term in a descriptive list.</dt>
           <dd>This is a descriptive definition.</dd>
         </dl>
-        <h3>Details</h3>
-        <details class="col-12" open>
-          <summary>This element is for details, click to toggle close/open.</summary>
-          <p>This text should be shown if the details element is opened.</p>
-        </details>
+        <h2>Quotes</h2>
+        <blockquote cite="https://www.goodreads.com/quotes/144310-the-nitrogen-in-our-dna-the-calcium-in-our-teeth">The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.</blockquote>
+        <cite>This is a citation.</cite>
+        <q cite="http://reddit.com">This is quote.</q>
       </section>
       <section id="tables">
-        <h2>Tables</h2>
+        <h2>Table</h2>
         <p>Data can be organsided into tables. Velleity allows you to sort tables.</p>
         <table>
           <caption>This is a table caption.</caption>
@@ -56,10 +71,6 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>This is a table data.</td>
-              <td>This is another table data.</td>
-            </tr>
             <tr>
               <td>This is a table data.</td>
               <td>This is another table data.</td>
@@ -178,41 +189,53 @@
         </form>
       </section>
       <section>
-        <h2>Quotes</h2>
-        <blockquote cite="https://www.goodreads.com/quotes/144310-the-nitrogen-in-our-dna-the-calcium-in-our-teeth">The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.</blockquote>
-        <cite>This is a citation.</cite>
-        <q cite="http://reddit.com">This is quote.</q>
         <h2>Directions</h2>
+        <dialog>This is a dialog.</dialog>
+        <h3>Details</h3>
         <details open>
-          <summary>details summary</summary>
-          <p>This is a paragraph in a details.</p>
+          <summary>This is <code>summary</code> for details, click to toggle close/open.</summary>
+          <p>This text should be shown if the details element is opened.</p>
         </details>
+        <h3>Meter</h3>
         <p>This is a meter.</p>
         <meter value="50" min="0" max="100"></meter>
+        <h3>Progress</h3>
         <p>This is a progress.</p>
         <progress value="50" max="100">50%</progress>
-        <h2>Media</h2>
-        <p class="col-12">The <code>audio</code>element supports MP3, OGG, and WAV.</p>
+      </section>
+      <section>
+        <header>
+          <h2>Media</h2>
+          <h3>Audio</h3>
+        </header>
+        <p>The <code>audio</code> element supports MP3, OGG, and WAV.</p>
         <audio controls>
           <source src="" type="audio/ogg"/>
           <source src="" type="audio/mpeg"/>
         </audio>
+        <hr>
+        <h3>Video</h3>
         <video style="width: 50%;" poster="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" controls>
           <source src="" type="video/mp4"/>
         </video>
-        <h3>Images</h3>
+        <hr>
+        <h3>Figure, Figcaption</h3>
         <figure>
           <figcaption>This is a figure caption in a figure.</figcaption>
           <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
         </figure>
         <hr>
+        <h3>Image</h3>
         <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Planets" usemap="#planetmap">
         <hr>
+        <h3>Map</h3>
         <map name="planetmap">
           <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
           <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
           <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
         </map>
+        <hr>
+        <h3>Picture</h3>
         <picture>
           <source media="(min-width: 650px)" srcset="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" width="150" height="250"/>
           <source media="(min-width: 465px)" srcset="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg"/>
@@ -250,15 +273,15 @@
           </div>
         </div>
         <h3>Slideshow</h3>
-        <div class="slideshow">
+        <div class='slideshow'>
           <figure>
-            <figcaption>This is a figure caption</figcaption>
+            <figcaption class='slide-caption'>Caption</figcaption>
+            <img class='slide-image' src='https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg' alt='Placeholder Image'/>
             <img src="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg" alt="Batman: The Animated Series">
-            <img src="https://www.animationconnection.com/assets/artwork/1534965514-395-1010-top-cat-model-sheet.jpg" alt="Top Cat">
-            <div class="progress"></div>
-            </div>
-            <div class="controller-ss"></div>
           </figure>
+          <div class="progress"></div>
+          <div class="controller-ss"></div>
+          <p class='slide-number'>Slide <span class='slide-number-current'>1</span> of <span class='slide-number-total'>2</span></p>
         </div>
         <h3>Tabs</h3>
         <div class="tabs">
