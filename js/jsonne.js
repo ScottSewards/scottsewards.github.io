@@ -1,4 +1,4 @@
-function tableFromJSON(file, parent, showDelete) {
+function CreateJSONTable(json, parent) {
   //CREATE TABLE HEAD
   var thead = makeElement("thead");
   parent.appendChild(thead);
@@ -14,21 +14,6 @@ function tableFromJSON(file, parent, showDelete) {
 
 function makeElement(type, text) {
   var element = document.createElement(type);
-  if(text != null) element.innerHTML = "ttt";
+  if(text != null) element.innerHTML = "placeholder text";
   return element;
 }
-
-//if(showDelete) keys.push("delete");
-
-/*
-var keys = Object.keys(file);
-console.log(keys);
-
-keys.forEach((item, index) => {
-  console.log(item);
-});
-
-for(var i in file.item) {
-  console.log("Key: " + i + " | Value: " + file.item[key]);
-}
-*/

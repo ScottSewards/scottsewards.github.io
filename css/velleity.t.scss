@@ -76,44 +76,6 @@
 }
 
 
-
-
-
-
-/*TABS
-@media(max-width: 30em){
-  .tab-opt li{
-    display: block;
-    width: 100% !important;
-  }
-}
-@media(min-width: 30em){
-  .tab-opt li{
-    display: inline-block;
-  }
-}
-.tab-opt li{
-  cursor: pointer;
-  display: inline-block;
-  padding: 1em 0.25em;
-  margin-bottom: -1px;
-  text-align: center;
-}
-.tabs div{
-  overflow-y: auto;
-  resize: vertical;
-  padding: 0 1em !important;
-  min-height: 10em;
-  height: 20em;
-  max-height: 30em;
-}
-.tabs div:last-child{
-  text-align: left;
-  direction: rtl;
-}
-
-*/
-
 /*TEMPLATES*/
 .accordion {
   > p {
@@ -184,11 +146,6 @@
   width: 0%;
   height: 2em;
 }
-.slideshow {
-  img:nth-child(3) {
-    width: 75% !important;
-  }
-}
 .tabs {
   > .tab-options {
     display: flex;
@@ -208,6 +165,10 @@
       &:first-child {
         border-left: 0;
       }
+      &:not(.active) {
+        //background: var(--background-colour) !important;
+        //color: var(--font-light);
+      }
       &.active {
         border-bottom: 0;
       }
@@ -219,6 +180,10 @@
     border: var(--border);
     border-top: 0;
     margin: 0;
+    overflow-y: auto;
+    resize: vertical;
+    min-height: 5em;
+    max-height: 30em;
     &.active {
       display: block;
     }
@@ -229,7 +194,7 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--content-gap);
   div:hover {
-    transform: scale(1.025);
+    //transform: scale(1.025);
   }
 }
 .timeline{
@@ -259,25 +224,5 @@
       bottom: -1.9em;
       right: 1em;
     }
-  }
-}
-.window{
-  overflow-y: auto;
-  background-color: #ddd;
-  z-index: 20;
-  position: absolute;
-  @include position(0, 0, 0, 0);
-  height: 45em;
-  max-height: 100%;
-  width: 40em;
-  max-width: 100%;
-  padding: 1em 2em;
-  margin: auto;
-  > button#close-window{
-    position: absolute;
-    top: 0.2em;
-    right: 0.2em;
-    width: 5em;
-    padding: 1.1em;
   }
 }

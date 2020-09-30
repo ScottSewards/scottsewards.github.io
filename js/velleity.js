@@ -11,7 +11,7 @@ $().ready(function() {
     else $(this).val("Show").prev().attr("type", "password");
   });
 
-  $(".accordion").each(function() {
+  $(".accordion").each(function(index) {
     var accordion = $(this);
     $(this).find("> p").each(function(index) {
       $(this).addClass("accordion-" + index);
@@ -29,7 +29,7 @@ $().ready(function() {
     });
   });
 
-  $('.tabs').each(function() {
+  $('.tabs').each(function(index) {
     var tabs = $(this);
     $(this).find('> ol, > ul').addClass('tab-options').find('> li').each(function(index) {
       $(this).addClass('tab-' + index);
@@ -65,15 +65,6 @@ $('nav li', 'button', 'a', 'audio', 'img', 'video').each(function() { //ACCESSIB
   num += 1;
 });
 
-$('.slideshow').each(function() {
-  setInterval(function() {
-    //var clone = $(this).find("> figure > figcaption").remove();
-    //var source = $(this).find('img:first-child').attr('src');
-    //var alt = $(this).find('img:first-child').attr('alt');
-    //$(this).find("> figure").append("<img src='" + source + "' alt='" + alt + "'></img>").find('img:first-child').remove();
-    //$(this).find("> figure").prepend(clone);
-  }, 5000);
-});
 
 $(function(){
   $('#getHere').get("http://teaching.ehustudent.co.uk/add-my-comment/22918078", {/*JSLN},function(){

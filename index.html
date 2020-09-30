@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>scottsewards.github.io</title>
-    <link rel="stylesheet" href="velleity.min.css">
-    <link rel="stylesheet" href="velleity.t.min.css">
+    <link rel="stylesheet" href="css/velleity.min.css">
+    <link rel="stylesheet" href="css/velleity.t.min.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
   </head>
   <body>
     <nav>
@@ -31,29 +32,45 @@
         <h1>Apps</h1>
         <p>I have no content to show while I overhaul all my projects. They will implement my new framework, Velleity and other libraries I have made such as JSONNE. You can <a href='velleity.html'>preview Velleity here</a>.</p>
         <table id="jason"></table>
-        <!--div class="tiles">
-          <div>
-            <img src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png" alt="Placeholder">
-          </div>
-        </div-->
       </section>
     </main>
   </body>
 </html>
-<script type="text/javascript">
-window.onload = function() {
-  let request = new XMLHttpRequest();
-  request.open("GET", "apps.json");
-  request.send();
-  request.onreadystatechange = function() {
-    if(request.readyState === 4 && request.status === 200) {
-      var response = JSON.parse(request.responseText);
-      var jason = document.getElementById('jason');
-      tableFromJSON(response, jason, true);
+<script>
+$(document).ready(function() {
+  $.ajax({
+    url: 'https://scottsewards.github.io/apps.json',
+    dataType: 'json',
+    success: function(data) {
+      CreateJSONTable(data, 'jason');
+    }
+  });
+});
+
+function CreateJSONTable(data, tableIdentifier) {
+  var cols = [];
+  for(var i = 0; i < data.length; i++)
+    for(var key in data[i])
+      if(cols.indexOf(key) === -1) cols.push(key);
+
+  var table = document.getElementById(tableIdentifier);
+  var thead = document.createElement('thead');
+  table.appendChild(thead);
+  var tr = thead.insertRow(-1);
+  for(var i = 0; i < cols.length; i++) {
+    var th = document.createElement('th');
+    th.innerHTML = cols[i];
+    tr.appendChild(th);
+  }
+
+  var tbody = document.createElement('tbody');
+  table.appendChild(tbody);
+  for(var i = 0; i < data.length; i++) {
+    tr = tbody.insertRow(-1);
+    for(var j = 0; j < cols.length; j++) {
+      var td = tr.insertCell(-1);
+      td.innerHTML = data[i][cols[j]];
     }
   }
 }
 </script>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="velleity.js"></script>
-<script type="text/javascript" src="jsonne.js"></script>

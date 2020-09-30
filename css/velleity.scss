@@ -51,7 +51,8 @@ body, body * {
     border-left: 1px solid black
   }
   &::-webkit-scrollbar-button{
-
+    background: white;
+    border-left: 0.1rem solid var(--foreground-colour);
   }
   &::-webkit-scrollbar-track {
     background: var(--background-colour);
@@ -73,6 +74,9 @@ body {
   color: var(--font-dark);
 }
 nav {
+  z-index: 1;
+  position: sticky;
+  top: 0;
   background: var(--theme-colour);
   color: var(--font-light);
   width: 100%;
@@ -283,11 +287,13 @@ ins { /*INSERTED*/
 details {}
 dfn { /*DEFENITION*/ }
 dialog {
-  position: fixed;
-  top: 0.25rem;
-  left: 0.25rem;
-  border: var(--border);
+  display: block;
+  position: static;
+  left: 0px;
+  right: 0px;
   padding: var(--padding);
+  border: var(--border);
+  margin: auto;
 }
 em, i { }
 hr {
@@ -377,53 +383,43 @@ sub { /*SUBSCRIPT*/
 
 
 //MEDIA
-audio, img, video {
+audio, img, picture, video {
   margin: auto;
   width: 100%;
 }
 area {}
 canvas {
   border: var(--border);
+  margin: auto;
 }
 figure{
-  color: var(--font-light);
   position: relative;
   img, video{
     max-width: 40em;
   }
   figcaption{
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: var(--padding);
     padding: var(--padding);
     font-style: italic;
+    text-align: center;
+    &.inside {
+      background: rgba(0, 0, 0, 0.5);
+      color: var(--font-light);
+      position: absolute;
+      top: var(--padding);
+    }
   }
-  @media(min-width: 41.5rem){
+  @media(min-width: 41.5rem) {
     figcaption{
       left: calc(100% / 2 - 20em);
     }
   }
 }
-/*
-figure {
-  padding: var(--padding);
-  margin: auto;
-  max-width: calc(var(--content-width - 20rem));
-  figcaption {
-    margin-bottom: var(--padding);
-    width: auto;
-    text-align: center;
-  }
-}
-*/
 iframe {}
 map {}
-picture {
-  margin: auto;
-  border: 1px solid black;
-}
 source {}
-svg {}
+svg {
+  margin: auto;
+}
 track {}
 video {}
 
@@ -558,28 +554,17 @@ input[type='radio']::after {
   content: 'Deselected' !important;
 }
 input[type=range] {
-  cursor: e-resize;
   -webkit-appearance: none;
-  padding: 0;
-  &:focus {
-    outline: none;
-    &::-webkit-slider-runnable-track {
-      background: var(--primary-colour) !important;
-    }
-  }
-  &::-webkit-slider-runnable-track, &::-moz-range-track {
-    cursor: pointer;
-    background: #111;
+  cursor: e-resize;
+  padding: 0 1rem;
+  &::-webkit-slider-runnable-track {
     width: 100%;
-    padding: 0;
+    height: 100%;
   }
-  &::-webkit-slider-thumb, &::-moz-range-thumb {
-    cursor: pointer;
-    height: 3rem;
-    padding: 0;
-    width: 16px;
-    background: #FFF;
-    -webkit-appearance: none;
+  &::-webkit-slider-thumb {
+  }
+  &:focus{
+    background: var(--theme-colour) !important;
   }
 }
 textarea {
