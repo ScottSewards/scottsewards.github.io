@@ -19,7 +19,6 @@
     		</form-->
     		<ul>
           <li><a href="velleity.html">Velleity</a></li>
-          <li class='caution'><a href=''>Destory</a></li>
           <!--ul>
             <li>Test</li>
             <li>Test</li>
@@ -29,23 +28,32 @@
     </nav>
     <main>
       <section>
-        <h1>Apps</h1>
-        <p>I have no content to show while I overhaul all my projects. They will implement my new framework, Velleity and other libraries I have made such as JSONNE. You can <a href='velleity.html'>preview Velleity here</a>.</p>
-        <table id="jason"></table>
+        <h1>Portfolio</h1>
+        <table id='jason'></table>
       </section>
     </main>
+    <footer>
+      <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+    </footer>
   </body>
 </html>
 <script>
-$(document).ready(function() {
-  $.ajax({
-    url: 'https://scottsewards.github.io/js/portfolio.json',
-    dataType: 'json',
-    success: function(data) {
-      CreateJSONTable(data, 'jason');
+window.onload = function() {
+  var data = [
+    {
+      "Name": "sewards.me",
+      "Description": "My previous portfolio website.",
+      "Link": "sewards.me"
+    },
+    {
+      "Name": "Velleity",
+      "Description": "A front-end content framework. I use it in personal web projects.",
+      "Link": "www.scottsewards.github.io/velleity.html"
     }
-  });
-});
+  ]
+
+  CreateJSONTable(data, 'jason');
+}
 
 function CreateJSONTable(data, tableIdentifier) {
   var cols = [];

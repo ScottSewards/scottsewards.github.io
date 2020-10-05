@@ -46,28 +46,6 @@ body, body * {
   font-weight: normal;
   letter-spacing: 0.01rem;
   transition: all 0.1s linear;
-  &::-webkit-scrollbar {
-    width: 1rem;
-    border-left: 1px solid black
-  }
-  &::-webkit-scrollbar-button{
-    background: white;
-    border-left: 0.1rem solid var(--foreground-colour);
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--background-colour);
-    border-left: 0.1rem solid var(--foreground-colour);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--theme-colour);
-    border-left: 0.1rem solid var(--foreground-colour);
-    &:hover {
-      background: rgba(0, 0, 0, 0.5);
-    }
-    &::selection {
-      background: rgba(0, 0, 0, 0.75);
-    }
-  }
 }
 body {
   background: var(--background-colour);
@@ -194,11 +172,7 @@ aside#scroll-to-top:hover {
 header {}
 h1, h2, h2, h3, h4, h5, h6 {
   text-align: center;
-}
-h2, h2, h3, h4, h5, h6, p {
-  margin: var(--padding) 0;
-  + * {
-  }
+  margin-bottom: var(--padding);
 }
 h1, h1::before {
   font-size: 120%;
@@ -228,7 +202,10 @@ a, abbr, acronym, address, b, bdi, bdo, code, del, dfn, em, i, ins, kbd, mark, s
 }
 a {
   &:link {
-    color: var(--font-dark);
+    color: var(--theme-colour);
+    &:hover {
+      color: var(--font-dark);
+    }
   }
   &:visited {
     color: var(--font-dark);
@@ -449,12 +426,13 @@ dl { /*DESCRIPTION LIST*/
 
 //FORMS
 form {
+  display: flex;
+  justify-content: center;
   > fieldset {
     color: var(--font-dark);
-    padding: var(--padding);
+    padding: var(--padding) 0 0 0;
     border: var(--border);
     min-width: 0;
-    width: 100%;
     > legend {
       padding: var(--padding);
       margin: auto;
@@ -592,9 +570,8 @@ output {
 table {
   display: table;
   border: var(--border);
-  width: 100%;
   border-collapse: collapse;
-  overflow-x: scroll !important; //THIS DOESNT WORK
+  margin: auto;
   > caption { //TABLE CAPTION
     display: table-caption;
     font-style: italic;
@@ -617,6 +594,7 @@ table {
     th, td {
       display: table-cell;
       padding: var(--padding);
+      min-width: 10rem;
     }
     th {
       font-weight: bold;
@@ -624,8 +602,34 @@ table {
     td {
       border-top: var(--border);
       &:hover {
-        background: rgba(0, 0, 0, 0.2w);
+        background: rgba(0, 0, 0, 0.1);
       }
     }
+  }
+}
+::selection {
+  background: var(--theme-colour);
+  color: var(--font-dark);
+}
+::-webkit-scrollbar {
+  width: 1rem;
+  border-left: 1px solid black
+}
+::-webkit-scrollbar-button{
+  background: white;
+  border-left: 0.1rem solid var(--foreground-colour);
+}
+::-webkit-scrollbar-track {
+  background: var(--background-colour);
+  border-left: 0.1rem solid var(--foreground-colour);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-colour);
+  border-left: 0.1rem solid var(--foreground-colour);
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &::selection {
+    background: rgba(0, 0, 0, 0.75);
   }
 }

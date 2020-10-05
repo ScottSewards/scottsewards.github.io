@@ -191,10 +191,20 @@
 }
 .tiles {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--content-gap);
   div:hover {
     //transform: scale(1.025);
+  }
+}
+@media(max-width: 60rem) {
+  .tiles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width: 30rem) {
+  .tiles {
+    grid-template-columns: 1fr;
   }
 }
 .timeline{

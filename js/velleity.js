@@ -1,4 +1,4 @@
-$().ready(function() {
+$(document).ready(function() {
   var darkMode = false;
   if(darkMode) {
 
@@ -64,32 +64,4 @@ $('nav li', 'button', 'a', 'audio', 'img', 'video').each(function() { //ACCESSIB
   $(this).href('wai-aria', num)
   num += 1;
 });
-
-
-$(function(){
-  $('#getHere').get("http://teaching.ehustudent.co.uk/add-my-comment/22918078", {/*JSLN},function(){
-    alert(data +  status);
-  });
-});
-
-var xhr = new XMLHttpRequest();
-
-$(function(){
-  var formData = $('#login').serialize;
-  $.post("test.php", "user=scott", proData).error(proError);
-  //$.postJSON(url, formData{
-  //  "first": "value",
-  //  "second": "value"
-  //}, proData).error(proError);
-});
-
-  function proData(data, status){
-    alert(status);
-    $(this).append('<p>' + data.firstName + '</p>')
-  }
-
-  function proError(data){
-    var msg = $(this).text("There was an error.");
-  }
-}
 */
