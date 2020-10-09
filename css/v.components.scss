@@ -1,0 +1,134 @@
+.accordion {
+  > p {
+    cursor: pointer;
+    padding: var(--pad);
+    border: var(--border);
+    margin: 0;
+    &:not(:first-child) {
+      border-top: 0;
+    }
+    &.active {
+      border-bottom: 0;
+    }
+  }
+  > div {
+    padding: var(--pad);
+    border: var(--border);
+    border-top: 0;
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
+.breadcrumbs{
+  ul{
+    li{
+      display: inline;
+      list-style-type: none;
+      //@include box(1em, 0, 0);
+      &:not(:first-child){
+        margin-left: 5em;
+      }
+      &:last-child{
+        background-color: rgba(0, 0, 0, 0.25);
+        font-weight: bold;
+      }
+    }
+  }
+}
+.carousel {
+  text-align: center;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  :not(:first-child) {
+    margin-left: var(--pad);
+  }
+}
+.columns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  > * {
+    row-gap: 1rem;
+    width: 50%;
+  }
+  > :not(:first-child) {
+    //margin-left: var(--content-gap);
+  }
+}
+@media(max-width: 55ch) {
+  .columns > * {
+    width: 100%;
+  }
+}
+.preview{
+  background-color: #fff;
+  box-shadow: 0 0 0.1em #000;
+  text-align: center;
+  text-transform: capitalize;
+  position: absolute;
+  z-index: 999;
+  top: 1.2em;
+  left: 0;
+  padding: 0.25em 0.25em;
+  width: 20em;
+}
+.tabs {
+  > .tab-options {
+    display: flex;
+    overflow-y: hidden;
+    border-right: var(--border);
+    border-left: var(--border);
+    > [class*='tab-'] {
+      user-select: none;
+      cursor: pointer;
+      list-style-type: none !important;
+      padding: var(--pad);
+      border: var(--border);
+      border-right: 0;
+      margin-left: 0;
+      width: 100%;
+      text-align: center;
+      &:first-child {
+        border-left: 0;
+      }
+      &:not(.active) {
+        //background: var(--background-colour) !important;
+        //color: var(--font-light);
+      }
+      &.active {
+        border-bottom: 0;
+      }
+    }
+  }
+  > div {
+    display: none;
+    padding: var(--pad);
+    border: var(--border);
+    border-top: 0;
+    margin: 0;
+    overflow-y: auto;
+    resize: vertical;
+    min-height: 5em;
+    max-height: 30em;
+    &.active {
+      display: block;
+    }
+  }
+}
+.tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--pad);
+}
+@media(max-width: 60rem) {
+  .tiles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width: 30rem) {
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+}

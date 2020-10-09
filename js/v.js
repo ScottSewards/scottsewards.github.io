@@ -1,10 +1,5 @@
 $(document).ready(function() {
-  var darkMode = false;
-  if(darkMode) {
-
-  } else {
-
-  }
+  //$("a[href*='" + location.pathname.substring(8, -1) + "']").addClass("active"); //SET RIBBON
 
   $("[name='show-password']").click(function() {
     if($(this).val() == "Show") $(this).val("Hide").prev().attr("type", "text");
@@ -29,6 +24,17 @@ $(document).ready(function() {
     });
   });
 
+  /*
+  $('main a').mouseenter(function(){ //ANCHOR PREVIEW
+    var con = $(this).text();
+    var src = $(this).attr('href');
+    $(this).append('<div class="preview"><p>' + con + '</p><img src="media/img/land.jpg"></img><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>')
+  });
+  $('main a').mouseleave(function(){
+    $('div.preview').remove();
+  });
+  */
+
   $('.tabs').each(function(index) {
     var tabs = $(this);
     $(this).find('> ol, > ul').addClass('tab-options').find('> li').each(function(index) {
@@ -47,21 +53,3 @@ $(document).ready(function() {
     });
   });
 });
-
-//$("a[href*='" + location.pathname.substring(8, -1) + "']").addClass("active"); //SET RIBBON
-
-/*
-$('main a').mouseenter(function(){ //ANCHOR PREVIEW
-  var con = $(this).text();
-  var src = $(this).attr('href');
-  $(this).append('<div class="preview"><p>' + con + '</p><img src="media/img/land.jpg"></img><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>')
-});
-$('main a').mouseleave(function(){
-  $('div.preview').remove();
-});
-
-$('nav li', 'button', 'a', 'audio', 'img', 'video').each(function() { //ACCESSIBILITY
-  $(this).href('wai-aria', num)
-  num += 1;
-});
-*/
