@@ -1,0 +1,92 @@
+
+* {
+  transition: all 0.1s linear;
+  box-sizing: border-box;
+  margin: 0;
+  letter-spacing: 0.01rem;
+}
+
+html { //HEAD, BODY
+  font-family: var(--font);
+  font-kerning: normal;
+  font-size: var(--font-size);
+  --width-nav: 12rem;
+  --push-r: 0;
+  --push-l: 1;
+}
+
+head { //BASE, TITLE, META, STYLE, LINK
+  display: none !important;
+}
+
+body {
+  background: var(--col-front);
+  color: var(--col-black);
+  //&:has(nav[class*='left'], nav[class*='right']) { margin: 0 calc(var(--width-nav) * var(--push-r)) 0 calc(var(--width-nav) * var(--push-l)); }
+}
+
+nav {
+  background: var(--col-front);
+  &[class*='full'] { background: var(--col-theme); }
+  color: var(--col-white);
+
+  z-index: 1;
+  position: static;
+  &[class*='top'] { top: 0; &[class*='follow'] { position: sticky; } }
+  &[class*='bottom'] { position: fixed; bottom: 0; }
+
+  display: block; //FALLBACK
+  width: 100%;
+
+  div, ul {
+    background: var(--col-theme);
+    margin: auto;
+    max-width: var(--width-content);
+  }
+  ul {
+    padding: 1rem 0;
+    li {
+      display: inline;
+      padding: 1rem;
+      margin-left: 0;
+      list-style-type: none;
+      &:hover, &.active { background: var(--col-black); }
+      &.active, &.active:hover { padding: 1rem; }
+      //&.warning:hover{ background-color: var(--col-warned); }
+    }
+  }
+  a {
+    color: inherit;
+    padding: 1rem 0;
+    font-weight: bold !important;
+    text-decoration: none;
+  }
+  /*
+  &[class*='left'], &[class*='right'] {
+    position: absolute;
+    width: var(--width-nav);
+    &[class*='stick'] {
+      position: fixed;
+    }
+  }
+  &[class*='left'] {
+    left: 0;
+    //--push-l: 1;
+  }
+  &[class*='right'] {
+    right: 0;
+    //--push-r: 1;
+  }
+  */
+}
+@media(max-width: 30rem) { nav ul { padding: 0; li { display: block; } } }
+@media(min-width: 30rem) { nav ul li { margin-right: 0.1rem; &.active { padding: var(--height-ribbon) 1rem; } } }
+
+main, .main {
+  background: var(--col-front);
+  color: var(--col-black);
+  display: block; //FALLBACK
+  padding: var(--pad);
+  margin: auto;
+  max-width: var(--width-chars);
+}

@@ -1,3 +1,28 @@
+
+
+var timeToSlide = 3000;
+
+window.onload = function() {
+  var slideshows = document.getElementsByClassName('slideshow');
+  Array.prototype.forEach.call(slideshows, function(slideshow) {
+    var slides = slideshow.children;
+    setInterval(function() {
+      slideshow.appendChild(slides[0]);
+    }, timeToSlide);
+  });
+}
+
+  /*
+  var tabs = document.getElementsByClassName('tabs');
+  Array.prototype.forEach.call(tabs, function(tab) {
+    var slides = tab.children;
+    setInterval(function() {
+      slideshow.appendChild(slides[0]);
+    }, 3000);
+  });
+  */
+
+/*
 $(document).ready(function() {
   //$("a[href*='" + location.pathname.substring(8, -1) + "']").addClass("active"); //SET RIBBON
 
@@ -24,7 +49,6 @@ $(document).ready(function() {
     });
   });
 
-  /*
   $('main a').mouseenter(function(){ //ANCHOR PREVIEW
     var con = $(this).text();
     var src = $(this).attr('href');
@@ -33,7 +57,6 @@ $(document).ready(function() {
   $('main a').mouseleave(function(){
     $('div.preview').remove();
   });
-  */
 
   $('.tabs').each(function(index) {
     var tabs = $(this);
@@ -53,3 +76,4 @@ $(document).ready(function() {
     });
   });
 });
+*/
