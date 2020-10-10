@@ -1,0 +1,105 @@
+a {
+  color: var(--col-theme);
+}
+abbr, acronym {
+  cursor: help;
+  text-decoration: underline dotted;
+  //text-transform: uppercase !important; //NOT ALL ABBREVIATIONS ARE UPPERCASE
+}
+blockquote, cite, q {
+  font-style: italic;
+  display: block;
+  margin: var(--pad) auto;
+  max-width: var(--width-chars);
+  text-align: center;
+  &::before { content: open-quote; }
+  &::after { content: close-quote; }
+}
+code {
+  font-family: "Courier New";
+  background: var(--col-back);
+  color: var(--col-white);
+  display: inline;
+  padding: var(--pad-inline);
+  white-space: pre;
+}
+data {
+
+}
+del, .deleted {
+  background: var(--col-deleted);
+  text-decoration: none;
+  &::before { content: "[deletion start] "; }
+  &::after { content: " [deletion end]"; }
+}
+details { }
+dialog {
+  display: block;
+  position: static;
+  padding: var(--pad);
+  border: var(--border);
+  margin: auto;
+}
+dl > dt { font-weight: bold; }
+dl > dd { margin: 0 0 var(--pad) var(--pad-list); }
+em, .emphasise, i, .italic { font-style: italic; }
+hr {
+  background: var(--col-black);
+  padding: 0.1rem;
+  border: 0;
+  //border-bottom: var(--border);
+  margin: var(--pad) auto;
+}
+ins, .inserted {
+  background: var(--col-inserted);
+  text-decoration: none;
+  &::before { content: "[insertion start] "; }
+  &::after { content: " [insertion end]"; }
+}
+kbd {
+  background: var(--col-back);
+  color: var(--col-white);
+  padding: var(--pad-inline);
+  box-shadow: 0 2px 0 0 var(--col-border);
+}
+mark {
+  background: var(--col-marked);
+  &::before { content: "[highlight start] "; }
+  &::after { content: " [highlight end]"; }
+}
+meter, progress {
+  display: block;
+  margin: var(--pad) auto;
+  width: 100%;
+}
+meter::-webkit-meter-bar {
+  background: var(--col-back);
+  border: 0;
+  border-radius: 0;
+}
+meter::-webkit-meter-optimum-value { background: var(--col-theme); }
+
+ol {
+
+}
+ul {
+
+}
+li {
+  list-style-type: square;
+  margin-left: var(--pad-list);
+}
+p { margin: var(--pad) auto; max-width: var(--width-chars); }
+
+
+pre { display: block; }
+progress { cursor: progress; }
+s, .strike { text-decoration: line-through; &:hover { text-decoration: none; } }
+samp { /*SAMPLE*/ }
+script { display: none !important; }
+summary {}
+sub, .sub { font-size: var(--font-size-script); vertical-align: sub; }
+sup, .sup { font-size: var(--font-size-script); vertical-align: super; }
+time { font-weight: bold; }
+var { font-style: italic; }
+//p:first-letter { font-size: 200%; }

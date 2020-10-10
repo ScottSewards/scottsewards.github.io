@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Velleity</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="css/velleity.min.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/velleity.js"></script>
+  </head>
+  <body>
+    <nav id='nav' class='full top follow'>
+      <ul>
+        <li><a href="index.html">Index</a></li>
+        <li class='active'><a href="showcase.html">My Framework</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <h1>Vell</h1>
+        <article>
+          <h2>About</h2>
+          <p><span class='bold'>Vell</span> is a CSS framework for layout and content. It is in development; that means <em>it is incomplete</em>. It is partly based on <a href='http://smacss.com/'>SMACSS</a>. I built the framework to scratch an itch I had with frameworks that require excessive use of classes. Instead, you follow a HTML structure to create a layout and content.</p>
+          <p>The framework applies a tri-colour scheme: white, black and user-defined. In the form section, you can change the colour picker value to see what the user-defined colour affects. Furthermore, the framework applies an prefered colour scheme for light or dark mode depending on each users system settings.</p>
+          <script type="text/javascript">
+          </script>
+        </article>
+      </section>
+
+      <section id='forms' class=''>
+        <h2>Form</h2>
+        <form action='' method='post'>
+          <fieldset>
+            <legend>Legend</legend>
+            <p>Input types are in alphabetical order.</p>
+            <label for='checkbox'>Checkbox</label>
+            <div class='inline'>
+              <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
+              <input class='check-cross' type='checkbox' name="checkbox-check-cross" value='check'/>
+              <input class='yes-no' type='checkbox' name="checkbox-yes-no" value='yes'/>
+            </div>
+            <p>Change the colour picker to change the user-defined colour.</p>
+            <div>
+              <div class='inline'>
+                <label for='colour'>Colour</label>
+                <output id='colour-output' name='colour'></output>
+              </div>
+              <input id='colour' type='color' name='colour'/>
+            </div>
+            <div>
+              <label for='date'>Date</label>
+              <input id='date' type='date' name='date'/>
+            </div>
+            <p>Labels and inputs can be inline.</p>
+            <div class='inline'>
+              <label for='datetime-local'>Datetime-local</label>
+              <input id='datetime-local' type='datetime-local' name='datetime-local'/>
+            </div>
+            <div>
+              <label for='email'>Email</label>
+              <input id='email' type='email' name='email' placeholder='scotttsewards@hotmail.com'/>
+            </div>
+            <p>Disabled inputs will be greyed out.</p>
+            <div>
+              <label for='file'>File</label>
+              <input id='file' type='file' name='file' disabled/>
+            </div>
+            <div>
+              <label for='list'>List</label>
+              <input id='list' name='list' list='list-items' placeholder='List Item A'/>
+            </div>
+            <datalist id='list-items'>
+              <option value='List Item A'/>
+              <option value='List Item B'/>
+              <option value='List Item C'/>
+            </datalist>
+            <div>
+              <label for='month'>Month</label>
+              <input id='month' type='month' name='month'/>
+            </div>
+            <div>
+              <label for='number'>Number</label>
+              <input id='number' type='number' name='number' placeholder='42'/>
+            </div>
+            <p>Inputs are two inline, two not inline, repeat for testing purposes.</p>
+            <div class='inline'>
+              <label for='password'>Password</label>
+              <input id='password' type='password' name='password' value='password'/>
+              <input class='hide' type="button" name="show-password" value="Show">
+            </div>
+            <div class='inline'>
+              <label for='range'>Range</label>
+              <input id='range' type='range' name='range'/>
+            </div>
+            <div>
+              <label for='radio'>Radio</label>
+              <input id='radio' type='radio' name='radio' value='one'/>
+            </div>
+            <div>
+              <label for='search'>Search</label>
+              <input id='search' type='search' name='search' placeholder='Search for..'/>
+            </div>
+            <div class='inline'>
+              <label for='select'>Select</label>
+              <select id='select' name='select'>
+                <optgroup label='A'>
+                  <option value='1'>Option A1</option>
+                  <option value='1'>Option A2</option>
+                </optgroup>
+                <optgroup label='B'>
+                  <option value='1'>Option B1</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class='inline'>
+              <label for='text'>Text</label>
+              <input id='text' type='text' name='text'/>
+            </div>
+            <div>
+              <label for='time'>Time</label>
+              <input id='time' type='time' name='time'/>
+            </div>
+            <div>
+              <label for='url'>URL</label>
+              <input id='url' type='url' name='url'/>
+            </div>
+            <div class='inline'>
+              <label for='week'>Week</label>
+              <input id='week' type='week' name='week'/>
+            </div>
+            <div class='inline'>
+              <label for='textarea'>Textarea</label>
+              <textarea id='textarea' name='textarea'></textarea>
+            </div>
+            <input type="button" name="button" value="Button">
+            <input type="reset" name="reset" value="Reset">
+            <input type="submit" name="submit" value="Submit" disabled>
+            <output name="output">undefined</output>
+          </fieldset>
+        </form>
+      </section>
+
+      <section id='tables' class='hide'>
+        <h2>Tables</h2>
+        <table>
+          <caption>Caption</caption>
+          <thead>
+            <tr>
+              <th>Table cell header</th>
+              <th>Table cell header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Table data</td>
+              <td>Table data</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Table data</td>
+              <td>Table data</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section>
+        <h2>Blocks</h2>
+        <p>Some blocks require JavaScript to work. These are marked.</p>
+        <article>
+          <h3>Slideshows</h3>
+          <p>Requires JavaScript.</p>
+          <div class='slideshow'>
+            <img src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt="">
+            <img src="https://img.cinemablend.com/filter:scale/quill/f/7/3/6/d/5/f736d502c43ec43b11a76c147cbcc8c258a6dcd2.jpg?mw=600" alt="">
+          </div>
+        </article>
+        <article class='hide'>
+          <h3>Tabs</h3>
+          <p>Requires JavaScript.</p>
+          <div class='tabs'>
+          </div>
+        </article>
+      </section>
+    </main>
+
+
+
+
+
+    <main class="hide">
+      <article>
+        <hgroup>
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+        </hgroup>
+        <p>Use your system settings to switch between light and dark mode.</p>
+        <table class="wider">
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>abbr</code></td>
+              <td>Velleity emphasises <abbr title='responsive web design'>RWD</abbr> example.</td>
+            </tr>
+            <tr>
+              <td><code>address</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>a</code></td>
+              <td><a href=''>Click here to scroll to top</a>.</td>
+            </tr>
+            <tr>
+              <td><code>code</code></td>
+              <td>The <code>print</code> statement will output a value to the console.</td>
+            </tr>
+            <tr>
+              <td><code>del</code></td>
+              <td>Fallout 76 is a <del>bad</del> game.</td>
+            </tr>
+            <tr>
+              <td><code>em</code></td>
+              <td>It is important you <em>pass</em>.</td>
+            </tr>
+            <tr>
+              <td><code>ins</code></td>
+              <td>Fallout 76 is a <ins datetime="2020-10-07">good</ins> game.</td>
+            </tr>
+            <tr>
+              <td><code>i</code></td>
+              <td>It is important you <i>pass</i>.</td>
+            </tr>
+            <tr>
+              <td><code>kbd</code></td>
+              <td>Press the <kbd>space</kbd> key to scroll down.</td>
+            </tr>
+            <tr>
+              <td><code>mark</code></td>
+              <td>Velleity is a <mark>front-end</mark> framework.</td>
+            </tr>
+            <tr>
+              <td><code>s</code></td>
+              <td><s>I am striked! Hover me to see me without a strike.</s></td>
+            </tr>
+            <tr>
+              <td><code>samp</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>sub</code></td>
+              <td>00110011<sub>2</sub> is base 2.</td>
+            </tr>
+            <tr>
+              <td><code>sup</code></td>
+              <td>Bolt came in 1<sup>st</sup> place.</td>
+            </tr>
+            <tr>
+              <td><code>time</code></td>
+              <td><time datetime="15:08">15:08</time></td>
+            </tr>
+            <tr>
+              <td><code>var</code></td>
+              <td><var>E</var> = <var>mc<sup>2</sup></var></td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <section id='lists'>
+        <h2>Lists</h2>
+        <div class="columns">
+          <div>
+            <h3>Descriptive List</h3>
+            <dl>
+              <dt>This is a descriptive term in a descriptive list.</dt>
+              <dd>This is a descriptive definition.</dd>
+              <dt>This is another descriptive term.</dt>
+              <dd>This is another descriptive definition.</dd>
+            </dl>
+          </div>
+          <div>
+            <h3>Lettered List</h3>
+            <ol type='A'>
+              <li>This is a list item.</li>
+              <li>This is another list item.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>Ordered List</h3>
+            <ol>
+              <li><data value="000033">This is a data in a list item.</data></li>
+              <li>This is another list item.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>Unordered List</h3>
+            <ul>
+              <li>This is a list item.</li>
+              <li>This is another list item.</li>
+            </ul>
+          </div>
+        </div>
+        <h2>Quotes</h2>
+        <blockquote cite="https://www.goodreads.com/quotes/144310-the-nitrogen-in-our-dna-the-calcium-in-our-teeth">The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of starstuff.</blockquote>
+        <cite>This is a citation.</cite>
+        <q cite="http://reddit.com">This is quote.</q>
+      </section>
+      <section id='directions'>
+        <h2>Directions</h2>
+        <dialog>This is a dialog.</dialog>
+        <div class="hide">
+          <h3>Details</h3>
+          <details open>
+            <summary>This is <code>summary</code> for details, click to toggle close/open.</summary>
+            <p>This text should be shown if the details element is opened.</p>
+          </details>
+        </div>
+        <div class="hide">
+          <h3>Meter</h3>
+          <meter value="50" min="0" max="100"></meter>
+        </div>
+        <div class="hide">
+          <h3>Progress</h3>
+          <progress value="50" max="100">50%</progress>
+        </div>
+      </section>
+      <section>
+        <h2>Media</h2>
+
+        <h3>Picture</h3>
+        <picture>
+          <source media="(min-width: 650px)" srcset="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" width="150" height="250"/>
+          <source media="(min-width: 465px)" srcset="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg"/>
+          <img src="placeholder.png" alt="Flowers"/>
+        </picture>
+        <h3>Figures and Figcaptions</h3>
+        <div class="tiles">
+          <figure>
+            <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
+            <figcaption>This is a figure caption.</figcaption>
+          </figure>
+          <figure>
+            <figcaption class="inside">This is a figure caption in a figure.</figcaption>
+            <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
+          </figure>
+        </div>
+
+
+        <article id='audio'>
+          <h3>Audio</h3>
+          <p>Rule, Britannia! by James Thomson (1740)</p>
+          <audio src='https://upload.wikimedia.org/wikipedia/commons/4/45/%27Rule%2C_Britannia%21%27_%28United_States_Army_Strings%29.oga' type='audio/ogg' controls></audio>
+        </article>
+        <article id='canvas' class='hide'>
+          <h3>Canvas</h3>
+          <canvas id="canvas" width="300" height="300"></canvas>
+        </article>
+        <article id='img'>
+          <h3>Image</h3>
+          <img src="https://www.udiscovermusic.com/wp-content/uploads/2020/02/The-Beatles-GettyImages-1183628511.jpg" alt="Planets" usemap="#planetmap">
+        </article>
+        <article id='map' class="hide">
+          <h3>Map</h3>
+          <map name="planetmap">
+            <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+            <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+            <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+          </map>
+        </article>
+        <article id='svg' class='hide'>
+          <h3>SVG</h3>
+          <svg>
+            <g>
+              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+              <rect x="100" y="20" rx="20" ry="20" width="100" height="50" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+              <ellipse cx="100" cy="70" rx="50" ry="50" fill="url(#grad1)"/>
+              <!--defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
+              <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"/>
+            </linearGradient>
+            </defs>
+            <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/-->
+            <text fill="#ffffff" font-size="45" font-family="Verdana" x="100" y="75">SVG</text>
+            </g>
+            Sorry, your browser does not support inline SVG.
+          </svg>
+        </article>
+        <article id='video'>
+          <h3>Video</h3>
+          <video poster='' src='//upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm' type='video/mp4' controls></video>
+        </article>
+      </section>
+
+
+
+
+    </main>
+    <footer>
+      <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#colour").val($("body").css("--col-theme").trim());
+  $("#colour-output").val($("body").css("--col-theme"));
+
+  $("#colour").change(function() {
+    document.body.style.setProperty("--col-theme", $(this).val());
+    $("#colour-output").val($(this).val());
+  });
+});
+</script>

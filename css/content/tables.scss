@@ -1,0 +1,27 @@
+table {
+  background: var(--col-over);
+  border-collapse: collapse;
+  margin: var(--pad) auto;
+  overflow: auto;
+}
+caption {
+  font-style: italic;
+}
+
+colgroup { }
+col { }
+
+thead { }
+tbody { }
+tfoot { }
+
+tr {
+  &:hover { background: rgba(0, 0, 0, 0.1); }
+}
+th {
+  font-weight: bold;
+  padding: var(--pad);
+}
+td {
+  padding: var(--pad);
+}
