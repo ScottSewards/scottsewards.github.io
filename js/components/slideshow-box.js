@@ -1,4 +1,4 @@
-class SlideShow extends HTMLElement {
+class Slideshow extends HTMLElement {
   constructor() {
     super();
     const shadow = this.attachShadow({ mode: 'open' });
@@ -43,7 +43,7 @@ class SlideShow extends HTMLElement {
   }
 }
 
-customElements.define('slide-show', SlideShow);
+customElements.define('slide-box', SlideShow);
 customElements.whenDefined('slide-show').then(() => {
   console.log('slide-show defined.');
 });
