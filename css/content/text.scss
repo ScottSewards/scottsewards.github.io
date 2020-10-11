@@ -1,5 +1,6 @@
 a {
   color: var(--col-theme);
+  &:hover { color: var(--col-black); }
 }
 abbr, acronym {
   cursor: help;
@@ -43,6 +44,7 @@ dialog {
 dl > dt { font-weight: bold; }
 dl > dd { margin: 0 0 var(--pad) var(--pad-list); }
 em, .emphasise, i, .italic { font-style: italic; }
+.hide { display: none !important; }
 hr {
   background: var(--col-black);
   padding: 0.1rem;
@@ -80,14 +82,14 @@ meter::-webkit-meter-bar {
 meter::-webkit-meter-optimum-value { background: var(--col-theme); }
 
 ol {
-
+  padding: 0;
 }
 ul {
-
+  padding: 0;
 }
 li {
   list-style-type: square;
-  margin-left: var(--pad-list);
+  //margin-left: var(--pad-list);
 }
 p { margin: var(--pad) auto; max-width: var(--width-chars); }
 

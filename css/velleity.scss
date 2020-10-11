@@ -1,18 +1,18 @@
 :root {
-  --col-theme: #D5366B;
-  --col-const-white: #FFF;
-  --col-const-black: #222;
+  --col-theme: #BE1349;
+  --col-const-white: #FFFFFF;
+  --col-const-black: #222222;
   --col-white: var(--col-const-white);
   --col-black: var(--col-const-black);
 
   --col-front: var(--col-white);
   --col-back: var(--col-black);
-  --col-over: #EEE;
+  --col-over: #EEEEEE;
   --col-border: var(--col-over);
   --col-deleted: rgba(255, 0, 0, 0.5);
-  --col-disabled: #CCC;
+  --col-disabled: #CCCCCC;
   --col-focus: purple;
-  --col-hover: #DDD;
+  --col-hover: #DDDDDD;
   --col-inserted: rgba(0, 255, 0, 0.5);
   --col-marked: rgba(255, 255, 0, 0.5);
   --col-warned: #BB2B2B;
@@ -39,8 +39,9 @@
   }
 }
 
-@import "blocks/grids.min.css";
-@import "blocks/seperators.min.css";
+@import "components/grids.min.css";
+@import "components/seperators.min.css";
+@import "components/tabulators.min.css";
 @import "content/forms.min.css";
 @import "content/media.min.css";
 @import "content/sections.min.css";
@@ -48,22 +49,6 @@
 @import "content/text.min.css";
 @import "layouts/layouts.min.css";
 
-.hide { display: none !important; }
-[class^='box'] { display: block; }
-.b-left { margin-right: auto; }
-.b-centre { margin: auto; }
-.b-right { margin-left: auto; }
-.f-left { float: left; }
-.f-right { float: right; }
-.t-left { text-align: left; }
-.t-center, .t-centre { text-align: center; }
-.t-right { text-align: right; }
-.t-justify { text-align: justify; }
-//SEMANTICS
-.bold, .important, .strong { font-weight: bold; }
-.error { text-decoration-style: wavy; }
-.underline { text-decoration: underline; }
-.strike-under { text-decoration: line-through underline; }
 
 :disabled {
   cursor: not-allowed !important;

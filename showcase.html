@@ -6,28 +6,36 @@
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <link rel="stylesheet" href="css/velleity.min.css">
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/velleity.js"></script>
+    <script type="text/javascript" src="js/albers.js"></script>
+    <script type="text/javascript" src="js/components/code.js"></script>
+    <script type="text/javascript" src="js/components/slideshow.js"></script>
+    <script type="text/javascript" src="js/components/tabs.js"></script>
   </head>
   <body>
-    <nav id='nav' class='full top follow'>
+    <nav id='nav' class='top-follow'>
       <ul>
         <li><a href="index.html">Index</a></li>
-        <li class='active'><a href="showcase.html">My Framework</a></li>
+        <li class='active'><a href="showcase.html">Albers</a></li>
       </ul>
     </nav>
+    <aside id='table-of-contents'>
+      <ul>
+      </ul>
+      <script type="text/javascript">
+
+      </script>
+    </aside>
     <main>
-      <section>
-        <h1>Vell</h1>
+      <section id='about'>
+        <h1>Albers</h1>
         <article>
           <h2>About</h2>
-          <p><span class='bold'>Vell</span> is a CSS framework for layout and content. It is in development; that means <em>it is incomplete</em>. It is partly based on <a href='http://smacss.com/'>SMACSS</a>. I built the framework to scratch an itch I had with frameworks that require excessive use of classes. Instead, you follow a HTML structure to create a layout and content.</p>
+          <p>Albers is a modern framework for modern browsers. It is in development.</p>
+           <p>Albers is a CSS framework for layout and content. It is in development; that means <em>it is incomplete</em>. It is partly based on <a href='http://smacss.com/'>SMACSS</a>. I built the framework to scratch an itch I had with frameworks that require excessive use of classes. Instead, you follow a HTML structure to create a layout and content.</p>
           <p>The framework applies a tri-colour scheme: white, black and user-defined. In the form section, you can change the colour picker value to see what the user-defined colour affects. Furthermore, the framework applies an prefered colour scheme for light or dark mode depending on each users system settings.</p>
-          <script type="text/javascript">
-          </script>
         </article>
       </section>
-
-      <section id='forms' class=''>
+      <section id='forms' class='hide'>
         <h2>Form</h2>
         <form action='' method='post'>
           <fieldset>
@@ -139,7 +147,6 @@
           </fieldset>
         </form>
       </section>
-
       <section id='tables' class='hide'>
         <h2>Tables</h2>
         <table>
@@ -164,26 +171,38 @@
           </tfoot>
         </table>
       </section>
-
       <section>
-        <h2>Blocks</h2>
-        <p>Some blocks require JavaScript to work. These are marked.</p>
-        <article>
+        <h2>Components</h2>
+        <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>  </p>
+        <article id='slideshow'>
           <h3>Slideshows</h3>
-          <p>Requires JavaScript.</p>
-          <div class='slideshow'>
+          <slide-show autoslide timer='5000' thumbnails>
             <img src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt="">
-            <img src="https://img.cinemablend.com/filter:scale/quill/f/7/3/6/d/5/f736d502c43ec43b11a76c147cbcc8c258a6dcd2.jpg?mw=600" alt="">
-          </div>
+            <slide-img title='Batman' src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt=''></slide-img>
+          </slide-show>
         </article>
-        <article class='hide'>
+        <article id='tabs' class='hide'>
           <h3>Tabs</h3>
-          <p>Requires JavaScript.</p>
-          <div class='tabs'>
-          </div>
+          <sq-tabs>
+            <tab-list>
+
+            </tab-list>
+            <tab-content>
+              <tab>
+                <p>Content</p>
+              </tab>
+              <tab>
+                <p>Content</p>
+              </tab>
+            </tab-content>
+          </tabs>
         </article>
       </section>
     </main>
+
+    <footer>
+      <p class='t-centre'>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+    </footer>
 
 
 
@@ -405,9 +424,6 @@
 
 
     </main>
-    <footer>
-      <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
-    </footer>
   </body>
 </html>
 <script type="text/javascript">

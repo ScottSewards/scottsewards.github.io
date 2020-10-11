@@ -1,26 +1,8 @@
 
+//https://developers.google.com/web/fundamentals/web-components/shadowdom
 
-var timeToSlide = 3000;
 
-window.onload = function() {
-  var slideshows = document.getElementsByClassName('slideshow');
-  Array.prototype.forEach.call(slideshows, function(slideshow) {
-    var slides = slideshow.children;
-    setInterval(function() {
-      slideshow.appendChild(slides[0]);
-    }, timeToSlide);
-  });
-}
 
-  /*
-  var tabs = document.getElementsByClassName('tabs');
-  Array.prototype.forEach.call(tabs, function(tab) {
-    var slides = tab.children;
-    setInterval(function() {
-      slideshow.appendChild(slides[0]);
-    }, 3000);
-  });
-  */
 
 /*
 $(document).ready(function() {
@@ -47,15 +29,6 @@ $(document).ready(function() {
         if($(this).hasClass(listItemClasses)) $(this).addClass('active');
       });
     });
-  });
-
-  $('main a').mouseenter(function(){ //ANCHOR PREVIEW
-    var con = $(this).text();
-    var src = $(this).attr('href');
-    $(this).append('<div class="preview"><p>' + con + '</p><img src="media/img/land.jpg"></img><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>')
-  });
-  $('main a').mouseleave(function(){
-    $('div.preview').remove();
   });
 
   $('.tabs').each(function(index) {
