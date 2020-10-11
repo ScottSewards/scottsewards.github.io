@@ -1,11 +1,18 @@
-var timeToSlide = 3000;
+class Tabs extends HTMLElement {
 
-window.onload = function() {
-  var slideshows = document.getElementsByClassName('slideshow');
-  Array.prototype.forEach.call(slideshows, function(slideshow) {
-    var slides = slideshow.children;
-    setInterval(function() {
-      slideshow.appendChild(slides[0]);
-    }, timeToSlide);
-  });
 }
+
+customElements.define('super-tabs', Tabs);
+customElements.whenDefined('super-tabs').then(() => {
+  console.log('super-tabs defined.');
+});
+
+/*
+var tabs = document.getElementsByClassName('tabs');
+Array.prototype.forEach.call(tabs, function(tab) {
+  var slides = tab.children;
+  setInterval(function() {
+    slideshow.appendChild(slides[0]);
+  }, 3000);
+});
+*/
