@@ -80,14 +80,14 @@ meter::-webkit-meter-bar {
 meter::-webkit-meter-optimum-value { background: var(--col-theme); }
 
 ol {
-
+  padding: 0;
 }
 ul {
-
+  padding: 0;
 }
 li {
   list-style-type: square;
-  margin-left: var(--pad-list);
+  //margin-left: var(--pad-list);
 }
 p { margin: var(--pad) auto; max-width: var(--width-chars); }
 

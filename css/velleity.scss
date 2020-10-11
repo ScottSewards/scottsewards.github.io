@@ -39,8 +39,9 @@
   }
 }
 
-@import "blocks/grids.min.css";
-@import "blocks/seperators.min.css";
+@import "components/grids.min.css";
+@import "components/seperators.min.css";
+@import "components/tabulators.min.css";
 @import "content/forms.min.css";
 @import "content/media.min.css";
 @import "content/sections.min.css";

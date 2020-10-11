@@ -16,18 +16,18 @@
       </ul>
     </nav>
     <main>
-      <section>
-        <h1>Vell</h1>
+      <section id='about'>
+        <h1>Framework</h1>
         <article>
           <h2>About</h2>
+          <p>A modern framework for modern browsers.</p>
           <p><span class='bold'>Vell</span> is a CSS framework for layout and content. It is in development; that means <em>it is incomplete</em>. It is partly based on <a href='http://smacss.com/'>SMACSS</a>. I built the framework to scratch an itch I had with frameworks that require excessive use of classes. Instead, you follow a HTML structure to create a layout and content.</p>
           <p>The framework applies a tri-colour scheme: white, black and user-defined. In the form section, you can change the colour picker value to see what the user-defined colour affects. Furthermore, the framework applies an prefered colour scheme for light or dark mode depending on each users system settings.</p>
           <script type="text/javascript">
           </script>
         </article>
       </section>
-
-      <section id='forms' class=''>
+      <section id='forms' class='hide'>
         <h2>Form</h2>
         <form action='' method='post'>
           <fieldset>
@@ -139,7 +139,6 @@
           </fieldset>
         </form>
       </section>
-
       <section id='tables' class='hide'>
         <h2>Tables</h2>
         <table>
@@ -164,26 +163,38 @@
           </tfoot>
         </table>
       </section>
-
       <section>
         <h2>Blocks</h2>
-        <p>Some blocks require JavaScript to work. These are marked.</p>
-        <article>
+        <article id='slideshow'>
           <h3>Slideshows</h3>
-          <p>Requires JavaScript.</p>
-          <div class='slideshow'>
+          <x-slideshow timer='5000' controls auto>
             <img src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt="">
-            <img src="https://img.cinemablend.com/filter:scale/quill/f/7/3/6/d/5/f736d502c43ec43b11a76c147cbcc8c258a6dcd2.jpg?mw=600" alt="">
-          </div>
+            <slide title='Batman' src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt=''/>
+            <slide title='Superman' src="https://img.cinemablend.com/filter:scale/quill/f/7/3/6/d/5/f736d502c43ec43b11a76c147cbcc8c258a6dcd2.jpg?mw=600" alt=''/>
+          </x-slideshow>
         </article>
-        <article class='hide'>
+        <article id='tabs' class='hide'>
           <h3>Tabs</h3>
-          <p>Requires JavaScript.</p>
-          <div class='tabs'>
-          </div>
+          <sq-tabs>
+            <tab-list>
+
+            </tab-list>
+            <tab-content>
+              <tab>
+                <p>Content</p>
+              </tab>
+              <tab>
+                <p>Content</p>
+              </tab>
+            </tab-content>
+          </tabs>
         </article>
       </section>
     </main>
+
+    <footer>
+      <p class='t-centre'>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+    </footer>
 
 
 
@@ -405,9 +416,6 @@
 
 
     </main>
-    <footer>
-      <p>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
-    </footer>
   </body>
 </html>
 <script type="text/javascript">

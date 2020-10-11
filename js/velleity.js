@@ -1,4 +1,81 @@
+var prefix = 'x-';
 
+class Slideshow extends HTMLElement {
+  constructor() {
+    super();
+    this.addEventListener('click', e => {
+      this.nextSlide();
+    });
+  }
+
+  connectedCallback() {
+
+  }
+
+  disconnectedCallback() {
+
+  }
+
+  static get observedAttributes() {
+    return ['autoslide', 'disabled', 'timer'];
+  }
+
+  attributeChangedCallback(attr, oldValue, newValue) {
+    if(attr == 'timer') this.timer = newValue;
+  }
+
+  //VARIABLES
+  timer = 3000;
+
+  //PROPERTIES
+  get autoslide() {
+    return this.hasAttribute('autoslide');
+  }
+
+  set autoslide(value) {
+    if(value) this.hasAttribute('autoslide', '');
+    else this.removeAttribute('autoslide');
+  }
+
+  get disabled() {
+    return this.hasAttribute('disabled');
+  }
+
+  set disabled(value) {
+    if(value) this.setAttribute('disabled', '');
+    else this.removeAttribute('disabled');
+  }
+
+  get timer() {
+    return this.timer;
+  }
+
+  set timer(value) {
+    alert("sdfsdfsd");
+    this.timer = value;
+  }
+
+  //METHODS
+  nextSlide() {
+    alert(this.timer);
+  }
+}
+
+customElements.define(prefix + 'slideshow', Slideshow);
+customElements.whenDefined(prefix + 'slideshow').then(() => {
+  console.log(prefix + 'slideshow defined.');
+});
+
+class Slide extends HTMLElement {
+
+}
+
+customElements.define(prefix + 'slide', Slide);
+
+//class SlideshowControls
+
+
+/*
 
 var timeToSlide = 3000;
 
