@@ -1,6 +1,7 @@
 class SlideShow extends HTMLElement {
   constructor() {
     super();
+    const shadow = this.attachShadow({ mode: 'open' });
     this.addEventListener('click', e => {
       this.nextSlide();
     });
@@ -57,11 +58,15 @@ customElements.whenDefined('slide-img').then(() => {
 });
 
 /*
-var slideshows = document.getElementsByClassName('slideshow');
-Array.prototype.forEach.call(slideshows, function(slideshow) {
-var slides = slideshow.children;
-setInterval(function() {
-slideshow.appendChild(slides[0]);
-}, timeToSlide);
-});
+var timeToSlide = 3000;
+
+window.onload = function() {
+  var slideshows = document.getElementsByClassName('slideshow');
+  Array.prototype.forEach.call(slideshows, function(slideshow) {
+    var slides = slideshow.children;
+    setInterval(function() {
+      slideshow.appendChild(slides[0]);
+    }, timeToSlide);
+  });
+}
 */

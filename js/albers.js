@@ -1,4 +1,7 @@
 
+//https://developers.google.com/web/fundamentals/web-components/shadowdom
+
+
 
 
 /*
@@ -26,15 +29,6 @@ $(document).ready(function() {
         if($(this).hasClass(listItemClasses)) $(this).addClass('active');
       });
     });
-  });
-
-  $('main a').mouseenter(function(){ //ANCHOR PREVIEW
-    var con = $(this).text();
-    var src = $(this).attr('href');
-    $(this).append('<div class="preview"><p>' + con + '</p><img src="media/img/land.jpg"></img><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>')
-  });
-  $('main a').mouseleave(function(){
-    $('div.preview').remove();
   });
 
   $('.tabs').each(function(index) {

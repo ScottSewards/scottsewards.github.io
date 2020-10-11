@@ -6,29 +6,33 @@
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <link rel="stylesheet" href="css/velleity.min.css">
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/velleity.js"></script>
+    <script type="text/javascript" src="js/albers.js"></script>
     <script type="text/javascript" src="js/components/code.js"></script>
     <script type="text/javascript" src="js/components/slideshow.js"></script>
     <script type="text/javascript" src="js/components/tabs.js"></script>
   </head>
   <body>
-    <nav id='nav' class='full top follow'>
+    <nav id='nav' class='top-follow'>
       <ul>
         <li><a href="index.html">Index</a></li>
-        <li class='active'><a href="showcase.html">My Framework</a></li>
+        <li class='active'><a href="showcase.html">Albers</a></li>
       </ul>
     </nav>
+    <aside id='table-of-contents'>
+      <ul>
+      </ul>
+      <script type="text/javascript">
+
+      </script>
+    </aside>
     <main>
       <section id='about'>
-        <h1>Framework</h1>
+        <h1>Albers</h1>
         <article>
           <h2>About</h2>
-          <p></p>
-          <p>A modern framework for modern browsers.</p>
-          <p><span class='bold'>Vell</span> is a CSS framework for layout and content. It is in development; that means <em>it is incomplete</em>. It is partly based on <a href='http://smacss.com/'>SMACSS</a>. I built the framework to scratch an itch I had with frameworks that require excessive use of classes. Instead, you follow a HTML structure to create a layout and content.</p>
+          <p>Albers is a modern framework for modern browsers. It is in development.</p>
+           <p>Albers is a CSS framework for layout and content. It is in development; that means <em>it is incomplete</em>. It is partly based on <a href='http://smacss.com/'>SMACSS</a>. I built the framework to scratch an itch I had with frameworks that require excessive use of classes. Instead, you follow a HTML structure to create a layout and content.</p>
           <p>The framework applies a tri-colour scheme: white, black and user-defined. In the form section, you can change the colour picker value to see what the user-defined colour affects. Furthermore, the framework applies an prefered colour scheme for light or dark mode depending on each users system settings.</p>
-          <script type="text/javascript">
-          </script>
         </article>
       </section>
       <section id='forms' class='hide'>
@@ -172,11 +176,10 @@
         <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>  </p>
         <article id='slideshow'>
           <h3>Slideshows</h3>
-          <x-slideshow timer='5000' controls auto>
+          <slide-show autoslide timer='5000' thumbnails>
             <img src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt="">
-            <slide title='Batman' src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt=''/>
-            <slide title='Superman' src="https://img.cinemablend.com/filter:scale/quill/f/7/3/6/d/5/f736d502c43ec43b11a76c147cbcc8c258a6dcd2.jpg?mw=600" alt=''/>
-          </x-slideshow>
+            <slide-img title='Batman' src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt=''></slide-img>
+          </slide-show>
         </article>
         <article id='tabs' class='hide'>
           <h3>Tabs</h3>
