@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Velleity</title>
+    <title>Albers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <link rel="stylesheet" href="css/velleity.min.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/albers.js"></script>
-    <script type="text/javascript" src="js/components/code.js"></script>
-    <script type="text/javascript" src="js/components/slideshow.js"></script>
-    <script type="text/javascript" src="js/components/tabs.js"></script>
+    <script type="text/javascript" src="js/components/accordion-box.js"></script>
+    <script type="text/javascript" src="js/components/code-box.js"></script>
+    <script type="text/javascript" src="js/components/column-box.js"></script>
+    <script type="text/javascript" src="js/components/grid-box.js"></script>
+    <script type="text/javascript" src="js/components/slideshow-box.js"></script>
+    <script type="text/javascript" src="js/components/tab-box.js"></script>
+    <style media="screen">
+    #contents {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: white;
+      color: black;
+      z-index: 50;
+    }
+    </style>
   </head>
   <body>
     <nav id='nav' class='top-follow'>
@@ -18,14 +31,18 @@
         <li class='active'><a href="albers.html">Albers</a></li>
       </ul>
     </nav>
-    <aside id='contents'>
+    <aside id='contents' class='hide'>
       <ul>
 
       </ul>
       <script type="text/javascript">
-      function createListItem(text) {
-        var listItem = document.createElement('li');
-      }
+      $(document).ready(function() {
+        $('h1, h2, h3, h4, h5, h6').each(function() {
+          $('#contents').append('<li>' + $(this).text() + '</li>');
+        });
+
+        //$('body').css('margin-left': '100');
+      });
       </script>
     </aside>
     <main>
@@ -43,18 +60,10 @@
         <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>  </p>
         <article id='accord-box'>
           <h3>Accordion</h3>
-          <details open>
-            <summary>Accordion Template</summary>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </details>
-          <acc-block>
-            <acc-title>
-            </acc-title>
-            <acc-content>
-            </acc-content>
-          </acc-block>
+          <accord-box>
+            <summary>Accord Sum</summary>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </accord-sum>
         </article>
         <article id='code-box'>
         </article>

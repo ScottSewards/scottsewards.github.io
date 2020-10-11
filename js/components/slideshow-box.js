@@ -43,9 +43,9 @@ class Slideshow extends HTMLElement {
   }
 }
 
-customElements.define('slide-box', SlideShow);
-customElements.whenDefined('slide-show').then(() => {
-  console.log('slide-show defined.');
+customElements.define('slideshow-box', Slideshow);
+customElements.whenDefined('slideshow-box').then(() => {
+  console.log('slideshow-box defined.');
 });
 
 class SlideImg extends HTMLElement {
