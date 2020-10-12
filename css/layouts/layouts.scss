@@ -1,18 +1,17 @@
-
 * {
   transition: all 0.1s linear;
   box-sizing: border-box;
   margin: 0;
-  letter-spacing: 0.01rem;
 }
 
 html { //HEAD, BODY
   font-family: var(--font);
   font-kerning: normal;
   font-size: var(--font-size);
-  --width-nav: 12rem;
-  --push-r: 0;
-  --push-l: 1;
+  letter-spacing: 0.01rem;
+  //--width-nav: 12rem;
+  //--push-r: 0;
+  //--push-l: 1;
 }
 
 head { //BASE, TITLE, META, STYLE, LINK
@@ -82,7 +81,7 @@ nav {
 @media(max-width: 30rem) { nav ul { padding: 0; li { display: block; } } }
 @media(min-width: 30rem) { nav ul li { margin-right: 0.1rem; &.active { padding: var(--height-ribbon) 1rem; } } }
 
-main, .main {
+main {
   background: var(--col-front);
   color: var(--col-black);
   display: block; //FALLBACK

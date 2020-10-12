@@ -1,7 +1,10 @@
-class Slideshow extends HTMLElement {
+
+//https://developers.google.com/web/fundamentals/web-components/customelements
+
+class SlideBox extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
+    //const shadow = this.attachShadow({ mode: 'open' });
     this.addEventListener('click', e => {
       this.nextSlide();
     });
@@ -43,23 +46,29 @@ class Slideshow extends HTMLElement {
   }
 }
 
-customElements.define('slideshow-box', Slideshow);
-customElements.whenDefined('slideshow-box').then(() => {
-  console.log('slideshow-box defined.');
+customElements.define('slide-box', SlideBox);
+customElements.whenDefined('slide-box').then(() => {
+  console.log('slide-box defined.');
 });
 
-class SlideImg extends HTMLElement {
 
-}
 
-customElements.define('slide-img', SlideImg);
-customElements.whenDefined('slide-img').then(() => {
-  console.log('slide-img defined.');
+
+customElements.define('slide-img', class extends Image {
+  constructor(height = 50, width = 100) {
+    super(height * 1, width * 1);
+  }
+}, {
+  extends: 'img'
 });
 
 /*
-var timeToSlide = 3000;
+customElements.whenDefined('slide-img').then(() => {
+  console.log('slide-img defined.');
+});
+*/
 
+/*
 window.onload = function() {
   var slideshows = document.getElementsByClassName('slideshow');
   Array.prototype.forEach.call(slideshows, function(slideshow) {
