@@ -4,24 +4,98 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <title>scottsewards.github.io</title>
-    <link rel="stylesheet" href="css/velleity.min.css">
+    <link rel="stylesheet" href="css/albers.min.css">
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jsonne.js"></script>
+    <style media="screen">
+    p {
+      text-align: center;
+    }
+    a {
+      color: inherit !important;
+    }
+    </style>
   </head>
   <body>
-    <nav class='full-follow'>
-      <ul>
-        <li class='active'><a href="index.html">Index</a></li>
-        <li><a href="showcase.html">Albers</a></li>
-      </ul>
-    </nav>
-    <main>
-      <h1>Portfolio</h1>
-      <table id='jason'></table>
+    <main class='full'>
+      <h1>Scott <span style='color: var(--col-theme);'>Sewards'</span> Portfolio</h1>
+      <div class='panel-fill'>
+        <h2>Albers</h2>
+        <p>A modern framework for modern browsers.</p>
+        <img src="" alt="">
+        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='albers.html'">See Albers</button>
+      </div>
+      <div class='panel'>
+        <h2>fat<span style='color: var(--col-theme);'>track</span>.app</h2>
+        <p>Calculate your metabolic rate.</p>
+        <form id='metabolic-rate-calculator'>
+          <fieldset>
+            <legend>Metabolic Rate Calculator</legend>
+            <div class=''>
+              <label for='sex-male'>I am male</label>
+              <input id='sex-male' type='radio' name='sex' value='0' required checked/>
+            </div>
+            <div class=''>
+              <label for='sex-female'>I am female</label>
+              <input id='sex-female' type='radio' name='sex' value='1' required/>
+            </div>
+            <div class=''>
+              <label for='age'>My age is</label>
+              <input id='age' type='number' name='age' min='13' max='100' required/>
+            </div>
+            <div class=''>
+              <label for='height'>Height (cm)</label>
+              <input id='height' type='number' name='height' min='50' max='260' required/>
+            </div>
+            <div class=''>
+              <label for='weight'>Weight (kg)</label>
+              <input id='weight' type='number' name='weight' min='30' max='300' required/>
+            </div>
+            <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
+            <!--button type="button" name="button">Save My Data</button-->
+            <output id='metatbolic-rate'></output>
+          </fieldset>
+        </form>
+        <script type="text/javascript">
+        $(document).ready(function() {
+          $("#metabolic-rate-calculator").submit(function(e) {
+            e.preventDefault();
+            var sex;
+            if($('#sex-male').is(':checked')) sex = 'm';
+            else sex = 'f';
+            var age = $('#age').val();
+            var height = $('#height').val();
+            var weight = $('#weight').val();
+            var rmr, bmr;
+            if(sex === 'm') rmr = 9.99 * weight + 6.25 * height - 4.92 * age + 5;
+            else rmr = 9.99 * weight + 6.25 * height - 4.92 * age - 161;
+            rmr = Math.round(rmr);
+            bmr = Math.round(rmr * 1.2);
+            $('#metatbolic-rate').html(`Your RMR is ${rmr} and BMR is ${bmr}.`);
+          });
+        });
+
+        /*
+        var date = new Date(),
+        day = String(date.getDate()).padStart(2, '0'),
+        month = String(date.getMonth() + 1).padStart(2, '0'),
+        year = String(date.getFullYear()),
+        today = year + '-' + month + '-' + day;
+        document.getElementById('weigh-in-date').setAttribute('value', today);
+        document.getElementById('weigh-in-date').setAttribute('max', today);
+        */
+        </script>
+        <p>Next Update - Save your data for next calculation.</p>
+      </div>
+      <div class='panel-fill'>
+        <h2>PomPay</h2>
+        <p>Patreon meets cryptocurrency.</p>
+        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='https://pompay.co.uk/'">Visit PomPay</button>
+      </div>
+      <div class='panel'>
+        <h2>More Soon</h2>
+        <p>I have revoked all personal projects prepare them for deployment on individual domains. Previously, I hosted them all at <a href='http://sewards.me'>sewards.me</a>, but the website ballooned. Furthermore, I have built my framework, Albers, from scratch to incoporate into those projects. I anticipate I will be finished before November.</p>
+      </div>
     </main>
-    <footer>
-      <p class='t-centre'>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
-    </footer>
   </body>
 </html>
 <script>
@@ -49,7 +123,15 @@ window.onload = function() {
       "Link": "sewards.me"
     }
   ]
-  //CreateJSONTable(data, 'jason');
   */
 }
 </script>
+<!--col-box parts='3'>
+  <col-item parts='2'>
+    <img src='' alt='img'>
+  </col-item>
+  <col-item class='middle-middle'>
+    <h2>Albers</h2>
+    <p>A modern framework for modern browsers.</p>
+  </col-item>
+</col-box-->

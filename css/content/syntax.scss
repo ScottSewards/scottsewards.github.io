@@ -1,6 +1,7 @@
-
-
-
-code-comment, .comment {
-  text-transform: uppercase;
+code-comment {
+  color: green;
+  text-transform: uppercase !important;
+}
+comment-value {
+  color: orange;
 }

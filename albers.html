@@ -1,38 +1,162 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Velleity</title>
+    <title>Albers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <link rel="stylesheet" href="css/velleity.min.css">
+    <link rel="stylesheet" href="css/albers.min.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/albers.js"></script>
-    <script type="text/javascript" src="js/components/code.js"></script>
-    <script type="text/javascript" src="js/components/slideshow.js"></script>
-    <script type="text/javascript" src="js/components/tabs.js"></script>
+    <script type="text/javascript" src="js/components/accordion-box.js"></script>
+    <script type="text/javascript" src="js/components/code-box.js"></script>
+    <script type="text/javascript" src="js/components/column-box.js"></script>
+    <script type="text/javascript" src="js/components/grid-box.js"></script>
+    <script type="text/javascript" src="js/components/slide-box.js"></script>
+    <script type="text/javascript" src="js/components/tab-box.js"></script>
+    <style media="screen">
+    #contents {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: white;
+      color: black;
+      z-index: 50;
+    }
+    </style>
   </head>
   <body>
-    <nav id='nav' class='top-follow'>
+    <nav id='nav' class='full'>
       <ul>
-        <li><a href="index.html">Index</a></li>
-        <li class='active'><a href="showcase.html">Albers</a></li>
+        <li><a href='index.html'>Return to My Portfolio</a></li>
       </ul>
     </nav>
-    <aside id='table-of-contents'>
+    <aside id='contents' class='hide'>
       <ul>
       </ul>
       <script type="text/javascript">
-
+      $(document).ready(function() {
+        //$('body').css('margin-left', '25px');
+        $('h1, h2, h3, h4, h5, h6').each(function() {
+          //$('#contents').append('<li>' + $(this).text() + '</li>');
+        });
+      });
       </script>
     </aside>
     <main>
       <section id='about'>
-        <h1>Albers</h1>
+        <h1>Albers <span style='color: var(--col-theme);'>by</span> Scott Sewards</h1>
         <article>
           <h2>About</h2>
-          <p>Albers is a modern framework for modern browsers. It is in development.</p>
-           <p>Albers is a CSS framework for layout and content. It is in development; that means <em>it is incomplete</em>. It is partly based on <a href='http://smacss.com/'>SMACSS</a>. I built the framework to scratch an itch I had with frameworks that require excessive use of classes. Instead, you follow a HTML structure to create a layout and content.</p>
-          <p>The framework applies a tri-colour scheme: white, black and user-defined. In the form section, you can change the colour picker value to see what the user-defined colour affects. Furthermore, the framework applies an prefered colour scheme for light or dark mode depending on each users system settings.</p>
+          <p>Albers is a modern framework for modern browsers. Use HTML like <code>code-block</code> and <code>slide-show</code>, complete with attributes, properties and methods to define your content, not CSS.</p>
+          <p>Use a simple colour scheme: black, white and user-defined. Modify the user-defined colour below.</p>
+          <form>
+            <fieldset>
+              <legend>Change Theme Colour</legend>
+              <div>
+                <div class='inline'>
+                  <label for='colour'>Theme colour</label>
+                  <output id='colour-output' name='colour'></output>
+                </div>
+                <input id='colour' type='color' name='colour'/>
+              </div>
+            </fieldset>
+          </form>
+          <script type="text/javascript">
+          $(document).ready(function() {
+            $("#colour").val($("body").css("--col-theme").trim());
+            $("#colour-output").val($("body").css("--col-theme"));
+            $("#colour").change(function() {
+              document.body.style.setProperty("--col-theme", $(this).val());
+              document.body.style.setProperty("--col-theme-alpha", $(this).val() + '80');
+              $("#colour-output").val($(this).val());
+            });
+          });
+          </script>
+          <p>Additionally, Albers uses <code>prefered-color-scheme</code> to implement light and dark modes. This may not work in all browsers. However, </p>
+          <form>
+            <fieldset>
+              <legend>Change Colour Scheme</legend>
+              <div>
+                <label for=''>Colour scheme</label>
+                <div class='inline'>
+                  <input type='radio' name='light' value=''/>
+                  <input type='radio' name='light' value=''/>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </article>
+      </section>
+      <section id='components'>
+        <h2>Components</h2>
+        <p>Create Alber elements using -box suffix.</p>
+        <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>.</p>
+        <article id='accord-box'>
+          <h3>Accordion Box</h3>
+          <accord-box>
+            <accord-item>
+              <summary>Accord Item A</summary>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </accord-item>
+            <accord-item>
+              <summary>Accord Item B</summary>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </accord-item>
+          </accord-sum>
+        </article>
+        <article id='code-box'>
+          <h3>Code Box</h3>
+          <code-box>
+            <code-comment>Lorem ipsum</code-comment>
+          </code-box>
+        </article>
+        <article id='column-box'>
+          <h3>Column Box</h3>
+          <col-box>
+            <col-item>
+              <h4>Col Item A</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </col-item>
+            <col-item>
+              <h4>Col Item B</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </col-item>
+          </col-box>
+        </article>
+        <article id='grid-box'>
+          <h3>Grid Box</h3>
+          <grid-box>
+            <grid-item>
+              <h4>Grid Item A</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </grid-item>
+            <grid-item>
+              <h4>Grid Item B</h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </grid-item>
+          </grid-box>
+        </article>
+        <article id='slide-box'>
+          <h3>Slide Box</h3>
+          <slide-box autoslide timer='5000' thumbnails>
+            <slide-img  src='https://css-tricks.com/wp-content/uploads/2016/01/the-difference-placeholder.png' alt='fjnrwf'></slide-img>
+          </slide-box>
+        </article>
+        <article id='tab-box'>
+          <h3>Tab Box</h3>
+          <tab-box>
+            <tab-titles>
+              <tab-title for='title-a' open>Title A</tab-title>
+              <tab-title for='title-b'>Title B</tab-title>
+            </tab-titles>
+            <tab-item id='title-a'>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </tab-item>
+            <tab-item id='title-b'>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </tab-item>
+          </tab-box>
+        </article>
         </article>
       </section>
       <section id='forms' class='hide'>
@@ -46,14 +170,6 @@
               <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
               <input class='check-cross' type='checkbox' name="checkbox-check-cross" value='check'/>
               <input class='yes-no' type='checkbox' name="checkbox-yes-no" value='yes'/>
-            </div>
-            <p>Change the colour picker to change the user-defined colour.</p>
-            <div>
-              <div class='inline'>
-                <label for='colour'>Colour</label>
-                <output id='colour-output' name='colour'></output>
-              </div>
-              <input id='colour' type='color' name='colour'/>
             </div>
             <div>
               <label for='date'>Date</label>
@@ -171,44 +287,11 @@
           </tfoot>
         </table>
       </section>
-      <section>
-        <h2>Components</h2>
-        <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>  </p>
-        <article id='slideshow'>
-          <h3>Slideshows</h3>
-          <slide-show autoslide timer='5000' thumbnails>
-            <img src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt="">
-            <slide-img title='Batman' src="https://pmcvariety.files.wordpress.com/2020/08/batman-10.jpg" alt=''></slide-img>
-          </slide-show>
-        </article>
-        <article id='tabs' class='hide'>
-          <h3>Tabs</h3>
-          <sq-tabs>
-            <tab-list>
-
-            </tab-list>
-            <tab-content>
-              <tab>
-                <p>Content</p>
-              </tab>
-              <tab>
-                <p>Content</p>
-              </tab>
-            </tab-content>
-          </tabs>
-        </article>
-      </section>
     </main>
-
     <footer>
       <p class='t-centre'>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
     </footer>
-
-
-
-
-
-    <main class="hide">
+    <main class="">
       <article>
         <hgroup>
           <h1>Heading 1</h1>
@@ -419,21 +502,6 @@
           <video poster='' src='//upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm' type='video/mp4' controls></video>
         </article>
       </section>
-
-
-
-
     </main>
   </body>
 </html>
-<script type="text/javascript">
-$(document).ready(function() {
-  $("#colour").val($("body").css("--col-theme").trim());
-  $("#colour-output").val($("body").css("--col-theme"));
-
-  $("#colour").change(function() {
-    document.body.style.setProperty("--col-theme", $(this).val());
-    $("#colour-output").val($(this).val());
-  });
-});
-</script>

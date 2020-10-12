@@ -1,6 +1,5 @@
 a {
   color: var(--col-theme);
-  &:hover { color: var(--col-black); }
 }
 abbr, acronym {
   cursor: help;
@@ -35,6 +34,7 @@ del, .deleted {
 }
 details { }
 dialog {
+  background: var(--col-theme);
   display: block;
   position: static;
   padding: var(--pad);
@@ -91,7 +91,10 @@ li {
   list-style-type: square;
   //margin-left: var(--pad-list);
 }
-p { margin: var(--pad) auto; max-width: var(--width-chars); }
+p {
+  margin: var(--pad) auto;
+  max-width: var(--width-chars);
+}
 
 
 pre { display: block; }

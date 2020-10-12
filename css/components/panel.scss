@@ -1,0 +1,20 @@
+[class^='panel'] {
+  background: var(--col-const-black);
+  color: var(--col-const-white);
+  top: 25%;
+  left: calc(50% - var(--width-chars) / 2);
+  padding: 1rem;
+  border: 1rem solid var(--col-theme);
+  height: 50%;
+  width: 100%;
+  &:nth-child(even) {
+    background: var(--col-const-black);
+    color: var(--col-const-white);
+  }
+  &[class*='fill'] {
+    background: var(--col-theme);
+  }
+  &[class*='full'] {
+    height: 100vh;
+  }
+}
