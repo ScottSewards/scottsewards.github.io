@@ -2,12 +2,14 @@ area {
 
 }
 audio {
+  display: block;
   margin: var(--pad) auto;
   width: 100%;
   max-width: var(--width-chars);
 }
 canvas {
   background: var(--col-back);
+  display: block;
   margin: auto;
 }
 figure {
@@ -21,12 +23,13 @@ figcaption {
   text-align: center;
 }
 img {
+  display: block;
   margin: var(--pad) auto;
   width: 100%;
   max-width: var(--width-chars);
 }
 map {
-  
+
 }
 svg {
   margin: auto;
@@ -43,6 +46,7 @@ track {
 
 }
 video {
+  display: block;
   margin: var(--pad) auto;
   width: 100%;
   max-width: var(--width-chars);

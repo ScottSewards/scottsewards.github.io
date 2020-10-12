@@ -85,6 +85,7 @@ main {
   background: var(--col-front);
   color: var(--col-black);
   display: block; //FALLBACK
+  padding: var(--pad);
   margin: auto;
   max-width: var(--width-content);
   &[class*='full'] { max-width: 100%; }
