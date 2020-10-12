@@ -91,7 +91,10 @@ li {
   list-style-type: square;
   //margin-left: var(--pad-list);
 }
-p { margin: var(--pad) auto; max-width: var(--width-chars); }
+p {
+  margin: var(--pad) auto;
+  max-width: var(--width-chars);
+}
 
 
 pre { display: block; }

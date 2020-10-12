@@ -6,7 +6,8 @@ form {
 }
 
 fieldset {
-  background: var(--col-over);
+  background: var(--col-theme); //FALLBACK
+  background: var(--col-theme-alpha);
   border: 0;
   min-width: 0; //PREVENT OVERFLOW
 }
@@ -18,7 +19,9 @@ label {
 }
 
 legend {
-  background: var(--col-over);
+  background: var(--col-theme); //FALLBACK
+  background: var(--col-theme-alpha);
+  font-weight: bold;
   padding: var(--pad);
   margin: auto;
   white-space: nowrap;
@@ -51,13 +54,16 @@ button, input[type='button'], input[type='reset'], input[type='submit'] {
 }
 
 input[type='checkbox'], input[type='radio'] {
-  height: 2.6rem;
+  position: relative;
+  height: 2.8rem;
   -moz-appearance: initial; //SHOW ::BEFORE AND ::AFTER IN FIREFOX
   padding: 0 !important;
   &::after {
     cursor: pointer;
     background: var(--col-black);
-    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
     padding: var(--pad);
     &:hover { background: var(--col-theme); }
   }
@@ -77,6 +83,7 @@ input[type='checkbox'] {
 }
 
 input[type='color'] {
+  cursor: pointer;
   height: 3rem;
   &::-webkit-color-swatch-wrapper, &::-webkit-color-swatch { border: 0; }
 }
@@ -112,6 +119,9 @@ input[type=range] {
 }
 
 input[type='select']
+
+label { &::after { content: ':'; } }
+
 optgroup { background: var(--col-black); color: var(--col-white); }
 option { } //CAN'T STYLE
 datalist { display: none; }
@@ -119,7 +129,6 @@ datalist { display: none; }
 output {
   display: block;
   padding: var(--pad);
-  &::before { content: "Output: "; }
 }
 
 textarea { //REMOVE COLUMN AND ROW ATTRIBUTES FROM HTML IF PRESENT

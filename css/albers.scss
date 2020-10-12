@@ -1,5 +1,6 @@
 :root {
   --col-theme: #BE1349;
+  --col-theme-alpha: #BE134980;
   --col-const-white: #FFFFFF;
   --col-const-black: #222222;
   --col-white: var(--col-const-white);
@@ -38,7 +39,8 @@
     --col-over: #333;
   }
 }
-@import "components/grids.min.css";
+@import "components/grid.min.css";
+@import "components/panel.min.css";
 @import "components/seperators.min.css";
 @import "components/tabulators.min.css";
 @import "content/forms.min.css";
@@ -47,7 +49,7 @@
 @import "content/syntax.min.css";
 @import "content/tables.min.css";
 @import "content/text.min.css";
-@import "layouts/layouts.min.css";
+@import "layouts/layout.min.css";
 
 
 :disabled {

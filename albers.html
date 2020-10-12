@@ -25,12 +25,12 @@
     </style>
   </head>
   <body>
-    <nav id='nav' class=''>
+    <nav id='nav' class='full'>
       <ul>
-        <li><a href="index.html">Return</a></li>
+        <li><a href='index.html'>Return to My Portfolio</a></li>
       </ul>
     </nav>
-    <aside id='contents' class=''>
+    <aside id='contents' class='hide'>
       <ul>
       </ul>
       <script type="text/javascript">
@@ -47,8 +47,8 @@
         <h1>Albers</h1>
         <article>
           <h2>About</h2>
-          <p>Albers is a modern framework for modern browsers. Use existing HTML elements such as  to create layouts and cotent versus classes. Don't use classes to define your content, use elements such as <code>code-block</code> and <code>slide-show</code>, complete with attributes and properties.</p>
-          <p>Albers provides a simple colour scheme: black, white and user-defined. Modify the user-defined colour below.</p>
+          <p>Albers is a modern framework for modern browsers. Use HTML like <code>code-block</code> and <code>slide-show</code>, complete with attributes, properties and methods to define your content, not CSS.</p>
+          <p>Use a simple colour scheme: black, white and user-defined. Modify the user-defined colour below.</p>
           <form>
             <fieldset>
               <legend>Change Theme Colour</legend>
@@ -61,6 +61,17 @@
               </div>
             </fieldset>
           </form>
+          <script type="text/javascript">
+          $(document).ready(function() {
+            $("#colour").val($("body").css("--col-theme").trim());
+            $("#colour-output").val($("body").css("--col-theme"));
+            $("#colour").change(function() {
+              document.body.style.setProperty("--col-theme", $(this).val());
+              document.body.style.setProperty("--col-theme-alpha", $(this).val() + '80');
+              $("#colour-output").val($(this).val());
+            });
+          });
+          </script>
           <p>Additionally, Albers uses <code>prefered-color-scheme</code> to implement light and dark modes. This may not work in all browsers. However, </p>
           <form>
             <fieldset>
@@ -494,13 +505,3 @@
     </main>
   </body>
 </html>
-<script type="text/javascript">
-$(document).ready(function() {
-  $("#colour").val($("body").css("--col-theme").trim());
-  $("#colour-output").val($("body").css("--col-theme"));
-  $("#colour").change(function() {
-    document.body.style.setProperty("--col-theme", $(this).val());
-    $("#colour-output").val($(this).val());
-  });
-});
-</script>
