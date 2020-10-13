@@ -4,7 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <title>scottsewards.github.io</title>
-    <link rel="stylesheet" href="css/albers.min.css">
+    <link rel="stylesheet" href="css/albers.css">
+    <link rel='stylesheet' href='css/components/grid.css'/>
+    <link rel='stylesheet' href='css/components/seperators.css'/>
+    <link rel='stylesheet' href='css/components/tabulators.css'/>
+    <link rel='stylesheet' href='css/content/forms.css'/>
+    <link rel='stylesheet' href='css/content/media.css'/>
+    <link rel='stylesheet' href='css/content/sections.css'/>
+    <link rel='stylesheet' href='css/content/syntax.css'/>
+    <link rel='stylesheet' href='css/content/tables.css'/>
+    <link rel='stylesheet' href='css/content/text.css'/>
+    <link rel='stylesheet' href='css/layouts/layout.css'/>
     <script type="text/javascript" src="js/jquery.js"></script>
     <style media="screen">
     p {
@@ -16,15 +26,15 @@
     </style>
   </head>
   <body>
-    <main class='full' style='padding: 0 !important;'>
+    <main class='full'>
       <h1>Scott <span style='color: var(--col-theme);'>Sewards'</span> Portfolio</h1>
-      <div class='panel-fill'>
+      <p style='text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
+      <section class='fill'>
         <h2>Albers</h2>
         <p>A modern framework for modern browsers.</p>
-        <img src="" alt="">
         <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='albers.html'">See Albers</button>
-      </div>
-      <div class='panel'>
+      </section>
+      <section class=''>
         <h2>fat<span style='color: var(--col-theme);'>track</span>.app</h2>
         <p>Calculate your metabolic rate.</p>
         <form id='metabolic-rate-calculator'>
@@ -72,29 +82,28 @@
             bmr = Math.round(rmr * 1.2);
             $('#metatbolic-rate').html(`Your RMR is ${rmr} and BMR is ${bmr}.`);
           });
-        });
 
-        /*
-        var date = new Date(),
-        day = String(date.getDate()).padStart(2, '0'),
-        month = String(date.getMonth() + 1).padStart(2, '0'),
-        year = String(date.getFullYear()),
-        today = year + '-' + month + '-' + day;
-        document.getElementById('weigh-in-date').setAttribute('value', today);
-        document.getElementById('weigh-in-date').setAttribute('max', today);
-        */
+          /*
+          var date = new Date(),
+          day = String(date.getDate()).padStart(2, '0'),
+          month = String(date.getMonth() + 1).padStart(2, '0'),
+          year = String(date.getFullYear()),
+          today = year + '-' + month + '-' + day;
+          document.getElementById('weigh-in-date').setAttribute('value', today);
+          document.getElementById('weigh-in-date').setAttribute('max', today);
+          */
+        });
         </script>
-        <p>Next Update - Save your data for next calculation.</p>
-      </div>
-      <div class='panel-fill'>
+      </section>
+      <section class='fill'>
         <h2>PomPay</h2>
         <p>Patreon meets cryptocurrency.</p>
         <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='https://pompay.co.uk/'">Visit PomPay</button>
-      </div>
-      <div class='panel'>
+      </section>
+      <section>
         <h2>More Soon</h2>
         <p>I have revoked all personal projects prepare them for deployment on individual domains. Previously, I hosted them all at <a href='http://sewards.me'>sewards.me</a>, but the website ballooned. Furthermore, I have built my framework, Albers, from scratch to incoporate into those projects. I anticipate I will be finished before November.</p>
-      </div>
+      </section>
     </main>
   </body>
 </html>

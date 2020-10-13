@@ -1,6 +1,6 @@
 :root {
   --col-theme: #BE1349;
-  --col-theme-alpha: #BE1349CC;
+  --col-theme-alpha: #BE134980;
   --col-const-white: #FFFFFF;
   --col-const-black: #222222;
   --col-white: var(--col-const-white);
@@ -39,18 +39,6 @@
     --col-over: #333;
   }
 }
-@import "components/grid.min.css";
-@import "components/panel.min.css";
-@import "components/seperators.min.css";
-@import "components/tabulators.min.css";
-@import "content/forms.min.css";
-@import "content/media.min.css";
-@import "content/sections.min.css";
-@import "content/syntax.min.css";
-@import "content/tables.min.css";
-@import "content/text.min.css";
-@import "layouts/layout.min.css";
-
 
 :disabled {
   cursor: not-allowed !important;

@@ -4,7 +4,17 @@
     <title>Albers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <link rel="stylesheet" href="css/albers.min.css">
+    <link rel="stylesheet" href="css/albers.css">
+    <link rel='stylesheet' href='css/components/grid.css'/>
+    <link rel='stylesheet' href='css/components/seperators.css'/>
+    <link rel='stylesheet' href='css/components/tabulators.css'/>
+    <link rel='stylesheet' href='css/content/forms.css'/>
+    <link rel='stylesheet' href='css/content/media.css'/>
+    <link rel='stylesheet' href='css/content/sections.css'/>
+    <link rel='stylesheet' href='css/content/syntax.css'/>
+    <link rel='stylesheet' href='css/content/tables.css'/>
+    <link rel='stylesheet' href='css/content/text.css'/>
+    <link rel='stylesheet' href='css/layouts/layout.css'/>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/albers.js"></script>
     <script type="text/javascript" src="js/components/accordion-box.js"></script>
@@ -15,293 +25,356 @@
     <script type="text/javascript" src="js/components/tab-box.js"></script>
     <style media="screen">
     #contents {
-      position: fixed;
+      position: sticky;
+      width: 20rem;
+      padding: 1rem;
       top: 0;
-      left: 0;
+    }
+    #contents li {
+      list-style-type: none;
+    }
+    .split {
+      display: flex;
+      margin: auto;
+      width: calc(var(--width-chars) + 20rem);
+    }
+    main {
+      max-width: var(--width-chars);
+    }
+
+    #editor {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
       background: white;
       color: black;
-      z-index: 50;
+    }
+    #editor ul {
+      display: none;
+    }
+    #editor ul li {
+      padding: 1rem;
+    }
+    #editor ul li:hover {
+      background: var(--col-theme);
+    }
+    #editor > ul {
+      display: flex;
+      flex-direction: column;
     }
     </style>
   </head>
   <body>
+    <aside id='editor' contenteditable="false">
+      <ul>
+        <li>Layouts</li>
+        <ul>
+          <li>Nav</li>
+          <ul>
+            <li>Top</li>
+            <li>Bottom</li>
+          </ul>
+        </ul>
+      </ul>
+    </aside>
     <nav id='nav' class='full'>
       <ul>
         <li><a href='index.html'>Return to My Portfolio</a></li>
       </ul>
     </nav>
-    <aside id='contents' class='hide'>
-      <ul>
-      </ul>
-      <script type="text/javascript">
-      $(document).ready(function() {
-        //$('body').css('margin-left', '25px');
-        $('h1, h2, h3, h4, h5, h6').each(function() {
-          //$('#contents').append('<li>' + $(this).text() + '</li>');
-        });
-      });
-      </script>
-    </aside>
-    <main>
-      <section id='about'>
-        <h1>Albers <span style='color: var(--col-theme);'>by</span> Scott Sewards</h1>
-        <article>
-          <h2>About</h2>
-          <p>Albers is a modern framework for modern browsers. Use HTML like <code>code-block</code> and <code>slide-show</code>, complete with attributes, properties and methods to define your content, not CSS.</p>
-          <p>Use a simple colour scheme: black, white and user-defined. Modify the user-defined colour below.</p>
-          <form>
-            <fieldset>
-              <legend>Change Theme Colour</legend>
-              <div>
-                <div class='inline'>
-                  <label for='colour'>Theme colour</label>
-                  <output id='colour-output' name='colour'></output>
-                </div>
-                <input id='colour' type='color' name='colour'/>
-              </div>
-            </fieldset>
-          </form>
-          <script type="text/javascript">
-          $(document).ready(function() {
-            $("#colour").val($("body").css("--col-theme").trim());
-            $("#colour-output").val($("body").css("--col-theme"));
-            $("#colour").change(function() {
-              document.body.style.setProperty("--col-theme", $(this).val());
-              document.body.style.setProperty("--col-theme-alpha", $(this).val() + 'CC');
-              $("#colour-output").val($(this).val());
-            });
+    <div class='split'>
+      <aside id='contents' class=''>
+        <ul id='list'>
+        </ul>
+        <script type="text/javascript">
+        $(document).ready(function() {
+          //$('body').css('margin-left', '25px');
+          $('h2, h3, h4, h5, h6').each(function() {
+            $('#list').append('<li>' + $(this).text() + '</li>');
           });
-          </script>
-          <p>Additionally, Albers uses <code>prefered-color-scheme</code> to implement light and dark modes. This may not work in all browsers. However, </p>
-          <form>
-            <fieldset>
-              <legend>Change Colour Scheme</legend>
-              <div>
-                <label for=''>Colour scheme</label>
-                <div class='inline'>
-                  <input type='radio' name='light' value=''/>
-                  <input type='radio' name='light' value=''/>
+        });
+        </script>
+      </aside>
+      <main>
+        <section id='about'>
+          <h1>Albers <span style='color: var(--col-theme);'>by</span> Scott Sewards</h1>
+          <article>
+            <h2>About</h2>
+            <p contenteditable>Albers is a modern framework for modern browsers. Use HTML like <code>code-block</code> and <code>slide-show</code>, complete with attributes, properties and methods to define your content, not CSS.</p>
+            <p>Use a simple colour scheme: black, white and user-defined. Modify the user-defined colour below.</p>
+            <form>
+              <fieldset>
+                <legend>Change Theme Colour</legend>
+                <div>
+                  <div class='inline'>
+                    <label for='colour'>Theme colour</label>
+                    <output id='colour-output' name='colour'></output>
+                  </div>
+                  <input id='colour' type='color' name='colour'/>
                 </div>
+              </fieldset>
+            </form>
+            <script type="text/javascript">
+            $(document).ready(function() {
+              $("#colour").val($("body").css("--col-theme").trim());
+              $("#colour-output").val($("body").css("--col-theme"));
+              $("#colour").change(function() {
+                document.body.style.setProperty("--col-theme", $(this).val());
+                document.body.style.setProperty("--col-theme-alpha", $(this).val() + '80');
+                $("#colour-output").val($(this).val());
+              });
+            });
+            </script>
+          </article>
+          <article class='hide'>
+            <p>Additionally, Albers uses <code>prefered-color-scheme</code> to implement light and dark modes. This may not work in all browsers. However, </p>
+            <form id='change-colour-scheme'>
+              <fieldset>
+                <legend>Change Colour Scheme</legend>
+                <div>
+                  <label for='light-mode'>Set colour scheme to light</label>
+                  <input id='light-mode' type='radio' name='colour-scheme' value='0'/>
+                </div>
+                <div>
+                  <label for='dark-mode'>Set colour scheme to dark</label>
+                  <input id='dark-mode' type='radio' name='colour-scheme' value='1'/>
+                </div>
+              </fieldset>
+            </form>
+            <script type='text/javascript'>
+            const prefersColourSchemeLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+            console.log(prefersColourSchemeLight ? 'light.' : 'dark.');
+
+            document.getElementById('light-mode').addEventListener('change', function() {
+              if(this.checked) {
+                document.body.style.setProperty('--col-white', '#FFFFFF');
+                document.body.style.setProperty('--col-black', '#222222');
+              }
+            });
+
+            document.getElementById('light-mode').addEventListener('change', function() {
+              if(this.checked) {
+                document.body.style.setProperty('--col-white', '#222222');
+                document.body.style.setProperty('--col-black', '#FFFFFF');
+              }
+            });
+
+            var colourSchemeForm = document.getElementById('change-colour-scheme');
+            colourSchemeForm.addEventListener('submit', e => {
+              e.preventDefault();
+            });
+            </script>
+          </article>
+        </section>
+        <p>As you can see, the side-nav is messy. I'm writing the documentation, organising and expanding the framework as I go.</p>
+        <section id='components' class='hide'>
+          <h2>Components</h2>
+          <p>Create Alber elements using -box suffix.</p>
+          <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>.</p>
+          <article id='accord-box'>
+            <h3>Accordion Box</h3>
+            <accord-box>
+              <accord-item>
+                <summary>Accord Item A</summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </accord-item>
+              <accord-item>
+                <summary>Accord Item B</summary>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </accord-item>
+            </accord-sum>
+          </article>
+          <article id='code-box'>
+            <h3>Code Box</h3>
+            <code-box>
+              <code-comment>Lorem ipsum</code-comment>
+            </code-box>
+          </article>
+          <article id='column-box'>
+            <h3>Column Box</h3>
+            <column-box>
+              <div>
+                <h4>Col Item A</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
+              <div>
+                <h4>Col Item B</h4>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </column-box>
+            </article>
+            <article id='grid-box'>
+              <h3>Grid Box</h3>
+              <grid-box>
+                <grid-item>
+                  <h4>Grid Item A</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </grid-item>
+                <grid-item>
+                  <h4>Grid Item B</h4>
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </grid-item>
+              </grid-box>
+            </article>
+            <article id='slide-box'>
+              <h3>Slide Box</h3>
+              <slide-box autoslide timer='5000' thumbnails>
+                <slide-img  src='https://css-tricks.com/wp-content/uploads/2016/01/the-difference-placeholder.png' alt='fjnrwf'></slide-img>
+              </slide-box>
+            </article>
+            <article id='tab-box'>
+              <h3>Tab Box</h3>
+              <tab-box>
+                <tab-titles>
+                  <tab-title for='title-a' open>Title A</tab-title>
+                  <tab-title for='title-b'>Title B</tab-title>
+                </tab-titles>
+                <tab-item id='title-a'>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </tab-item>
+                <tab-item id='title-b'>
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </tab-item>
+              </tab-box>
+            </article>
+          </article>
+        </section>
+        <section id='forms' class='hide'>
+          <h2>Form</h2>
+          <form action='' method='post'>
+            <fieldset>
+              <legend>Legend</legend>
+              <p>Input types are in alphabetical order.</p>
+              <label for='checkbox'>Checkbox</label>
+              <div class='inline'>
+                <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
+                <input class='check-cross' type='checkbox' name="checkbox-check-cross" value='check'/>
+                <input class='yes-no' type='checkbox' name="checkbox-yes-no" value='yes'/>
+              </div>
+              <div>
+                <label for='date'>Date</label>
+                <input id='date' type='date' name='date'/>
+              </div>
+              <p>Labels and inputs can be inline.</p>
+              <div class='inline'>
+                <label for='datetime-local'>Datetime-local</label>
+                <input id='datetime-local' type='datetime-local' name='datetime-local'/>
+              </div>
+              <div>
+                <label for='email'>Email</label>
+                <input id='email' type='email' name='email' placeholder='scotttsewards@hotmail.com'/>
+              </div>
+              <p>Disabled inputs will be greyed out.</p>
+              <div>
+                <label for='file'>File</label>
+                <input id='file' type='file' name='file' disabled/>
+              </div>
+              <div>
+                <label for='list'>List</label>
+                <input id='list' name='list' list='list-items' placeholder='List Item A'/>
+              </div>
+              <datalist id='list-items'>
+                <option value='List Item A'/>
+                <option value='List Item B'/>
+                <option value='List Item C'/>
+              </datalist>
+              <div>
+                <label for='month'>Month</label>
+                <input id='month' type='month' name='month'/>
+              </div>
+              <div>
+                <label for='number'>Number</label>
+                <input id='number' type='number' name='number' placeholder='42'/>
+              </div>
+              <p>Inputs are two inline, two not inline, repeat for testing purposes.</p>
+              <div class='inline'>
+                <label for='password'>Password</label>
+                <input id='password' type='password' name='password' value='password'/>
+                <input class='hide' type="button" name="show-password" value="Show">
+              </div>
+              <div class='inline'>
+                <label for='range'>Range</label>
+                <input id='range' type='range' name='range'/>
+              </div>
+              <div>
+                <label for='radio'>Radio</label>
+                <input id='radio' type='radio' name='radio' value='one'/>
+              </div>
+              <div>
+                <label for='search'>Search</label>
+                <input id='search' type='search' name='search' placeholder='Search for..'/>
+              </div>
+              <div class='inline'>
+                <label for='select'>Select</label>
+                <select id='select' name='select'>
+                  <optgroup label='A'>
+                    <option value='1'>Option A1</option>
+                    <option value='1'>Option A2</option>
+                  </optgroup>
+                  <optgroup label='B'>
+                    <option value='1'>Option B1</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class='inline'>
+                <label for='text'>Text</label>
+                <input id='text' type='text' name='text'/>
+              </div>
+              <div>
+                <label for='time'>Time</label>
+                <input id='time' type='time' name='time'/>
+              </div>
+              <div>
+                <label for='url'>URL</label>
+                <input id='url' type='url' name='url'/>
+              </div>
+              <div class='inline'>
+                <label for='week'>Week</label>
+                <input id='week' type='week' name='week'/>
+              </div>
+              <div class='inline'>
+                <label for='textarea'>Textarea</label>
+                <textarea id='textarea' name='textarea'></textarea>
+              </div>
+              <input type="button" name="button" value="Button">
+              <input type="reset" name="reset" value="Reset">
+              <input type="submit" name="submit" value="Submit" disabled>
+              <output name="output">undefined</output>
             </fieldset>
           </form>
-        </article>
-      </section>
-      <section id='components'>
-        <h2>Components</h2>
-        <p>Create Alber elements using -box suffix.</p>
-        <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>.</p>
-        <article id='accord-box'>
-          <h3>Accordion Box</h3>
-          <accord-box>
-            <accord-item>
-              <summary>Accord Item A</summary>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </accord-item>
-            <accord-item>
-              <summary>Accord Item B</summary>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </accord-item>
-          </accord-sum>
-        </article>
-        <article id='code-box'>
-          <h3>Code Box</h3>
-          <code-box>
-            <code-comment>Lorem ipsum</code-comment>
-          </code-box>
-        </article>
-        <article id='column-box'>
-          <h3>Column Box</h3>
-          <col-box>
-            <col-item>
-              <h4>Col Item A</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </col-item>
-            <col-item>
-              <h4>Col Item B</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </col-item>
-          </col-box>
-        </article>
-        <article id='grid-box'>
-          <h3>Grid Box</h3>
-          <grid-box>
-            <grid-item>
-              <h4>Grid Item A</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </grid-item>
-            <grid-item>
-              <h4>Grid Item B</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </grid-item>
-          </grid-box>
-        </article>
-        <article id='slide-box'>
-          <h3>Slide Box</h3>
-          <slide-box autoslide timer='5000' thumbnails>
-            <slide-img  src='https://css-tricks.com/wp-content/uploads/2016/01/the-difference-placeholder.png' alt='fjnrwf'></slide-img>
-          </slide-box>
-        </article>
-        <article id='tab-box'>
-          <h3>Tab Box</h3>
-          <tab-box>
-            <tab-titles>
-              <tab-title for='title-a' open>Title A</tab-title>
-              <tab-title for='title-b'>Title B</tab-title>
-            </tab-titles>
-            <tab-item id='title-a'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </tab-item>
-            <tab-item id='title-b'>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </tab-item>
-          </tab-box>
-        </article>
-        </article>
-      </section>
-      <section id='forms' class='hide'>
-        <h2>Form</h2>
-        <form action='' method='post'>
-          <fieldset>
-            <legend>Legend</legend>
-            <p>Input types are in alphabetical order.</p>
-            <label for='checkbox'>Checkbox</label>
-            <div class='inline'>
-              <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
-              <input class='check-cross' type='checkbox' name="checkbox-check-cross" value='check'/>
-              <input class='yes-no' type='checkbox' name="checkbox-yes-no" value='yes'/>
-            </div>
-            <div>
-              <label for='date'>Date</label>
-              <input id='date' type='date' name='date'/>
-            </div>
-            <p>Labels and inputs can be inline.</p>
-            <div class='inline'>
-              <label for='datetime-local'>Datetime-local</label>
-              <input id='datetime-local' type='datetime-local' name='datetime-local'/>
-            </div>
-            <div>
-              <label for='email'>Email</label>
-              <input id='email' type='email' name='email' placeholder='scotttsewards@hotmail.com'/>
-            </div>
-            <p>Disabled inputs will be greyed out.</p>
-            <div>
-              <label for='file'>File</label>
-              <input id='file' type='file' name='file' disabled/>
-            </div>
-            <div>
-              <label for='list'>List</label>
-              <input id='list' name='list' list='list-items' placeholder='List Item A'/>
-            </div>
-            <datalist id='list-items'>
-              <option value='List Item A'/>
-              <option value='List Item B'/>
-              <option value='List Item C'/>
-            </datalist>
-            <div>
-              <label for='month'>Month</label>
-              <input id='month' type='month' name='month'/>
-            </div>
-            <div>
-              <label for='number'>Number</label>
-              <input id='number' type='number' name='number' placeholder='42'/>
-            </div>
-            <p>Inputs are two inline, two not inline, repeat for testing purposes.</p>
-            <div class='inline'>
-              <label for='password'>Password</label>
-              <input id='password' type='password' name='password' value='password'/>
-              <input class='hide' type="button" name="show-password" value="Show">
-            </div>
-            <div class='inline'>
-              <label for='range'>Range</label>
-              <input id='range' type='range' name='range'/>
-            </div>
-            <div>
-              <label for='radio'>Radio</label>
-              <input id='radio' type='radio' name='radio' value='one'/>
-            </div>
-            <div>
-              <label for='search'>Search</label>
-              <input id='search' type='search' name='search' placeholder='Search for..'/>
-            </div>
-            <div class='inline'>
-              <label for='select'>Select</label>
-              <select id='select' name='select'>
-                <optgroup label='A'>
-                  <option value='1'>Option A1</option>
-                  <option value='1'>Option A2</option>
-                </optgroup>
-                <optgroup label='B'>
-                  <option value='1'>Option B1</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class='inline'>
-              <label for='text'>Text</label>
-              <input id='text' type='text' name='text'/>
-            </div>
-            <div>
-              <label for='time'>Time</label>
-              <input id='time' type='time' name='time'/>
-            </div>
-            <div>
-              <label for='url'>URL</label>
-              <input id='url' type='url' name='url'/>
-            </div>
-            <div class='inline'>
-              <label for='week'>Week</label>
-              <input id='week' type='week' name='week'/>
-            </div>
-            <div class='inline'>
-              <label for='textarea'>Textarea</label>
-              <textarea id='textarea' name='textarea'></textarea>
-            </div>
-            <input type="button" name="button" value="Button">
-            <input type="reset" name="reset" value="Reset">
-            <input type="submit" name="submit" value="Submit" disabled>
-            <output name="output">undefined</output>
-          </fieldset>
-        </form>
-      </section>
-      <section id='tables' class='hide'>
-        <h2>Tables</h2>
-        <table>
-          <caption>Caption</caption>
-          <thead>
-            <tr>
-              <th>Table cell header</th>
-              <th>Table cell header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Table data</td>
-              <td>Table data</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>Table data</td>
-              <td>Table data</td>
-            </tr>
-          </tfoot>
-        </table>
-      </section>
-    </main>
+        </section>
+        <section id='tables' class='hide'>
+          <h2>Tables</h2>
+          <table>
+            <caption>Caption</caption>
+            <thead>
+              <tr>
+                <th>Table cell header</th>
+                <th>Table cell header</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Table data</td>
+                <td>Table data</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Table data</td>
+                <td>Table data</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </main>
+    </div>
     <footer>
-      <p class='t-centre'>Copyright (c) 2020 Copyright Holder All Rights Reserved.</p>
+      <p style='text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
     </footer>
-    <main class="">
+
+    <main class="hide">
       <article>
-        <hgroup>
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
-        </hgroup>
-        <p>Use your system settings to switch between light and dark mode.</p>
         <table class="wider">
           <thead>
             <tr>

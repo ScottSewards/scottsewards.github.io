@@ -1,6 +1,5 @@
 form {
   display: block;
-  color: white;
   margin: var(--pad) auto;
   max-width: var(--width-chars);
   div[class^='inline'] { display: flex; margin: 0.5rem auto; }
@@ -25,7 +24,6 @@ legend {
   font-weight: bold;
   padding: var(--pad);
   margin: auto;
-  margin-bottom: -0.5rem;
   white-space: nowrap;
 }
 

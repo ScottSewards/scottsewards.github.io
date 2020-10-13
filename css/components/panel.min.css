@@ -1,1 +1,0 @@
-[class^='panel']{background:var(--col-const-black);color:var(--col-const-white);top:25%;left:calc(50% - var(--width-chars) / 2);padding:1rem;height:50%;width:100%}[class^='panel']:nth-child(even){background:var(--col-const-black);color:var(--col-const-white)}[class^='panel'][class*='fill']{background:var(--col-theme)}[class^='panel'][class*='full']{height:100vh}
