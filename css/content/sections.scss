@@ -37,6 +37,14 @@ nav {
 
 }
 
-section, .section {
+section {
   display: block; //FALLBACK
+  padding: var(--pad);
+  width: 100%;
+  &[class*='fill'] {
+    background: var(--col-theme);
+    color: var(--col-const-black);
+  }
+  &[class*='tall'] { min-height: 100vh; }
+  &[class*='wide'] { max-width: 100%; }
 }

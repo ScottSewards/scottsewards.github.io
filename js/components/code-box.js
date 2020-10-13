@@ -1,10 +1,10 @@
 
-class CodeBlock extends HTMLElement {
+class CodeBox extends HTMLElement {
 
 }
 
-customElements.define('code-block', CodeBlock);
-customElements.whenDefined('code-block').then(() => {
+customElements.define('code-box', CodeBox);
+customElements.whenDefined('code-box').then(() => {
   console.log('code-block defined.');
 });
 
