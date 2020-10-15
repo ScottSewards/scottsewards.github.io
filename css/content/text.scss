@@ -1,5 +1,5 @@
 a {
-  color: var(--col-theme);
+  color: inherit;
 }
 abbr, acronym {
   cursor: help;
@@ -17,10 +17,11 @@ blockquote, cite, q {
 }
 code {
   font-family: "Courier New";
-  background: var(--col-back);
+  background: var(--col-black);
   color: var(--col-white);
   display: inline;
   padding: var(--pad-inline);
+  border-radius: 1px;
   white-space: pre;
 }
 data {
@@ -59,10 +60,12 @@ ins, .inserted {
   &::after { content: " [insertion end]"; }
 }
 kbd {
-  background: var(--col-back);
+  background: var(--col-black);
   color: var(--col-white);
+  display: inline;
   padding: var(--pad-inline);
-  box-shadow: 0 2px 0 0 var(--col-border);
+  border-radius: 1px;
+  box-shadow: 0 2px 0 0 var(--col-theme);
 }
 mark {
   background: var(--col-marked);
@@ -74,25 +77,40 @@ meter, progress {
   margin: var(--pad) auto;
   width: 100%;
 }
-meter::-webkit-meter-bar {
-  background: var(--col-back);
-  border: 0;
-  border-radius: 0;
+meter {
+  height: 2rem;
+  &::-webkit-meter-bar {
+    background: var(--col-black);
+    border: 0;
+    border-radius: var(--border-radius);
+  }
+  &::-webkit-meter-optimum-value {
+    background: var(--col-theme);
+  }
 }
-meter::-webkit-meter-optimum-value { background: var(--col-theme); }
-
-ol {
-  padding: 0;
+progress {
+  appearance: none;
+  &::-webkit-progress-bar {
+    background: var(--col-black);
+    border-radius: var(--border-radius);
+  }
+  &::-webkit-progress-value {
+    background: var(--col-theme);
+    border-radius: var(--border-radius);
+  }
 }
-ul {
-  padding: 0;
+main {
+  ol, ul {
+    padding: 0;
+    margin-left: calc(var(--pad) * 2);
+  }
 }
 li {
   list-style-type: square;
   //margin-left: var(--pad-list);
 }
 p {
-  margin: var(--pad) auto;
+  margin: var(--pad) 0;
   max-width: var(--width-chars);
 }
 

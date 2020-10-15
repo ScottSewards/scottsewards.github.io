@@ -23,357 +23,297 @@
     <script type="text/javascript" src="js/components/grid-box.js"></script>
     <script type="text/javascript" src="js/components/slide-box.js"></script>
     <script type="text/javascript" src="js/components/tab-box.js"></script>
-    <style media="screen">
-    #contents {
-      position: sticky;
-      width: 20rem;
-      padding: 1rem;
-      top: 0;
-    }
-    #contents li {
-      list-style-type: none;
-    }
-    .split {
-      display: flex;
-      margin: auto;
-      width: calc(var(--width-chars) + 20rem);
-    }
-    main {
-      max-width: var(--width-chars);
-    }
-
-    #editor {
-      position: absolute;
-      bottom: 0.5rem;
-      left: 0.5rem;
-      background: white;
-      color: black;
-    }
-    #editor ul {
-      display: none;
-    }
-    #editor ul li {
-      padding: 1rem;
-    }
-    #editor ul li:hover {
-      background: var(--col-theme);
-    }
-    #editor > ul {
-      display: flex;
-      flex-direction: column;
-    }
-    </style>
   </head>
   <body>
-    <aside id='editor' contenteditable="false">
-      <ul>
-        <li>Layouts</li>
+    <nav id='nav' class='top-follow'>
+      <div>
         <ul>
-          <li>Nav</li>
-          <ul>
-            <li>Top</li>
-            <li>Bottom</li>
-          </ul>
+          <li class='active'><a href='index.html'>Return to My Portfolio</a></li>
         </ul>
-      </ul>
-    </aside>
-    <nav id='nav' class='full'>
-      <ul>
-        <li><a href='index.html'>Return to My Portfolio</a></li>
-      </ul>
+        <ul>
+          <li id='top'>Top</li>
+          <li id='follow'>Top-Follow</li>
+          <li id='bottom'>Bottom</li>
+        </ul>
+      </div>
     </nav>
-    <div class='split'>
-      <aside id='contents' class=''>
-        <ul id='list'>
-        </ul>
-        <script type="text/javascript">
-        $(document).ready(function() {
-          //$('body').css('margin-left', '25px');
-          $('h2, h3, h4, h5, h6').each(function() {
-            $('#list').append('<li>' + $(this).text() + '</li>');
-          });
-        });
-        </script>
-      </aside>
-      <main>
-        <section id='about'>
-          <h1>Albers <span style='color: var(--col-theme);'>by</span> Scott Sewards</h1>
-          <article>
-            <h2>About</h2>
-            <p contenteditable>Albers is a modern framework for modern browsers. Use HTML like <code>code-block</code> and <code>slide-show</code>, complete with attributes, properties and methods to define your content, not CSS.</p>
-            <p>Use a simple colour scheme: black, white and user-defined. Modify the user-defined colour below.</p>
-            <form>
-              <fieldset>
-                <legend>Change Theme Colour</legend>
-                <div>
-                  <div class='inline'>
-                    <label for='colour'>Theme colour</label>
-                    <output id='colour-output' name='colour'></output>
-                  </div>
-                  <input id='colour' type='color' name='colour'/>
-                </div>
-              </fieldset>
-            </form>
-            <script type="text/javascript">
-            $(document).ready(function() {
-              $("#colour").val($("body").css("--col-theme").trim());
-              $("#colour-output").val($("body").css("--col-theme"));
-              $("#colour").change(function() {
-                document.body.style.setProperty("--col-theme", $(this).val());
-                document.body.style.setProperty("--col-theme-alpha", $(this).val() + '80');
-                $("#colour-output").val($(this).val());
-              });
-            });
-            </script>
-          </article>
-          <article class='hide'>
-            <p>Additionally, Albers uses <code>prefered-color-scheme</code> to implement light and dark modes. This may not work in all browsers. However, </p>
-            <form id='change-colour-scheme'>
-              <fieldset>
-                <legend>Change Colour Scheme</legend>
-                <div>
-                  <label for='light-mode'>Set colour scheme to light</label>
-                  <input id='light-mode' type='radio' name='colour-scheme' value='0'/>
-                </div>
-                <div>
-                  <label for='dark-mode'>Set colour scheme to dark</label>
-                  <input id='dark-mode' type='radio' name='colour-scheme' value='1'/>
-                </div>
-              </fieldset>
-            </form>
-            <script type='text/javascript'>
-            const prefersColourSchemeLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-            console.log(prefersColourSchemeLight ? 'light.' : 'dark.');
-
-            document.getElementById('light-mode').addEventListener('change', function() {
-              if(this.checked) {
-                document.body.style.setProperty('--col-white', '#FFFFFF');
-                document.body.style.setProperty('--col-black', '#222222');
-              }
-            });
-
-            document.getElementById('light-mode').addEventListener('change', function() {
-              if(this.checked) {
-                document.body.style.setProperty('--col-white', '#222222');
-                document.body.style.setProperty('--col-black', '#FFFFFF');
-              }
-            });
-
-            var colourSchemeForm = document.getElementById('change-colour-scheme');
-            colourSchemeForm.addEventListener('submit', e => {
-              e.preventDefault();
-            });
-            </script>
-          </article>
-        </section>
-        <p>As you can see, the side-nav is messy. I'm writing the documentation, organising and expanding the framework as I go.</p>
-        <section id='components' class='hide'>
-          <h2>Components</h2>
-          <p>Create Alber elements using -box suffix.</p>
-          <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>.</p>
-          <article id='accord-box'>
-            <h3>Accordion Box</h3>
-            <accord-box>
-              <accord-item>
-                <summary>Accord Item A</summary>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </accord-item>
-              <accord-item>
-                <summary>Accord Item B</summary>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </accord-item>
-            </accord-sum>
-          </article>
-          <article id='code-box'>
-            <h3>Code Box</h3>
-            <code-box>
-              <code-comment>Lorem ipsum</code-comment>
-            </code-box>
-          </article>
-          <article id='column-box'>
-            <h3>Column Box</h3>
-            <column-box>
-              <div>
-                <h4>Col Item A</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div>
-                <h4>Col Item B</h4>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </column-box>
-            </article>
-            <article id='grid-box'>
-              <h3>Grid Box</h3>
-              <grid-box>
-                <grid-item>
-                  <h4>Grid Item A</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </grid-item>
-                <grid-item>
-                  <h4>Grid Item B</h4>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </grid-item>
-              </grid-box>
-            </article>
-            <article id='slide-box'>
-              <h3>Slide Box</h3>
-              <slide-box autoslide timer='5000' thumbnails>
-                <slide-img  src='https://css-tricks.com/wp-content/uploads/2016/01/the-difference-placeholder.png' alt='fjnrwf'></slide-img>
-              </slide-box>
-            </article>
-            <article id='tab-box'>
-              <h3>Tab Box</h3>
-              <tab-box>
-                <tab-titles>
-                  <tab-title for='title-a' open>Title A</tab-title>
-                  <tab-title for='title-b'>Title B</tab-title>
-                </tab-titles>
-                <tab-item id='title-a'>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </tab-item>
-                <tab-item id='title-b'>
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </tab-item>
-              </tab-box>
-            </article>
-          </article>
-        </section>
-        <section id='forms' class='hide'>
-          <h2>Form</h2>
-          <form action='' method='post'>
+    <script type="text/javascript">
+      document.getElementById('top').addEventListener('click', function() {
+        document.getElementById('nav').className = 'top';
+      });
+      document.getElementById('follow').addEventListener('click', function() {
+        document.getElementById('nav').className = 'top follow';
+      });
+      document.getElementById('bottom').addEventListener('click', function() {
+        document.getElementById('nav').className = 'bottom';
+      });
+    </script>
+    <main>
+      <section id='about'>
+        <h1>Albers <span style='color: var(--col-theme);'>by</span> Scott S.</h1>
+        <p>Albers is my modern framework for modern browsers. I use custom elements such as <code>code-box</code> and <code>tab-box</code> to define my content. The aim is to limit the use of CSS and JavaScript.</p>
+        <article>
+          <h2 style='color: var(--col-theme);'>Theme Colour</h2>
+          <p>I use simple black, white and user-defined colour scheme. Change the colour picker to change the user-defined colour.</p>
+          <form id='theme-colour-form'>
             <fieldset>
-              <legend>Legend</legend>
-              <p>Input types are in alphabetical order.</p>
-              <label for='checkbox'>Checkbox</label>
-              <div class='inline'>
-                <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
-                <input class='check-cross' type='checkbox' name="checkbox-check-cross" value='check'/>
-                <input class='yes-no' type='checkbox' name="checkbox-yes-no" value='yes'/>
-              </div>
+              <legend>Change Theme Colour</legend>
               <div>
-                <label for='date'>Date</label>
-                <input id='date' type='date' name='date'/>
+                <div class='inline'>
+                  <label for='theme-colour'>Theme colour</label>
+                  <output id='theme-colour-output' name='theme-colour-output'></output>
+                </div>
+                <input id='theme-colour' type='color' name='theme-colour'/>
               </div>
-              <p>Labels and inputs can be inline.</p>
-              <div class='inline'>
-                <label for='datetime-local'>Datetime-local</label>
-                <input id='datetime-local' type='datetime-local' name='datetime-local'/>
-              </div>
-              <div>
-                <label for='email'>Email</label>
-                <input id='email' type='email' name='email' placeholder='scotttsewards@hotmail.com'/>
-              </div>
-              <p>Disabled inputs will be greyed out.</p>
-              <div>
-                <label for='file'>File</label>
-                <input id='file' type='file' name='file' disabled/>
-              </div>
-              <div>
-                <label for='list'>List</label>
-                <input id='list' name='list' list='list-items' placeholder='List Item A'/>
-              </div>
-              <datalist id='list-items'>
-                <option value='List Item A'/>
-                <option value='List Item B'/>
-                <option value='List Item C'/>
-              </datalist>
-              <div>
-                <label for='month'>Month</label>
-                <input id='month' type='month' name='month'/>
-              </div>
-              <div>
-                <label for='number'>Number</label>
-                <input id='number' type='number' name='number' placeholder='42'/>
-              </div>
-              <p>Inputs are two inline, two not inline, repeat for testing purposes.</p>
-              <div class='inline'>
-                <label for='password'>Password</label>
-                <input id='password' type='password' name='password' value='password'/>
-                <input class='hide' type="button" name="show-password" value="Show">
-              </div>
-              <div class='inline'>
-                <label for='range'>Range</label>
-                <input id='range' type='range' name='range'/>
-              </div>
-              <div>
-                <label for='radio'>Radio</label>
-                <input id='radio' type='radio' name='radio' value='one'/>
-              </div>
-              <div>
-                <label for='search'>Search</label>
-                <input id='search' type='search' name='search' placeholder='Search for..'/>
-              </div>
-              <div class='inline'>
-                <label for='select'>Select</label>
-                <select id='select' name='select'>
-                  <optgroup label='A'>
-                    <option value='1'>Option A1</option>
-                    <option value='1'>Option A2</option>
-                  </optgroup>
-                  <optgroup label='B'>
-                    <option value='1'>Option B1</option>
-                  </optgroup>
-                </select>
-              </div>
-              <div class='inline'>
-                <label for='text'>Text</label>
-                <input id='text' type='text' name='text'/>
-              </div>
-              <div>
-                <label for='time'>Time</label>
-                <input id='time' type='time' name='time'/>
-              </div>
-              <div>
-                <label for='url'>URL</label>
-                <input id='url' type='url' name='url'/>
-              </div>
-              <div class='inline'>
-                <label for='week'>Week</label>
-                <input id='week' type='week' name='week'/>
-              </div>
-              <div class='inline'>
-                <label for='textarea'>Textarea</label>
-                <textarea id='textarea' name='textarea'></textarea>
-              </div>
-              <input type="button" name="button" value="Button">
-              <input type="reset" name="reset" value="Reset">
-              <input type="submit" name="submit" value="Submit" disabled>
-              <output name="output">undefined</output>
             </fieldset>
           </form>
-        </section>
-        <section id='tables' class='hide'>
-          <h2>Tables</h2>
-          <table>
-            <caption>Caption</caption>
-            <thead>
-              <tr>
-                <th>Table cell header</th>
-                <th>Table cell header</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Table data</td>
-                <td>Table data</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Table data</td>
-                <td>Table data</td>
-              </tr>
-            </tfoot>
-          </table>
-        </section>
-      </main>
-    </div>
-    <footer>
-      <p style='text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
-    </footer>
+          <script type="text/javascript">
+            document.getElementById('theme-colour').value = getComputedStyle(document.body).getPropertyValue('--col-theme').trim();
+            document.getElementById('theme-colour-output').value = getComputedStyle(document.body).getPropertyValue('--col-theme').trim();
+            document.getElementById('theme-colour').addEventListener('change', function() {
+              document.body.style.setProperty("--col-theme", this.value.toUpperCase());
+              document.body.style.setProperty("--col-theme-alpha", this.value.toUpperCase() + '80');
+              document.getElementById('theme-colour-output').value = this.value.toUpperCase();
+            });
+          </script>
+        </article>
+        <article class=''>
+          <p>I always use dark mode. So I use <code>prefered-color-scheme</code> to change between light mode and dark mode. Change your device theme to change theme mode. This may not work for some browsers or devices.</p>
+          <form id='change-colour-scheme'>
+            <fieldset>
+              <legend>Change Colour Scheme</legend>
+              <div class='inline'>
+                <label for='light-mode'>Set colour scheme to light</label>
+                <input id='light-mode' type='radio' name='colour-scheme' value='0'/>
+              </div>
+              <div class='inline'>
+                <label for='dark-mode'>Set colour scheme to dark</label>
+                <input id='dark-mode' type='radio' name='colour-scheme' value='1'/>
+              </div>
+            </fieldset>
+          </form>
+          <script type='text/javascript'>
+            const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
-    <main class="hide">
+            if(prefersLight) document.getElementById('light-mode').checked = true;
+            else document.getElementById('dark-mode').checked = true;
+
+            document.getElementById('light-mode').addEventListener('change', function() {
+              if(this.checked) {
+                document.body.style.setProperty('--col-white', '#FFF');
+                document.body.style.setProperty('--col-black', '#111');
+              }
+            });
+            document.getElementById('dark-mode').addEventListener('change', function() {
+              if(this.checked) {
+                document.body.style.setProperty('--col-white', '#111');
+                document.body.style.setProperty('--col-black', '#FFF');
+              }
+            });
+          </script>
+        </article>
+      </section>
+      <p>As you can see, the side-nav is messy. I'm writing the documentation, organising and expanding the framework as I go.</p>
+      <!--section id='components' class='hide'>
+      <h2>Components</h2>
+      <p>Create Alber elements using -box suffix.</p>
+      <p>I have created custom elements to ease use of the framework. No more must you use classes to use <code class='element'>div</code> and <code class='class'>.class</code>.</p>
+      <article id='accord-box'>
+        <h3>Accordion Box</h3>
+        <accord-box>
+          <accord-item>
+            <summary>Accord Item A</summary>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </accord-item>
+          <accord-item>
+            <summary>Accord Item B</summary>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </accord-item>
+        </accord-sum>
+      </article>
+      <article id='code-box'>
+        <h3>Code Box</h3>
+        <code-box>
+          <code-comment>Lorem ipsum</code-comment>
+        </code-box>
+      </article>
+      <article id='column-box'>
+        <h3>Column Box</h3>
+        <column-box>
+          <div>
+            <h4>Col Item A</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div>
+            <h4>Col Item B</h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </column-box>
+      </article>
+      <article id='grid-box'>
+        <h3>Grid Box</h3>
+        <grid-box>
+          <grid-item>
+            <h4>Grid Item A</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </grid-item>
+          <grid-item>
+            <h4>Grid Item B</h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </grid-item>
+        </grid-box>
+      </article>
+      <article id='slide-box'>
+        <h3>Slide Box</h3>
+        <slide-box autoslide timer='5000' thumbnails>
+          <slide-img  src='https://css-tricks.com/wp-content/uploads/2016/01/the-difference-placeholder.png' alt='fjnrwf'></slide-img>
+        </slide-box>
+      </article>
+      <article id='tab-box'>
+        <h3>Tab Box</h3>
+        <tab-box>
+          <tab-titles>
+            <tab-title for='title-a' open>Title A</tab-title>
+            <tab-title for='title-b'>Title B</tab-title>
+          </tab-titles>
+          <tab-item id='title-a'>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </tab-item>
+          <tab-item id='title-b'>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </tab-item>
+          </tab-box>
+        </article>
+      </article>
+    </section-->
+      <section id='forms' class='hide'>
+        <h2>Form</h2>
+        <form action='' method='post'>
+          <fieldset>
+            <legend>Legend</legend>
+            <p>Input types are in alphabetical order.</p>
+            <label for='checkbox'>Checkbox</label>
+            <div class='inline'>
+              <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
+              <input class='check-cross' type='checkbox' name="checkbox-check-cross" value='check'/>
+              <input class='yes-no' type='checkbox' name="checkbox-yes-no" value='yes'/>
+            </div>
+            <div>
+              <label for='date'>Date</label>
+              <input id='date' type='date' name='date'/>
+            </div>
+            <p>Labels and inputs can be inline.</p>
+            <div class='inline'>
+              <label for='datetime-local'>Datetime-local</label>
+              <input id='datetime-local' type='datetime-local' name='datetime-local'/>
+            </div>
+            <div>
+              <label for='email'>Email</label>
+              <input id='email' type='email' name='email' placeholder='scotttsewards@hotmail.com'/>
+            </div>
+            <p>Disabled inputs will be greyed out.</p>
+            <div>
+              <label for='file'>File</label>
+              <input id='file' type='file' name='file' disabled/>
+            </div>
+            <div>
+              <label for='list'>List</label>
+              <input id='list' name='list' list='list-items' placeholder='List Item A'/>
+            </div>
+            <datalist id='list-items'>
+              <option value='List Item A'/>
+              <option value='List Item B'/>
+              <option value='List Item C'/>
+            </datalist>
+            <div>
+              <label for='month'>Month</label>
+              <input id='month' type='month' name='month'/>
+            </div>
+            <div>
+              <label for='number'>Number</label>
+              <input id='number' type='number' name='number' placeholder='42'/>
+            </div>
+            <p>Inputs are two inline, two not inline, repeat for testing purposes.</p>
+            <div class='inline'>
+              <label for='password'>Password</label>
+              <input id='password' type='password' name='password' value='password'/>
+              <input class='hide' type="button" name="show-password" value="Show">
+            </div>
+            <div class='inline'>
+              <label for='range'>Range</label>
+              <input id='range' type='range' name='range'/>
+            </div>
+            <div>
+              <label for='radio'>Radio</label>
+              <input id='radio' type='radio' name='radio' value='one'/>
+            </div>
+            <div>
+              <label for='search'>Search</label>
+              <input id='search' type='search' name='search' placeholder='Search for..'/>
+            </div>
+            <div class='inline'>
+              <label for='select'>Select</label>
+              <select id='select' name='select'>
+                <optgroup label='A'>
+                  <option value='1'>Option A1</option>
+                  <option value='1'>Option A2</option>
+                </optgroup>
+                <optgroup label='B'>
+                  <option value='1'>Option B1</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class='inline'>
+              <label for='text'>Text</label>
+              <input id='text' type='text' name='text'/>
+            </div>
+            <div>
+              <label for='time'>Time</label>
+              <input id='time' type='time' name='time'/>
+            </div>
+            <div>
+              <label for='url'>URL</label>
+              <input id='url' type='url' name='url'/>
+            </div>
+            <div class='inline'>
+              <label for='week'>Week</label>
+              <input id='week' type='week' name='week'/>
+            </div>
+            <div class='inline'>
+              <label for='textarea'>Textarea</label>
+              <textarea id='textarea' name='textarea'></textarea>
+            </div>
+            <input type="button" name="button" value="Button">
+            <input type="reset" name="reset" value="Reset">
+            <input type="submit" name="submit" value="Submit" disabled>
+            <output name="output">undefined</output>
+          </fieldset>
+        </form>
+      </section>
+      <section id='tables' class='hide'>
+        <h2>Tables</h2>
+        <table>
+          <caption>Caption</caption>
+          <thead>
+            <tr>
+              <th>Table cell header</th>
+              <th>Table cell header</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Table data</td>
+              <td>Table data</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Table data</td>
+              <td>Table data</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
       <article>
         <table class="wider">
           <thead>
@@ -392,60 +332,12 @@
               <td></td>
             </tr>
             <tr>
-              <td><code>a</code></td>
-              <td><a href=''>Click here to scroll to top</a>.</td>
-            </tr>
-            <tr>
-              <td><code>code</code></td>
-              <td>The <code>print</code> statement will output a value to the console.</td>
-            </tr>
-            <tr>
-              <td><code>del</code></td>
-              <td>Fallout 76 is a <del>bad</del> game.</td>
-            </tr>
-            <tr>
-              <td><code>em</code></td>
-              <td>It is important you <em>pass</em>.</td>
-            </tr>
-            <tr>
-              <td><code>ins</code></td>
-              <td>Fallout 76 is a <ins datetime="2020-10-07">good</ins> game.</td>
-            </tr>
-            <tr>
-              <td><code>i</code></td>
-              <td>It is important you <i>pass</i>.</td>
-            </tr>
-            <tr>
-              <td><code>kbd</code></td>
-              <td>Press the <kbd>space</kbd> key to scroll down.</td>
-            </tr>
-            <tr>
               <td><code>mark</code></td>
               <td>Velleity is a <mark>front-end</mark> framework.</td>
             </tr>
             <tr>
-              <td><code>s</code></td>
-              <td><s>I am striked! Hover me to see me without a strike.</s></td>
-            </tr>
-            <tr>
               <td><code>samp</code></td>
               <td></td>
-            </tr>
-            <tr>
-              <td><code>sub</code></td>
-              <td>00110011<sub>2</sub> is base 2.</td>
-            </tr>
-            <tr>
-              <td><code>sup</code></td>
-              <td>Bolt came in 1<sup>st</sup> place.</td>
-            </tr>
-            <tr>
-              <td><code>time</code></td>
-              <td><time datetime="15:08">15:08</time></td>
-            </tr>
-            <tr>
-              <td><code>var</code></td>
-              <td><var>E</var> = <var>mc<sup>2</sup></var></td>
             </tr>
           </tbody>
         </table>
@@ -499,37 +391,17 @@
             <p>This text should be shown if the details element is opened.</p>
           </details>
         </div>
-        <div class="hide">
+        <div class=''>
           <h3>Meter</h3>
           <meter value="50" min="0" max="100"></meter>
         </div>
-        <div class="hide">
+        <div class=''>
           <h3>Progress</h3>
           <progress value="50" max="100">50%</progress>
         </div>
       </section>
       <section>
         <h2>Media</h2>
-
-        <h3>Picture</h3>
-        <picture>
-          <source media="(min-width: 650px)" srcset="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" width="150" height="250"/>
-          <source media="(min-width: 465px)" srcset="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg"/>
-          <img src="placeholder.png" alt="Flowers"/>
-        </picture>
-        <h3>Figures and Figcaptions</h3>
-        <div class="tiles">
-          <figure>
-            <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
-            <figcaption>This is a figure caption.</figcaption>
-          </figure>
-          <figure>
-            <figcaption class="inside">This is a figure caption in a figure.</figcaption>
-            <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
-          </figure>
-        </div>
-
-
         <article id='audio'>
           <h3>Audio</h3>
           <p>Rule, Britannia! by James Thomson (1740)</p>
@@ -538,6 +410,13 @@
         <article id='canvas' class='hide'>
           <h3>Canvas</h3>
           <canvas id="canvas" width="300" height="300"></canvas>
+        </article>
+        <article id='figure'>
+          <h3>Figures and Figcaptions</h3>
+          <figure>
+            <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
+            <figcaption>This is a figure caption.</figcaption>
+          </figure>
         </article>
         <article id='img'>
           <h3>Image</h3>
@@ -551,24 +430,13 @@
             <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
           </map>
         </article>
-        <article id='svg' class='hide'>
-          <h3>SVG</h3>
-          <svg>
-            <g>
-              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-              <rect x="100" y="20" rx="20" ry="20" width="100" height="50" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-              <ellipse cx="100" cy="70" rx="50" ry="50" fill="url(#grad1)"/>
-              <!--defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="50%" y2="0%">
-              <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1"/>
-              <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1"/>
-            </linearGradient>
-            </defs>
-            <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/-->
-            <text fill="#ffffff" font-size="45" font-family="Verdana" x="100" y="75">SVG</text>
-            </g>
-            Sorry, your browser does not support inline SVG.
-          </svg>
+        <article id='picture'>
+          <h3>Picture</h3>
+          <picture>
+            <source media="(min-width: 650px)" srcset="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" width="150" height="250"/>
+            <source media="(min-width: 465px)" srcset="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg"/>
+            <img src="placeholder.png" alt="Flowers"/>
+          </picture>
         </article>
         <article id='video'>
           <h3>Video</h3>
@@ -576,5 +444,6 @@
         </article>
       </section>
     </main>
+    <footer><p><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p></footer>
   </body>
 </html>

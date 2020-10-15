@@ -1,27 +1,42 @@
 table {
-  background: var(--col-over);
+  background: var(--col-theme-alpha);
+  padding: var(--pad) auto;
   border-collapse: collapse;
-  margin: var(--pad) auto;
+  border-radius: var(--border-radius);
   overflow: auto;
 }
 caption {
   font-style: italic;
 }
 
-colgroup { }
-col { }
+colgroup {
 
-thead { }
-tbody { }
-tfoot { }
+}
+col {
+
+}
+
+thead {
+
+}
+tbody {
+
+}
+tfoot {
+
+}
 
 tr {
-  //&:hover { background: rgba(0, 0, 0, 0.1); }
+
 }
 th {
   font-weight: bold;
+}
+th, td {
   padding: var(--pad);
+  border-radius: var(--border-radius);
+  &:hover { background: var(--col-theme); }
 }
 td {
-  padding: var(--pad);
+
 }

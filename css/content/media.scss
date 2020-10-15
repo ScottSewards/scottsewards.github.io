@@ -2,6 +2,8 @@ area {
 
 }
 audio {
+  background: var(--col-theme-alpha);
+  border-radius: var(--border-radius) !important;
   margin: var(--pad) auto;
   width: 100%;
   max-width: var(--width-chars);
@@ -11,16 +13,19 @@ canvas {
   margin: auto;
 }
 figure {
+  background: var(--col-theme-alpha);
   position: relative;
+  border-radius: var(--border-radius);
   margin: var(--pad) auto;
   img, picture { margin: 0; }
 }
 figcaption {
   font-style: italic;
-  padding: var(--pad);
+  padding-bottom: var(--pad);
   text-align: center;
 }
 img {
+  border-radius: var(--border-radius);
   margin: var(--pad) auto;
   width: 100%;
   max-width: var(--width-chars);
@@ -43,6 +48,8 @@ track {
 
 }
 video {
+  background: var(--col-theme-alpha);
+  border-radius: var(--border-radius);
   margin: var(--pad) auto;
   width: 100%;
   max-width: var(--width-chars);

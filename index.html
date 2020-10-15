@@ -19,6 +19,7 @@
     <style media="screen">
     p {
       text-align: center;
+      margin: var(--pad) auto;
     }
     a {
       color: inherit !important;
@@ -26,15 +27,17 @@
     </style>
   </head>
   <body>
-    <main class='full'>
-      <h1>Scott <span style='color: var(--col-theme);'>Sewards'</span> Portfolio</h1>
-      <p style='text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
-      <section class='fill'>
+    <main class='wide'>
+      <section>
+        <h1>Scott <span style='color: var(--col-theme);'>Sewards'</span> Portfolio</h1>
+        <p style='text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
+      </section>
+      <section id='albers' class='fill'>
         <h2>Albers</h2>
         <p>A modern framework for modern browsers.</p>
         <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='albers.html'">See Albers</button>
       </section>
-      <section class=''>
+      <section id='fattrack'>
         <h2>fat<span style='color: var(--col-theme);'>track</span>.app</h2>
         <p>Calculate your metabolic rate.</p>
         <form id='metabolic-rate-calculator'>
@@ -65,82 +68,35 @@
             <output id='metatbolic-rate'></output>
           </fieldset>
         </form>
+        <!--
+        https://developer.edamam.com/food-database-api-docs
+        https://www.programmableweb.com/api/can-i-eat-it-barcode
+        https://opexfit.com/blog/how-to-calculate-tdee-total-daily-energy-expenditure/
+        -->
         <script type="text/javascript">
-        $(document).ready(function() {
-          $("#metabolic-rate-calculator").submit(function(e) {
-            e.preventDefault();
-            var sex;
-            if($('#sex-male').is(':checked')) sex = 'm';
-            else sex = 'f';
-            var age = $('#age').val();
-            var height = $('#height').val();
-            var weight = $('#weight').val();
-            var rmr, bmr;
-            if(sex === 'm') rmr = 9.99 * weight + 6.25 * height - 4.92 * age + 5;
-            else rmr = 9.99 * weight + 6.25 * height - 4.92 * age - 161;
-            rmr = Math.round(rmr);
-            bmr = Math.round(rmr * 1.2);
-            $('#metatbolic-rate').html(`Your RMR is ${rmr} and BMR is ${bmr}.`);
-          });
+        document.getElementById('metabolic-rate-calculator').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var age = document.getElementById('age').value;
+          var height = document.getElementById('height').value;
+          var weight = document.getElementById('weight').value;
 
-          /*
-          var date = new Date(),
-          day = String(date.getDate()).padStart(2, '0'),
-          month = String(date.getMonth() + 1).padStart(2, '0'),
-          year = String(date.getFullYear()),
-          today = year + '-' + month + '-' + day;
-          document.getElementById('weigh-in-date').setAttribute('value', today);
-          document.getElementById('weigh-in-date').setAttribute('max', today);
-          */
+          if(document.getElementById('sex-male').checked) var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age + 5);
+          else var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age - 161);
+
+          var bmr = Math.round(rmr * 1.2);
+          document.getElementById('metatbolic-rate').innerHTML = `Your RMR is ${rmr} and BMR is ${bmr}.`;
         });
         </script>
       </section>
-      <section class='fill'>
+      <section id='pompay' class='fill'>
         <h2>PomPay</h2>
         <p>Patreon meets cryptocurrency.</p>
         <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='https://pompay.co.uk/'">Visit PomPay</button>
       </section>
-      <section>
+      <section class=''>
         <h2>More Soon</h2>
-        <p>I have revoked all personal projects prepare them for deployment on individual domains. Previously, I hosted them all at <a href='http://sewards.me'>sewards.me</a>, but the website ballooned. Furthermore, I have built my framework, Albers, from scratch to incoporate into those projects. I anticipate I will be finished before November.</p>
+        <p>I have removed my projects to prepare them for deployment on individual domains and to implement Albers. This will be complete before November.</p>
       </section>
     </main>
   </body>
 </html>
-<script>
-window.onload = function() {
-  /*
-  var data = [
-    {
-      "Name": "Leaves",
-      "Description": "My previous portfolio website.",
-      "Link": "sewards.me"
-    },
-    {
-      "Name": "sewards.me",
-      "Description": "My previous portfolio website.",
-      "Link": "sewards.me"
-    },
-    {
-      "Name": "Velleity",
-      "Description": "A front-end content framework. I use it in personal web projects.",
-      "Link": "www.scottsewards.github.io/velleity.html"
-    },
-    {
-      "Name": "Writer's Block",
-      "Description": "My previous portfolio website.",
-      "Link": "sewards.me"
-    }
-  ]
-  */
-}
-</script>
-<!--col-box parts='3'>
-  <col-item parts='2'>
-    <img src='' alt='img'>
-  </col-item>
-  <col-item class='middle-middle'>
-    <h2>Albers</h2>
-    <p>A modern framework for modern browsers.</p>
-  </col-item>
-</col-box-->

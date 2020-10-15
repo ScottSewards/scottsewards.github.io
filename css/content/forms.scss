@@ -9,6 +9,7 @@ fieldset {
   background: var(--col-theme); //FALLBACK
   background: var(--col-theme-alpha);
   border: 0;
+  border-radius: var(--border-radius);
   min-width: 0; //PREVENT OVERFLOW
 }
 
@@ -16,13 +17,14 @@ label {
   display: block;
   padding: var(--pad);
   white-space: nowrap;
+  &::after { content: ':'; }
 }
 
 legend {
   background: var(--col-theme); //FALLBACK
-  background: var(--col-theme-alpha);
   font-weight: bold;
   padding: var(--pad);
+  border-radius: var(--border-radius);
   margin: auto;
   white-space: nowrap;
 }
@@ -35,13 +37,12 @@ button, input, select, textarea {
   display: block;
   padding: var(--pad);
   border: 0;
+  border-radius: var(--border-radius);
   margin: 0;
+  outline: 0;
   width: 100%;
-  &:hover { background: var(--col-theme); }
-  &:focus {
-    outline: solid var(--col-theme) 0.2rem;
-    z-index: 45;
-   }
+  &:hover { box-shadow: 0 0 0 0.2rem var(--col-black); }
+  &:focus, &:focus-visible { box-shadow: 0 0 0 0.4rem var(--col-black); }
 }
 
 button, input[type='button'], input[type='reset'], input[type='submit'] {
@@ -50,7 +51,10 @@ button, input[type='button'], input[type='reset'], input[type='submit'] {
   margin: var(--pad);
   margin-left: 0;
   width: auto;
-  &[class^='full'] { width: 100%; }
+  &[class*='wide'] {
+    display: block;
+    width: 100%;
+  }
 }
 
 input[type='checkbox'], input[type='radio'] {
@@ -65,7 +69,9 @@ input[type='checkbox'], input[type='radio'] {
     right: 0;
     left: 0;
     padding: var(--pad);
-    &:hover { background: var(--col-theme); }
+    border-radius: var(--border-radius);
+    &:hover { box-shadow: 0 0 0 0.2rem var(--col-black); }
+    &:focus, &:focus-visible { box-shadow: 0 0 0 0.4rem var(--col-black); }
   }
 }
 
@@ -119,8 +125,6 @@ input[type=range] {
 }
 
 input[type='select']
-
-label { &::after { content: ':'; } }
 
 optgroup { background: var(--col-black); color: var(--col-white); }
 option { } //CAN'T STYLE

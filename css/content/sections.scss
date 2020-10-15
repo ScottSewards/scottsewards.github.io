@@ -1,4 +1,6 @@
-address { }
+address {
+
+}
 
 article, .article {
   display: block; //FALLBACK
@@ -10,8 +12,6 @@ aside, .aside {
 
 footer, .footer {
   display: block; //FALLBACK
-  background: var(--col-const-black);
-  color: var(--col-const-white);
   padding: var(--pad);
   margin: auto;
   max-width: var(--width-content);
@@ -29,21 +29,31 @@ h4 { font-size: 104%; }
 h5 { font-size: 102%; }
 h6 { font-size: 100%; }
 
-header { }
+h1, h2, h3, h4, h5, h6, p {
+  //mix-blend-mode: difference; //INEFFECTIVE
+}
 
-hgroup { }
+header {
+
+}
+
+hgroup {
+
+}
 
 nav {
-
+  display: block;
 }
 
 section {
   display: block; //FALLBACK
   padding: var(--pad);
+  margin: auto;
   width: 100%;
+  //max-width: var(--width-chars);
   &[class*='fill'] {
     background: var(--col-theme);
-    color: var(--col-const-black);
+    color: var(--col-const-white);
   }
   &[class*='tall'] { min-height: 100vh; }
   &[class*='wide'] { max-width: 100%; }
