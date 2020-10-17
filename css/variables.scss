@@ -45,12 +45,12 @@
   background: var(--col-disabled);
 }
 ::selection { background: var(--col-marked); }
-::-webkit-scrollbar { width: 1rem; }
+::-webkit-scrollbar { width: auto; }
 ::-webkit-scrollbar-track { background: var(--col-white); }
 ::-webkit-scrollbar-thumb {
   background: var(--col-theme-alpha);
-  border-radius: var(--border-radius);
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  //border-radius: var(--border-radius);
+  //border-top-right-radius: 0;
+  //border-bottom-right-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--col-theme); }

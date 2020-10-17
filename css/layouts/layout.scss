@@ -32,6 +32,8 @@ nav {
     //ul { background: none !important; }
   }
 
+  padding: 0 var(--border-radius);
+
   z-index: 1;
   position: static;
   &[class*='top'] {
@@ -55,9 +57,17 @@ nav {
     background: var(--col-theme);
     border-radius: var(--border-radius);
     border-top-left-radius: 0;
-    border-top-right-radius: 0;  
+    border-top-right-radius: 0;
     margin: auto;
     max-width: var(--width-content);
+  }
+  &[class*='bottom'] {
+    div, ul {
+      border-top-left-radius: var(--border-radius) !important;
+      border-top-right-radius: var(--border-radius) !important;
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
   }
   ul {
     padding: 1rem 0;
