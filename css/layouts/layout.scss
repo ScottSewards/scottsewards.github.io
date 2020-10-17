@@ -63,9 +63,10 @@ nav {
   }
   &[class*='bottom'] {
     div, ul {
-      border-radius: var(--border-radius);
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;      
+      border-top-left-radius: var(--border-radius) !important;
+      border-top-right-radius: var(--border-radius) !important;
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
     }
   }
   ul {

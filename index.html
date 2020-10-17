@@ -8,6 +8,7 @@
     <link rel='stylesheet' href='css/components/grid.css'/>
     <link rel='stylesheet' href='css/components/seperators.css'/>
     <link rel='stylesheet' href='css/components/tabulators.css'/>
+    <link rel='stylesheet' href='css/content/embedded.css'/>
     <link rel='stylesheet' href='css/content/forms.css'/>
     <link rel='stylesheet' href='css/content/media.css'/>
     <link rel='stylesheet' href='css/content/sections.css'/>
@@ -37,35 +38,37 @@
         <p>A modern framework for modern browsers.</p>
         <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='albers.html'">See Albers</button>
       </section>
-      <section id='fattrack'>
+      <section id='fat-track'>
         <h2>fat<span style='color: var(--col-theme);'>track</span>.app</h2>
         <p>Calculate your metabolic rate.</p>
         <form id='metabolic-rate-calculator'>
           <fieldset>
             <legend>Metabolic Rate Calculator</legend>
-            <div class=''>
+            <div class='inline'>
               <label for='sex-male'>I am male</label>
               <input id='sex-male' type='radio' name='sex' value='0' required checked/>
             </div>
-            <div class=''>
+            <div class='inline'>
               <label for='sex-female'>I am female</label>
               <input id='sex-female' type='radio' name='sex' value='1' required/>
             </div>
-            <div class=''>
+            <div class='inline'>
               <label for='age'>My age is</label>
               <input id='age' type='number' name='age' min='13' max='100' required/>
             </div>
-            <div class=''>
+            <div class='inline'>
               <label for='height'>Height (cm)</label>
               <input id='height' type='number' name='height' min='50' max='260' required/>
             </div>
-            <div class=''>
+            <div class='inline'>
               <label for='weight'>Weight (kg)</label>
               <input id='weight' type='number' name='weight' min='30' max='300' required/>
             </div>
-            <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
-            <!--button type="button" name="button">Save My Data</button-->
-            <output id='metatbolic-rate'></output>
+            <div class='inline'>
+              <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
+              <!--button type="button" name="button">Save My Data</button-->
+              <output id='metatbolic-rate'></output>
+            </div>
           </fieldset>
         </form>
         <!--
@@ -93,7 +96,13 @@
         <p>Patreon meets cryptocurrency.</p>
         <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='https://pompay.co.uk/'">Visit PomPay</button>
       </section>
-      <section class=''>
+      <section id='rise-and-fall' class='hide'>
+        <h2>Rise and Fall</h2>
+        <p>Build your empire, watch it fall.</p>
+        <iframe>
+        </iframe>
+      </section>
+      <section id='more' class=''>
         <h2>More Soon</h2>
         <p>I have removed my projects to prepare them for deployment on individual domains and to implement Albers. This will be complete before November.</p>
       </section>

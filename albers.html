@@ -186,17 +186,15 @@
         </article>
       </article>
     </section-->
-      <section id='forms' class='hide'>
+      <section id='forms' class=''>
         <h2>Form</h2>
         <form action='' method='post'>
           <fieldset>
             <legend>Legend</legend>
-            <p>Input types are in alphabetical order.</p>
-            <label for='checkbox'>Checkbox</label>
+            <p>Input types are in alphabetical order. I have omitted text-based inputs such as <code>search</code> and <code>url</code>.</p>
             <div class='inline'>
+              <label for='checkbox'>Checkbox</label>
               <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
-              <input class='check-cross' type='checkbox' name="checkbox-check-cross" value='check'/>
-              <input class='yes-no' type='checkbox' name="checkbox-yes-no" value='yes'/>
             </div>
             <div>
               <label for='date'>Date</label>
@@ -206,10 +204,6 @@
             <div class='inline'>
               <label for='datetime-local'>Datetime-local</label>
               <input id='datetime-local' type='datetime-local' name='datetime-local'/>
-            </div>
-            <div>
-              <label for='email'>Email</label>
-              <input id='email' type='email' name='email' placeholder='scotttsewards@hotmail.com'/>
             </div>
             <p>Disabled inputs will be greyed out.</p>
             <div>
@@ -243,14 +237,6 @@
               <label for='range'>Range</label>
               <input id='range' type='range' name='range'/>
             </div>
-            <div>
-              <label for='radio'>Radio</label>
-              <input id='radio' type='radio' name='radio' value='one'/>
-            </div>
-            <div>
-              <label for='search'>Search</label>
-              <input id='search' type='search' name='search' placeholder='Search for..'/>
-            </div>
             <div class='inline'>
               <label for='select'>Select</label>
               <select id='select' name='select'>
@@ -271,10 +257,6 @@
               <label for='time'>Time</label>
               <input id='time' type='time' name='time'/>
             </div>
-            <div>
-              <label for='url'>URL</label>
-              <input id='url' type='url' name='url'/>
-            </div>
             <div class='inline'>
               <label for='week'>Week</label>
               <input id='week' type='week' name='week'/>
@@ -283,10 +265,7 @@
               <label for='textarea'>Textarea</label>
               <textarea id='textarea' name='textarea'></textarea>
             </div>
-            <input type="button" name="button" value="Button">
             <input type="reset" name="reset" value="Reset">
-            <input type="submit" name="submit" value="Submit" disabled>
-            <output name="output">undefined</output>
           </fieldset>
         </form>
       </section>
@@ -404,43 +383,18 @@
         <h2>Media</h2>
         <article id='audio'>
           <h3>Audio</h3>
-          <p>Rule, Britannia! by James Thomson (1740)</p>
           <audio src='https://upload.wikimedia.org/wikipedia/commons/4/45/%27Rule%2C_Britannia%21%27_%28United_States_Army_Strings%29.oga' type='audio/ogg' controls></audio>
         </article>
-        <article id='canvas' class='hide'>
-          <h3>Canvas</h3>
-          <canvas id="canvas" width="300" height="300"></canvas>
-        </article>
         <article id='figure'>
-          <h3>Figures and Figcaptions</h3>
+          <h3>Figure and Image</h3>
           <figure>
-            <img src="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" alt="Placeholder"/>
-            <figcaption>This is a figure caption.</figcaption>
+            <figcaption>figcaption</figcaption>
+            <img title='The Beatles' src='https://www.udiscovermusic.com/wp-content/uploads/2020/02/The-Beatles-GettyImages-1183628511.jpg' alt='The Beatles'/>
           </figure>
-        </article>
-        <article id='img'>
-          <h3>Image</h3>
-          <img src="https://www.udiscovermusic.com/wp-content/uploads/2020/02/The-Beatles-GettyImages-1183628511.jpg" alt="Planets" usemap="#planetmap">
-        </article>
-        <article id='map' class="hide">
-          <h3>Map</h3>
-          <map name="planetmap">
-            <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
-            <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
-            <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
-          </map>
-        </article>
-        <article id='picture'>
-          <h3>Picture</h3>
-          <picture>
-            <source media="(min-width: 650px)" srcset="https://horsevets.co.uk/wp-content/uploads/2013/10/placeholder.jpg" width="150" height="250"/>
-            <source media="(min-width: 465px)" srcset="https://cdn.mos.cms.futurecdn.net/ZGi6eSYZrmgbBLAuJQXvhb-1200-80.jpg"/>
-            <img src="placeholder.png" alt="Flowers"/>
-          </picture>
         </article>
         <article id='video'>
           <h3>Video</h3>
-          <video poster='' src='//upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm' type='video/mp4' controls></video>
+          <video src='//upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm' type='video/mp4' controls></video>
         </article>
       </section>
     </main>

@@ -23,7 +23,7 @@
   --pad-inline: 0 0.2rem;
   --pad-list: calc(var(--pad) * 2);
   --border: 0.2rem solid var(--col-border);
-  --border-radius: 1rem;
+  --border-radius: 0.5rem;
   --outline: solid 0.4rem var(--col-white);
 
   --height-ribbon: 1.375rem;
@@ -49,8 +49,8 @@
 ::-webkit-scrollbar-track { background: var(--col-white); }
 ::-webkit-scrollbar-thumb {
   background: var(--col-theme-alpha);
-  border-radius: var(--border-radius);
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  //border-radius: var(--border-radius);
+  //border-top-right-radius: 0;
+  //border-bottom-right-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--col-theme); }
