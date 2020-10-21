@@ -1,1 +1,20 @@
-column-box,.column{display:flex;flex-flow:row wrap}grid-box,.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--pad)}@media (max-width: 60rem){.tiles{grid-template-columns:1fr 1fr}}@media (max-width: 30rem){.tiles{grid-template-columns:1fr}}@media (max-width: 55ch){.columns>*{width:100%}}
+column-box, .column {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+grid-box, .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pad);
+}
+@media(min-width: 30rem) {
+  grid-box, .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(min-width: 60rem) {
+  grid-box, .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -82,3 +82,25 @@ $(document).ready(function() {
   });
 });
 */
+
+
+
+
+
+//https://web.dev/file-system-access/
+//https://developer.mozilla.org/en-US/docs/Web/API/FileSystem
+/*
+window.onload = () => {
+  //window.requestFileSystem();
+};
+
+//https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard
+//https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText
+function copyToClipboard(identifier) {
+  //navigator.clipboard.writeText(document.getElementById(identifier).textContent).then(e => alert(e));
+}
+
+function pasteFromClipboard(element) {
+  //navigator.clipboard.readText().then(e => alert(e));
+}
+*/

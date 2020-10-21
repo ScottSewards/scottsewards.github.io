@@ -1,1 +1,28 @@
-table{background:var(--col-theme-alpha);padding:var(--pad);border-collapse:collapse;border-radius:var(--border-radius);overflow:auto}caption{font-style:italic}th{font-weight:bold}th,td{padding:var(--pad);border-radius:var(--border-radius)}th:hover,td:hover{background:var(--col-theme)}
+table {
+  background: #FFF;
+  padding: var(--space);
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
+  overflow: auto;
+  filter: drop-shadow(var(--shadow));
+}
+caption {
+  font-style: italic;
+}
+
+colgroup { }
+col { }
+
+thead { }
+tbody { }
+tfoot { }
+
+tr { }
+th {
+  font-weight: bold;
+}
+th, td {
+  padding: var(--space);
+  border-radius: var(--border-radius);
+}
+td { }

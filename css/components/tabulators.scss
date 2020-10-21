@@ -1,8 +1,8 @@
 .accordion {
+  filter: drop-shadow(var(--shadow));
   > p {
     cursor: pointer;
-    padding: var(--pad);
-    border: var(--border);
+    padding: var(--space);
     margin: 0;
     &:not(:first-child) {
       border-top: 0;
@@ -12,8 +12,7 @@
     }
   }
   > div {
-    padding: var(--pad);
-    border: var(--border);
+    padding: var(--space);
     border-top: 0;
     &:not(.active) {
       display: none;
@@ -22,12 +21,10 @@
 }
 
 .tabs {
-  background: var(--col-over);
+  filter: drop-shadow(var(--shadow));
   &[class*='top'] {
-
   }
   &[class*='bottom'] {
-
   }
   &[class*='left'] {
     display: flex;
@@ -37,19 +34,14 @@
     display: flex;
     .tab-items { flex-direction: column; }
   }
-
   .tab-items {
     display: flex;
     overflow-y: hidden;
-
     [class*='tab-'] {
       background: rgba(255, 255, 255, 0.2) !important;
       cursor: pointer;
-
       list-style-type: none !important;
-
       width: 100%;
-
       &:first-child {
         border-left: 0;
       }
@@ -59,16 +51,10 @@
       }
       &.active { border-bottom: 0; }
     }
-
-
-
   }
-
    div {
-
     overflow-y: auto;
     height: 10em;
-
     &.show { display: block; }
   }
 }
