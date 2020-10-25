@@ -1,3 +1,35 @@
+column-box, .column {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+grid-box, .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pad);
+}
+@media(min-width: 30rem) {
+  grid-box, .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(min-width: 60rem) {
+  grid-box, .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.carousel {
+  text-align: center;
+  display: flex;
+  width: auto;
+  overflow: hidden;
+}
+
+:matches(slide-box, .slideshow) img {
+  display: none;
+}
+
+
 .accordion {
   filter: drop-shadow(var(--shadow));
   > p {

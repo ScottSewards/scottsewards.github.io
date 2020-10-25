@@ -1,3 +1,7 @@
+body, body * {
+  box-sizing: border-box;
+  transition: all var(--transition-time);
+}
 body {
   background: var(--col-white);
   color: var(--col-black);
@@ -6,18 +10,9 @@ body {
   font-size: var(--font-size);
   letter-spacing: 0.01rem;
   display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 100%;
   margin: 0;
-}
-
-@media(min-width: 300px) {
-  body {
-    background: yellow !important;
-  }
-}
-
-body, body * {
-  box-sizing: border-box;
-  transition: all var(--transition-time);
 }
 
 nav {
@@ -82,12 +77,6 @@ nav {
 
 main {
   display: block; //FALLBACK
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
-  max-width: var(--width-chars);
-  &[class*='wide'] { max-width: 100%; }
-}
-
-section {
-  max-width: var(--character-limit);
 }

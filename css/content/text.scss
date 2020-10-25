@@ -23,6 +23,7 @@ code {
   padding: var(--space-inline);
   border-radius: 1px;
   white-space: pre;
+  tab-size: 4;
 }
 
 data { }
@@ -110,7 +111,7 @@ main ol, main ul {
 ul li { list-style-type: square; }
 
 p {
-  margin: var(--space) 0;
+  margin: var(--space) auto;
   max-width: var(--character-limit);
 }
 

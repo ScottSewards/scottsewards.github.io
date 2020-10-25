@@ -1,9 +1,7 @@
 form {
-  color: white;
   display: block;
   margin: var(--space) auto;
   max-width: var(--character-limit);
-  filter: drop-shadow(var(--shadow));
 }
 form div[class^='inline'] {
   display: flex;
@@ -14,23 +12,16 @@ form div[class^='inline'] {
 }
 
 fieldset {
+  background: var(--col-darker-theme);
+  color: var(--col-const-white);
+  box-shadow: var(--shadow);
   border: 0;
   border-radius: var(--border-radius);
-}
-@media(prefers-color-scheme: light) {
-  fieldset {
-    background: var(--col-white);
-  }
-}
-@media(prefers-color-scheme: dark) {
-  fieldset {
-    background: var(--col-alpha-theme);
-  }
 }
 
 legend {
   background: var(--col-theme);
-  font-weight: bold;
+  box-shadow: var(--shadow);
   padding: var(--space);
   border-radius: var(--border-radius);
   margin: auto;
@@ -39,12 +30,13 @@ legend {
 
 label {
   display: block;
-  padding: var(--space);
+  padding: var(--space) var(--space) var(--space) 0;
   white-space: nowrap;
 }
 
 button, input, select, textarea {
-  background: var(--col-black);
+  background: var(--col-white);
+  color: var(--col-black);
   font-family: var(--font-family);
   font-size: var(--font-size);
   display: block;
@@ -53,9 +45,9 @@ button, input, select, textarea {
   border-radius: var(--border-radius);
   margin: 0;
   width: 100%;
-  &:hover {
-    background: var(--col-theme);
-    filter: drop-shadow(var(--shadow));
+  &:not(:disabled):hover {
+    background: var(--col-black);
+    color: var(--col-white);
   }
   //&:hover, &:focus { background: var(--col-theme-alpha); }
   //&:focus { background: var(--col-theme); }
@@ -63,6 +55,7 @@ button, input, select, textarea {
 
 button, input[type='button'], input[type='reset'], input[type='submit'] {
   cursor: pointer;
+  box-shadow: var(--shadow);
   width: auto;
   &[class*='wide'] { width: 100%; }
 }
@@ -76,8 +69,9 @@ input[type='checkbox'], input[type='radio'] {
 }
 input[type='checkbox'] { border-radius: var(--border-radius); }
 input[type='radio'] {
-  border: calc(var(--space) / 2) solid var(--col-black);
-  border-radius: 100%;
+  border: calc(var(--space) / 2) solid var(--col-white);
+  border-radius: 10rem !important;
+  margin-right: var(--space);
 }
 input[type='checkbox']:checked, input[type='radio']:checked { background: var(--col-theme); }
 
