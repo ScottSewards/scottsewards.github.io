@@ -3,108 +3,95 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <title>scottsewards.github.io</title>
+    <title>Scott Sewards' Portfolio</title>
     <link rel="stylesheet" href="css/variables.css">
-    <link rel='stylesheet' href='css/components/grid.css'/>
-    <link rel='stylesheet' href='css/components/seperators.css'/>
-    <link rel='stylesheet' href='css/components/tabulators.css'/>
-    <link rel='stylesheet' href='css/content/embedded.css'/>
     <link rel='stylesheet' href='css/content/forms.css'/>
     <link rel='stylesheet' href='css/content/media.css'/>
     <link rel='stylesheet' href='css/content/sections.css'/>
-    <link rel='stylesheet' href='css/content/syntax.css'/>
-    <link rel='stylesheet' href='css/content/tables.css'/>
     <link rel='stylesheet' href='css/content/text.css'/>
     <link rel='stylesheet' href='css/layouts/layout.css'/>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <style media="screen">
-    p {
-      text-align: center;
-      margin: var(--pad) auto;
+    <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById('metabolic-rate-calculator').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var age = document.getElementById('age').value;
+        var height = document.getElementById('height').value;
+        var weight = document.getElementById('weight').value;
+
+        if(document.getElementById('sex-male').checked) var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age + 5);
+        else var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age - 161);
+
+        var bmr = Math.round(rmr * 1.2);
+        document.getElementById('metatbolic-rate').innerHTML = `Your RMR is ${rmr} and BMR is ${bmr}.`;
+      });
     }
-    a {
-      color: inherit !important;
-    }
-    </style>
+    </script>
   </head>
   <body>
-    <main class='wide'>
-      <section>
-        <h1>Scott <span style='color: var(--col-theme);'>Sewards'</span> Portfolio</h1>
-        <p style='text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
+    <main>
+      <h1>Scott Sewards' Portfolio</h1>
+
+      <section id='pompay' class='fill'>
+        <h2>pompay.co.uk</h2>
+        <q>Patreon meets cryptocurrency.</q>
+        <img title='PomPay Homepage' src='img/pompay.png' alt='PomPay Homepage'/>
+        <p>We built PomPay with Bootstrap, JavaScript and PHP. It uses cryptocurrency and PayPal APIs to enable users to send and receive money.</p>
+        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='https://pompay.co.uk/'">Visit PomPay</button>
       </section>
-      <section id='albers' class='fill'>
-        <h2>Albers</h2>
-        <p>A modern framework for modern browsers.</p>
-        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='albers.html'">See Albers</button>
-      </section>
-      <section id='fat-track'>
+
+      <section id='fat-track' class=''>
         <h2>fat<span style='color: var(--col-theme);'>track</span>.app</h2>
-        <p>Calculate your metabolic rate.</p>
+        <q>Calculate your metabolism, count your calories and chart your weight.</q>
         <form id='metabolic-rate-calculator'>
           <fieldset>
             <legend>Metabolic Rate Calculator</legend>
             <div class='inline'>
-              <label for='sex-male'>I am male</label>
-              <input id='sex-male' type='radio' name='sex' value='0' required checked/>
-            </div>
-            <div class='inline'>
-              <label for='sex-female'>I am female</label>
-              <input id='sex-female' type='radio' name='sex' value='1' required/>
+              <div class='inline'>
+                <input id='sex-male' type='radio' name='sex' value='0' required checked/>
+                <label for='sex-male'>I am male</label>
+              </div>
+              <div class='inline'>
+                <input id='sex-female' type='radio' name='sex' value='1' required/>
+                <label for='sex-female'>I am female</label>
+              </div>
             </div>
             <div class='inline'>
               <label for='age'>My age is</label>
-              <input id='age' type='number' name='age' min='13' max='100' required/>
+              <input id='age' type='number' name='age' min='10' max='100' required/>
             </div>
             <div class='inline'>
               <label for='height'>Height (cm)</label>
-              <input id='height' type='number' name='height' min='50' max='260' required/>
+              <input id='height' type='number' name='height' min='30' max='300' required/>
             </div>
             <div class='inline'>
               <label for='weight'>Weight (kg)</label>
-              <input id='weight' type='number' name='weight' min='30' max='300' required/>
+              <input id='weight' type='number' name='weight' min='25' max='500' required/>
             </div>
             <div class='inline'>
               <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
-              <!--button type="button" name="button">Save My Data</button-->
               <output id='metatbolic-rate'></output>
             </div>
           </fieldset>
         </form>
-        <!--
-        https://developer.edamam.com/food-database-api-docs
-        https://www.programmableweb.com/api/can-i-eat-it-barcode
-        https://opexfit.com/blog/how-to-calculate-tdee-total-daily-energy-expenditure/
-        -->
-        <script type="text/javascript">
-        document.getElementById('metabolic-rate-calculator').addEventListener('submit', function(e) {
-          e.preventDefault();
-          var age = document.getElementById('age').value;
-          var height = document.getElementById('height').value;
-          var weight = document.getElementById('weight').value;
+        <p>I used Material Design and Vue.js for this project. The website will be live in November.</p>
+      </section>
 
-          if(document.getElementById('sex-male').checked) var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age + 5);
-          else var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age - 161);
+      <section id='albers' class='fill'>
+        <h2>Albers</h2>
+        <q>A modern framework for modern browsers.</q>
+        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='albers.html'" disabled>Preview Albers</button>
+      </section>
 
-          var bmr = Math.round(rmr * 1.2);
-          document.getElementById('metatbolic-rate').innerHTML = `Your RMR is ${rmr} and BMR is ${bmr}.`;
-        });
-        </script>
-      </section>
-      <section id='pompay' class='fill'>
-        <h2>PomPay</h2>
-        <p>Patreon meets cryptocurrency.</p>
-        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='https://pompay.co.uk/'">Visit PomPay</button>
-      </section>
-      <section id='rise-and-fall' class='hide'>
-        <h2>Rise and Fall</h2>
-        <p>Build your empire, watch it fall.</p>
-        <iframe>
-        </iframe>
-      </section>
+      <!--section class='hide'>
+        <h2>codechart.app</h2>
+        <p>Visualise pseudocode in a flowchart.</p>
+        <p>Codechart is built on Vue.js. It will be live in December.</p>
+      </section-->
+
       <section id='more' class=''>
-        <h2>More Soon</h2>
-        <p>I have removed my projects to prepare them for deployment on individual domains and to implement Albers. This will be complete before November.</p>
+        <h2>Other Projects</h2>
+        <p>My other projects are available at <a href='http://sewards.me'>sewards.me</a>, but the website is unstable. I broke it when removing them to individual domains.</p>
+        <p style='font-weight: bold; text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
       </section>
     </main>
   </body>

@@ -12,14 +12,14 @@ aside, .aside {
 
 footer, .footer {
   display: block; //FALLBACK
-  padding: var(--pad);
+  padding: var(--space);
   margin: auto;
-  max-width: var(--width-content);
+  max-width: var(--content-width);
 }
 
 h1, h2, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  margin: var(--pad) auto;
+  margin: var(--space) auto;
   text-align: center;
 }
 h1 { font-size: 110%; }
@@ -42,19 +42,18 @@ hgroup {
 }
 
 nav {
-  display: block;
+  display: block; //FALLBACK
 }
 
 section {
   display: block; //FALLBACK
-  padding: var(--pad);
+  padding: var(--space);
   margin: auto;
   width: 100%;
-  //max-width: var(--width-chars);
   &[class*='fill'] {
-    background: var(--col-theme);
-    color: var(--col-const-white);
+    background: var(--col-theme) !important;
+    color: var(--col-const-white) !important;
   }
-  &[class*='tall'] { min-height: 100vh; }
-  &[class*='wide'] { max-width: 100%; }
+  &[class*='tall'] { min-height: 100vh !important; }
+  &[class*='wide'] { max-width: 100% !important; }
 }

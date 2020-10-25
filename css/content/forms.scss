@@ -1,83 +1,83 @@
 form {
   display: block;
-  margin: var(--pad) auto;
-  max-width: var(--width-chars);
+  margin: var(--space) auto;
+  max-width: var(--character-limit);
 }
-form div[class^='inline'] { display: flex; margin: var(--pad) auto; }
+form div[class^='inline'] {
+  display: flex;
+  justify-content: flex-start;
+  margin: var(--space) 0;
+  width: 100%;
+  div { margin: 0; }
+}
 
 fieldset {
-  background: var(--col-theme); //FALLBACK
-  background: var(--col-theme-alpha);
+  background: var(--col-darker-theme);
+  color: var(--col-const-white);
+  box-shadow: var(--shadow);
   border: 0;
   border-radius: var(--border-radius);
-  min-width: 0; //PREVENT OVERFLOW
 }
-
-label {
-  display: inline-block;
-  padding: var(--pad);
-  white-space: nowrap;
-}
-label::after { content: ':'; }
 
 legend {
-  background: var(--col-theme); //FALLBACK
-  font-weight: bold;
-  padding: var(--pad);
+  background: var(--col-theme);
+  box-shadow: var(--shadow);
+  padding: var(--space);
   border-radius: var(--border-radius);
   margin: auto;
   white-space: nowrap;
 }
 
-//https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+label {
+  display: block;
+  padding: var(--space) var(--space) var(--space) 0;
+  white-space: nowrap;
+}
 
 button, input, select, textarea {
+  background: var(--col-white);
+  color: var(--col-black);
   font-family: var(--font-family);
   font-size: var(--font-size);
-  background: var(--col-black);
-  color: var(--col-white);
   display: block;
-  padding: var(--pad);
+  padding: var(--space);
   border: 0;
   border-radius: var(--border-radius);
   margin: 0;
-  outline: 0;
   width: 100%;
-  &:hover, &:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 0.3rem 0 var(--col-white);
+  &:not(:disabled):hover {
+    background: var(--col-black);
+    color: var(--col-white);
   }
+  //&:hover, &:focus { background: var(--col-theme-alpha); }
+  //&:focus { background: var(--col-theme); }
 }
 
 button, input[type='button'], input[type='reset'], input[type='submit'] {
   cursor: pointer;
-  display: inline-block;
+  box-shadow: var(--shadow);
   width: auto;
-  &[class*='wide'] {
-    display: block;
-    width: 100%;
-  }
+  &[class*='wide'] { width: 100%; }
 }
 
 input[type='checkbox'], input[type='radio'] {
   appearance: none;
   cursor: pointer;
-  display: inline-block;
-  padding: var(--pad);
-  border: solid 0.25rem var(--col-black);
+  padding: var(--space);
   height: 3rem;
   width: 3rem !important;
-  &:hover, &:focus {
-    transform: scale(1.2);
-  }
 }
 input[type='checkbox'] { border-radius: var(--border-radius); }
-input[type='radio'] { border-radius: 100%; }
+input[type='radio'] {
+  border: calc(var(--space) / 2) solid var(--col-white);
+  border-radius: 10rem !important;
+  margin-right: var(--space);
+}
 input[type='checkbox']:checked, input[type='radio']:checked { background: var(--col-theme); }
 
 input[type='color'] {
   cursor: pointer;
-  padding: calc(var(--pad) / 2);
+  padding: calc(var(--space) / 2);
   height: 3rem;
   &::-webkit-color-swatch-wrapper, &::-webkit-color-swatch { border: 0; border-radius: calc(var(--border-radius) / 2); }
 }
@@ -111,7 +111,7 @@ datalist { display: none; }
 
 output {
   display: block;
-  padding: var(--pad);
+  padding: var(--space);
 }
 
 textarea { //REMOVE COLUMN AND ROW ATTRIBUTES FROM HTML IF PRESENT

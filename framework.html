@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Albers</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>Framework</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel='stylesheet' href='css/components/grid.css'/>
     <link rel='stylesheet' href='css/components/seperators.css'/>
     <link rel='stylesheet' href='css/components/tabulators.css'/>
+    <link rel='stylesheet' href='css/content/embedded.css'/>
     <link rel='stylesheet' href='css/content/forms.css'/>
     <link rel='stylesheet' href='css/content/media.css'/>
     <link rel='stylesheet' href='css/content/sections.css'/>
@@ -25,27 +26,28 @@
     <script type="text/javascript" src="js/components/tab-box.js"></script>
   </head>
   <body>
-    <nav id='nav' class='top-follow'>
+    <nav id='nav' class='stick wide'>
       <div>
         <ul>
           <li class='active'><a href='index.html'>Return to My Portfolio</a></li>
         </ul>
         <ul>
-          <li id='top'>Top</li>
-          <li id='follow'>Top-Follow</li>
-          <li id='bottom'>Bottom</li>
+          <li id='nav-stick'>Stay</li>
+          <li id='nav-wide'>Narrow</li>
         </ul>
       </div>
     </nav>
     <script type="text/javascript">
-      document.getElementById('top').addEventListener('click', function() {
-        document.getElementById('nav').className = 'top';
+      var nav = document.getElementById('nav');
+      document.getElementById('nav-stick').addEventListener('click', function() {
+        nav.classList.toggle('stick');
+        if(nav.classList.contains('stick')) this.innerHTML = 'Stay';
+        else this.innerHTML = 'Stick';
       });
-      document.getElementById('follow').addEventListener('click', function() {
-        document.getElementById('nav').className = 'top follow';
-      });
-      document.getElementById('bottom').addEventListener('click', function() {
-        document.getElementById('nav').className = 'bottom';
+      document.getElementById('nav-wide').addEventListener('click', function() {
+        nav.classList.toggle('wide');
+        if(nav.classList.contains('wide')) this.innerHTML = 'Narrow';
+        else this.innerHTML = 'Wide';
       });
     </script>
     <main>
@@ -113,7 +115,21 @@
           </script>
         </article>
       </section>
-      <p>As you can see, the side-nav is messy. I'm writing the documentation, organising and expanding the framework as I go.</p>
+      <section id='more'>
+        <h2>Future</h2>
+        <p>I'm documenting the framework.</p>
+        <h3>Incoming Features</h3>
+        <ul>
+          <li>Custom Elements</li>
+          <ul>
+            <li>code-box</li>
+            <li>column-box</li>
+            <li>grid-box</li>
+            <li>slide-box</li>
+            <li>tab-box</li>
+          </ul>
+        </ul>
+      </section>
       <!--section id='components' class='hide'>
       <h2>Components</h2>
       <p>Create Alber elements using -box suffix.</p>

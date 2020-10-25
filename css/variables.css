@@ -1,1 +1,60 @@
-:root{--col-theme: #BE1349;--col-theme-alpha: #BE134980;--col-const-white: #FFFFFF;--col-const-black: #111111;--col-white: var(--col-const-white);--col-black: var(--col-const-black);--col-border: var(--col-over);--col-deleted: rgba(255, 0, 0, 0.5);--col-disabled: #CCCCCC;--col-focus: purple;--col-hover: #DDDDDD;--col-inserted: rgba(0, 255, 0, 0.5);--col-marked: rgba(255, 255, 0, 0.5);--col-warned: #BB2B2B;--font:'Segoe UI';--font-size: 16px;--font-size-script: 70%;--pad: 0.8rem;--pad-inline: 0 0.2rem;--pad-list: calc(var(--pad) * 2);--border: 0.2rem solid var(--col-border);--border-radius: 0.5rem;--outline: solid 0.4rem var(--col-white);--height-ribbon: 1.375rem;--width-chars: 65ch;--width-content: 65rem}@media (prefers-color-scheme: light){::-webkit-calendar-picker-indicator{filter:invert(1)}}@media (prefers-color-scheme: dark){:root{--col-white: var(--col-const-black);--col-black: var(--col-const-white)}}:disabled{cursor:not-allowed;background:var(--col-disabled)}::selection{background:var(--col-marked)}::-webkit-scrollbar{width:auto}::-webkit-scrollbar-track{background:var(--col-white)}::-webkit-scrollbar-thumb{background:var(--col-theme-alpha)}::-webkit-scrollbar-thumb:hover{background:var(--col-theme)}
+:root {
+  --col-const-white: #FFF;
+  --col-const-black: #111;
+  --col-white: var(--col-const-white);
+  --col-black: var(--col-const-black);
+
+  --col-theme-default: #BE1349;
+  --col-theme: #BE1349;
+  --col-darker-theme: #9E123F; /*DARKER THAN --col-theme*/
+
+  --col-deleted: rgba(255, 0, 0, 0.6);
+  --col-disabled: #CCCCCC;
+  --col-focus: purple;
+  --col-hover: #DDDDDD;
+  --col-inserted: rgba(0, 255, 0, 0.6);
+  --col-marked: rgba(255, 255, 0, 0.6);
+  --col-warned: #BB2B2B;
+
+  --font:'Segoe UI';
+  --font-size: 16px;
+  --font-script-size: 70%;
+
+  --space: 0.8rem;
+  --inline-space: 0.1rem;
+  --list-space: calc(var(--space) * 2);
+
+  --border-radius: 0.2rem;
+  --shadow: 0 0 0.2rem #000;
+
+  --character-limit: 65ch;
+  --ribbon-height: 1.5rem;
+  --content-width: 65rem;
+  --transition-time: 0.125s;
+}
+
+::-webkit-calendar-picker-indicator { filter: invert(0); }
+:root {
+  --col-white: var(--col-const-black);
+  --col-black: var(--col-const-white);
+}
+@media(prefers-color-scheme: light) {
+}
+@media(prefers-color-scheme: dark) {
+}
+:disabled {
+  cursor: not-allowed;
+  background: var(--col-disabled);
+}
+::selection { background: var(--col-marked); }
+/*
+::-webkit-scrollbar { width: auto; }
+::-webkit-scrollbar-track { background: #222; }
+::-webkit-scrollbar-thumb {
+  background: var(--col-white);
+  //border-radius: var(--border-radius);
+  //border-top-right-radius: 0;
+  //border-bottom-right-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--col-theme); }
+*/
