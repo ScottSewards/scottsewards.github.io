@@ -17,11 +17,12 @@ blockquote, cite, q {
 
 code {
   font-family: "Courier New";
+  font-size: 90%;
   background: var(--col-black);
   color: var(--col-white);
   display: inline;
-  padding: var(--space-inline);
-  border-radius: 1px;
+  padding: var(--inline-space);
+  border-radius: var(--border-radius);
   white-space: pre;
   tab-size: 4;
 }
@@ -104,7 +105,7 @@ progress {
   }
 }
 
-main ol, main ul {
+ol, ul {
   padding: 0;
   margin-left: calc(var(--space) * 2);
 }

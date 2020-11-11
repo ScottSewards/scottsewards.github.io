@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width = device-width, initial-scale = 1.0'>
     <title>Scott Sewards' Portfolio</title>
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel='stylesheet' href='css/content/forms.css'/>
+    <link rel='stylesheet' href='css/variables.min.css'>
+    <link rel='stylesheet' href='css/content/forms.min.css'/>
     <link rel='stylesheet' href='css/content/media.css'/>
-    <link rel='stylesheet' href='css/content/sections.css'/>
-    <link rel='stylesheet' href='css/content/text.css'/>
-    <link rel='stylesheet' href='css/layouts/layout.css'/>
-    <script type="text/javascript">
+    <link rel='stylesheet' href='css/content/sections.min.css'/>
+    <link rel='stylesheet' href='css/content/text.min.css'/>
+    <link rel='stylesheet' href='css/layouts.min.css'/>
+    <style>
+    button {
+      margin: auto;
+    }
+    </style>
+    <script type='text/javascript' src='js/simple.js'></script>
+    <script type='text/javascript'>
     window.onload = function() {
       document.getElementById('metabolic-rate-calculator').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -29,75 +35,92 @@
   </head>
   <body>
     <main>
-      <h1>Scott Sewards' Portfolio</h1>
-
-      <section id='pompay' class='fill'>
-        <h2>pompay.co.uk</h2>
-        <q>Patreon meets cryptocurrency.</q>
-        <img title='PomPay Homepage' src='img/pompay.png' alt='PomPay Homepage'/>
-        <p>We built PomPay with Bootstrap, JavaScript and PHP. It uses cryptocurrency and PayPal APIs to enable users to send and receive money.</p>
-        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='https://pompay.co.uk/'">Visit PomPay</button>
+      <section>
+        <header>
+          <h1>Scott Sewards' Portfolio</h1>
+          <h2>About</h2>
+        </header>
+        <p>I am a full-stack and video game developer. A graduate of Edge Hill University. Awarded a BSc in Games Programming. Awarded a MSc in Visual Computing and Games Programming. Awarded a PGCE for Secondary CS and IT with QTS. A Unity Certified Developer. A Cisco Certified Network Associate.</p>
       </section>
 
-      <section id='fat-track' class=''>
-        <h2>fat<span style='color: var(--col-theme);'>track</span>.app</h2>
-        <q>Calculate your metabolism, count your calories and chart your weight.</q>
-        <form id='metabolic-rate-calculator'>
-          <fieldset>
-            <legend>Metabolic Rate Calculator</legend>
-            <div class='inline'>
+      <section>
+        <h2>Projects</h2>
+        <article id='pompay'>
+          <h3>PomPay</h3>
+          <q>Where Patreon meets cryptocurrency.</q>
+          <p>PomPay uses Bootstrap for front-end and a custom PHP back-end.</p>
+          <button type='button' name='visit-pompay' onclick="window.open('https://pompay.co.uk/')">Visit PomPay</button>
+        </article>
+        <article id='hot-pot'>
+          <h3>Hot Pot</h3>
+          <q>A social hub for social media.</q>
+          <p>Hot Pot uses Simple for front-end and a custom PHP back-end.</p>
+          <button type='button' name='preview-hot-pot' onclick="window.open('https://sewards.me/')">Preview Hot Pot</button>
+        </article>
+        <article id='simple'>
+          <h3>Simple</h3>
+          <q>A modern framework for modern browsers.</q>
+          <p>Simple is a custom layout and content framework for content that is accessible and usable. It implements the latest HTML, CSS, and JavaScript features.</p>
+          <button type='button' name='preview-simple' onclick="window.location.href='simple.html'">Preview Simple</button>
+        </article>
+        <article id='fat-track'>
+          <h3>Fat Track</h3>
+          <q>Get healthy, the healthy way.</q>
+          <form id='metabolic-rate-calculator'>
+            <fieldset>
+              <legend>Metabolic Rate Calculator</legend>
               <div class='inline'>
-                <input id='sex-male' type='radio' name='sex' value='0' required checked/>
-                <label for='sex-male'>I am male</label>
+                <label for='equation'>Equation</label>
+                <select id='equation' name='equation' required>
+                  <option value='0'>Harris-Benedict equation (default)</option>
+                </select>
+              </div>
+              <p>Sex</p>
+              <div class='inline'>
+                <div class='inline'>
+                  <input id='sex-male' type='radio' name='sex' value='0' required checked/>
+                  <label for='sex-male'>I am male</label>
+                </div>
+                <div class='inline'>
+                  <input id='sex-female' type='radio' name='sex' value='1' required/>
+                  <label for='sex-female'>I am female</label>
+                </div>
               </div>
               <div class='inline'>
-                <input id='sex-female' type='radio' name='sex' value='1' required/>
-                <label for='sex-female'>I am female</label>
+                <label for='age'>My age is</label>
+                <input id='age' type='number' name='age' min='10' max='100' required/>
               </div>
-            </div>
-            <div class='inline'>
-              <label for='age'>My age is</label>
-              <input id='age' type='number' name='age' min='10' max='100' required/>
-            </div>
-            <div class='inline'>
-              <label for='height'>Height (cm)</label>
-              <input id='height' type='number' name='height' min='30' max='300' required/>
-            </div>
-            <div class='inline'>
-              <label for='weight'>Weight (kg)</label>
-              <input id='weight' type='number' name='weight' min='25' max='500' required/>
-            </div>
-            <div class='inline'>
-              <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
-              <output id='metatbolic-rate'></output>
-            </div>
-          </fieldset>
-        </form>
-        <p>I used Material Design and Vue.js for this project. The website will be live in November.</p>
-      </section>
-
-      <section id='albers' class='fill'>
-        <h2>Albers</h2>
-        <q>A modern framework for modern browsers.</q>
-        <button style='display: block; margin: auto;' type='button' name='button' onclick="window.location.href='albers.html'" disabled>Preview Albers</button>
-      </section>
-
-      <section class=''>
-        <h2>codechart.app</h2>
-        <q>Code with flowcharts.</q>
-        <p>Codechart is built on Vue.js. It will be live in December.</p>
-      </section>
-
-      <section class='fill'>
-        <h2>MySig</h2>
-        <q>Your social media in one place.</q>
-      </section>
-
-      <section id='more' class=''>
-        <h2>Other Projects</h2>
-        <p>My other projects are available at <a href='http://sewards.me'>sewards.me</a>, but the website is unstable. I broke it when removing them to individual domains.</p>
-        <p style='font-weight: bold; text-align: center; '><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
+              <div class='inline'>
+                <label for='height'>Height (cm)</label>
+                <input id='height' type='number' name='height' min='30' max='300' required/>
+              </div>
+              <div class='inline'>
+                <label for='weight'>Weight (kg)</label>
+                <input id='weight' type='number' name='weight' min='25' max='500' required/>
+              </div>
+              <div class='inline'>
+                <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
+                <output id='metatbolic-rate'></output>
+              </div>
+            </fieldset>
+          </form>
+          <p>Fat Track is a progressive web application for calculating metabolic rates, counting calories, and graphing weight fluctuations. It will be available in December.</p>
+          <button type='button' name='preview-fat-track' onclick="" disabled>Preview Fat Track</button>
+        </article>
+        <article id='codechart'>
+          <h3>codechart.app</h3>
+          <q>Test your code with flowcharts.</q>
+          <p>Codechart is a web-based desktop application for testing algorithms written in pseudocode that adheres to the GCSE specifications. It uses jQuery and Electron to deploy on desktop.</p>
+          <button type='button' name='test-codechart' onclick="" disabled>Test Codechart</button>
+        </article>
       </section>
     </main>
+    <footer class='invert'>
+      <p><a href='https://www.artstation.com/scottsewards'>Visit ArtStation</a> for hard-surface models modelled in Blender.</p>
+      <p><a href='https://github.com/scottsewards'>Visit GitHub</a> for personal and non-proprietary professional projects.</p>
+      <p><a href='https://scratch.mit.edu/users/ScottSewards/'>Visit Scratch</a> for block-based projects for computer science classes.</p>
+      <p>Contact me via email available at <a href='mailto:scott.sewards@outlook.com'>scott.sewards@outlook.com</a>.</p>
+      <p>Contact me via phone at <a href='tel:+447388933973'>+447338933973</a>.</p>
+    </footer>
   </body>
 </html>

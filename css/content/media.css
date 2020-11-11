@@ -20,9 +20,7 @@ figure {
   border-radius: var(--border-radius);
   margin: var(--space) auto;
 }
-figure img {
-  margin: 0;
-}
+figure img { }
 figcaption {
   font-style: italic;
   display: block;
@@ -33,7 +31,7 @@ img {
   user-select: none;
   display: block;
   border-radius: var(--border-radius);
-  margin: var(--space) auto;
+  margin: auto;
   width: 100%;
   max-width: var(--content-width);
 }
