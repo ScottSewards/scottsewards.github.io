@@ -2,19 +2,23 @@ address {
 
 }
 
-article, .article {
+article {
+  display: block; //FALLBACK
+}
+article + article {
+  border-top: 0.1rem solid var(--col-theme);
+  margin-top: var(--space);
+}
+
+aside {
   display: block; //FALLBACK
 }
 
-aside, .aside {
-  display: block; //FALLBACK
-}
-
-footer, .footer {
+footer {
   display: block; //FALLBACK
   padding: var(--space);
   margin: auto;
-  max-width: var(--content-width);
+  text-align: center;
 }
 
 h1, h2, h2, h3, h4, h5, h6 {

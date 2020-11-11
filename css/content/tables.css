@@ -1,13 +1,15 @@
 table {
-  background: #FFF;
+  background: var(--col-theme);
+  color: var(--col-white);
   padding: var(--space);
   border-collapse: collapse;
   border-radius: var(--border-radius);
+  margin: auto;
   overflow: auto;
-  filter: drop-shadow(var(--shadow));
 }
 caption {
-  font-style: italic;
+  color: var(--col-black);
+  margin-bottom: 0.5rem;
 }
 
 colgroup { }
@@ -17,12 +19,13 @@ thead { }
 tbody { }
 tfoot { }
 
-tr { }
+tr:hover {
+  background: var(--col-dark-theme);
+}
 th {
   font-weight: bold;
 }
 th, td {
   padding: var(--space);
-  border-radius: var(--border-radius);
 }
 td { }

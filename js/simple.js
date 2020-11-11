@@ -1,11 +1,56 @@
 //https://developers.google.com/web/fundamentals/web-components/shadowdom
-function createQR(data) {
-  var ethereumWallet = "0xA14Ae9BC94005A93934a027024EB7421215853Af";
-  var element = document.createElement('img');
-  element.src = "<img src='https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=" + ethereumWallet + "&choe=UTF-8&chld=L|0' alt='Ethereum Wallet Address QR Code'/>";
-  return element;
+//https://dev.to/mrahmadawais/use-instead-of-document-queryselector-all-in-javascript-without-jquery-3ef1
+const $ = document.querySelector.bind(document);
+//const $$ = document.querySelectorAll.bind(document);
+
+
+//GET THEME COLOUR COOKIE
+var themeColourHue = getCookie('themeColourHue');
+//APPLY THEME COLOUR BEFORE WHILE LOADING
+if(themeColourHue !== null) document.documentElement.style.setProperty('--col-theme-hue', themeColourHue);
+
+window.onload = function() {
+
 }
 
+
+
+
+
+
+function getCookie(name) {
+  var cookies = document.cookie.split('; ');
+  for(var i = 0; i < cookies.length; i++) {
+    var split = cookies[i].split('=');
+    var key = split[0];
+    var value = split[1];
+    if(name === key) return value;
+  }
+  return null;
+}
+
+function setCookie(name, value, log) {
+  document.cookie = name + '=' + value;
+  if(log) console.log(name + ' cookie was set.');
+}
+
+function setRibbon() {
+  try {
+    var pathname = window.location.pathname.substring(1).split('/');
+    var link = pathname[window.location.hostname === 'localhost' ? 1 : 0].split('.');
+    $('#' + link[0] + '-link').classList.add('active');
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+
+
+
+
+
+
+/*
 function createTable(data, parent) {
   var cols = [];
   for(var i = 0; i < data.length; i++)
