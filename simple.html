@@ -5,12 +5,9 @@
     <meta name='viewport' content='width = device-width, initial-scale = 1.0'>
     <title>Scott Sewards' Simple Framework</title>
     <link rel='stylesheet' href='css/variables.min.css'>
-    <link rel='stylesheet' href='css/content/forms.min.css'/>
-    <link rel='stylesheet' href='css/content/media.css'/>
-    <link rel='stylesheet' href='css/content/sections.min.css'/>
-    <link rel='stylesheet' href='css/content/tables.css'/>
-    <link rel='stylesheet' href='css/content/text.min.css'/>
-    <link rel='stylesheet' href='css/layouts.min.css'/>
+    <link rel='stylesheet' href='css/layouts.min.css'>
+    <link rel='stylesheet' href='css/content.min.css'>
+    <link rel='stylesheet' href='css/components.min.css'>
     <script type='text/javascript' src='js/simple.js'></script>
     <script type='text/javascript'>
     var hue = getComputedStyle(document.documentElement).getPropertyValue('--col-theme-hue');
@@ -32,7 +29,7 @@
         <h1>Simple</h1>
         <article>
           <h2>About</h2>
-          <p>Simple is a modern, mobile-first framework for modern browsers. It implements the latest HTML, CSS and JavaScript features. While accessible, it is easy-to-use and deploy. It is 11 kilobytes compressed.</p>
+          <p>Simple is a modern, mobile-first framework for modern browsers. It implements the latest HTML, CSS and JavaScript features. It is accessible and easy-to-use and deploy.</p>
           <p class='hide'>The layout and content are seperated. Hence you can deploy layout or content features.</p>
         </article>
         <article>
@@ -155,85 +152,52 @@
         </article>
       </article>
     </section-->
-      <section id='forms' class=''>
+      <section id='form'>
         <h2>Form</h2>
-        <form action='' method='post'>
-          <fieldset>
-            <legend>Legend</legend>
-            <p>Input types are in alphabetical order and text-based types are omitted.</p>
-            <div class='inline'>
-              <label for='checkbox'>Checkbox</label>
-              <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
-            </div>
-            <p>A label and input can be inline.</p>
-            <div class='inline'>
-              <label for='date'>Date</label>
-              <input id='date' type='date' name='date'/>
-            </div>
-            <div>
-              <label for='datetime-local'>Datetime-local</label>
-              <input id='datetime-local' type='datetime-local' name='datetime-local'/>
-            </div>
-            <p>An input disabled is greyed out.</p>
-            <div>
-              <label for='file'>File</label>
-              <input id='file' type='file' name='file' disabled/>
-            </div>
-            <div>
-              <label for='list'>List</label>
-              <input id='list' name='list' list='list-items' placeholder='List Item A'/>
-            </div>
-            <datalist id='list-items'>
-              <option value='List Item A'/>
-              <option value='List Item B'/>
-              <option value='List Item C'/>
-            </datalist>
-            <div>
-              <label for='month'>Month</label>
-              <input id='month' type='month' name='month'/>
-            </div>
-            <div>
-              <label for='number'>Number</label>
-              <input id='number' type='number' name='number' placeholder='42'/>
-            </div>
-            <div>
-              <label for='password'>Password</label>
-              <input id='password' type='password' name='password' value='password'/>
-              <input class='hide' type="button" name="show-password" value="Show">
-            </div>
-            <div>
-              <label for='range'>Range</label>
-              <input id='range' type='range' name='range'/>
-            </div>
-            <div>
-              <label for='select'>Select</label>
-              <select id='select' name='select'>
-                <optgroup label='A'>
-                  <option value='1'>Option A1</option>
-                  <option value='1'>Option A2</option>
-                </optgroup>
-                <optgroup label='B'>
-                  <option value='1'>Option B1</option>
-                </optgroup>
-              </select>
-            </div>
-            <div>
-              <label for='text'>Text</label>
-              <input id='text' type='text' name='text'/>
-            </div>
-            <div>
-              <label for='time'>Time</label>
-              <input id='time' type='time' name='time'/>
-            </div>
-            <div>
-              <label for='week'>Week</label>
-              <input id='week' type='week' name='week'/>
-            </div>
-            <div>
-              <label for='textarea'>Textarea</label>
-              <textarea id='textarea' name='textarea'></textarea>
-            </div>
-          </fieldset>
+        <p><code>form</code>, <code>fieldset</code>, <code>input</code> and all related elements are consistently styled and functionally extended with web components.</p>
+        <form>
+          <div class='inline'>
+            <label for='checkbox'>Checkbox</label>
+            <input id='checkbox' type='checkbox' name='checkbox' value='on'/>
+          </div>
+          <div>
+            <label for='list'>List</label>
+            <input id='list' name='list' list='list-items' placeholder='List Item A'/>
+          </div>
+          <datalist id='list-items'>
+            <option value='List Item A'/>
+            <option value='List Item B'/>
+            <option value='List Item C'/>
+          </datalist>
+          <div>
+            <label for='password'>Password</label>
+            <input id='password' type='password' name='password' value='password'/>
+            <input class='hide' type="button" name="show-password" value="Show">
+          </div>
+          <div>
+            <label for='range'>Range</label>
+            <input id='range' type='range' name='range'/>
+          </div>
+          <div>
+            <label for='select'>Select</label>
+            <select id='select' name='select'>
+              <optgroup label='A'>
+                <option value='1'>Option A1</option>
+                <option value='1'>Option A2</option>
+              </optgroup>
+              <optgroup label='B'>
+                <option value='1'>Option B1</option>
+              </optgroup>
+            </select>
+          </div>
+          <div>
+            <label for='text'>Text</label>
+            <input id='text' type='text' name='text'/>
+          </div>
+          <div>
+            <label for='textarea'>Textarea</label>
+            <textarea id='textarea' name='textarea'></textarea>
+          </div>
         </form>
       </section>
       <section id='tables' class=''>
@@ -316,27 +280,6 @@
           <progress value="50" max="100">50%</progress>
         </div>
       </section>
-      <section>
-        <h2>Media</h2>
-        <article id='audio'>
-          <h3>Audio</h3>
-          <audio src='https://upload.wikimedia.org/wikipedia/commons/4/45/%27Rule%2C_Britannia%21%27_%28United_States_Army_Strings%29.oga' type='audio/ogg' controls></audio>
-        </article>
-        <article id='figure'>
-          <h3>Figure and Image</h3>
-          <figure>
-            <figcaption>figcaption</figcaption>
-            <img title='The Beatles' src='https://www.udiscovermusic.com/wp-content/uploads/2020/02/The-Beatles-GettyImages-1183628511.jpg' alt='The Beatles'/>
-          </figure>
-        </article>
-        <article id='video'>
-          <h3>Video</h3>
-          <video src='//upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm' type='video/mp4' controls></video>
-        </article>
-      </section>
     </main>
-    <footer class='invert'>
-      <p><a href='mailto:scotttsewards@hotmail.com'>Contact me at scotttsewards@hotmail.com</a>.</p>
-    </footer>
   </body>
 </html>

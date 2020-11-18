@@ -5,77 +5,75 @@
     <meta name='viewport' content='width = device-width, initial-scale = 1.0'>
     <title>Scott Sewards' Portfolio</title>
     <link rel='stylesheet' href='css/variables.min.css'>
-    <link rel='stylesheet' href='css/content/forms.min.css'/>
-    <link rel='stylesheet' href='css/content/media.css'/>
-    <link rel='stylesheet' href='css/content/sections.min.css'/>
-    <link rel='stylesheet' href='css/content/text.min.css'/>
-    <link rel='stylesheet' href='css/layouts.min.css'/>
-    <style>
-    button {
-      margin: auto;
-    }
-    </style>
+    <link rel='stylesheet' href='css/layouts.min.css'>
+    <link rel='stylesheet' href='css/content.min.css'>
+    <link rel='stylesheet' href='css/components.min.css'>
     <script type='text/javascript' src='js/simple.js'></script>
     <script type='text/javascript'>
-    window.onload = function() {
-      document.getElementById('metabolic-rate-calculator').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var age = document.getElementById('age').value;
-        var height = document.getElementById('height').value;
-        var weight = document.getElementById('weight').value;
+    var hue = getComputedStyle(document.documentElement).getPropertyValue('--col-theme-hue');
+    setInterval(function() {
+      hue = parseInt(hue) + 1;
+      document.documentElement.style.setProperty('--col-theme-hue', hue + '');
+      setCookie('themeColourHue', hue, false);
+    }, 100);
 
-        if(document.getElementById('sex-male').checked) var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age + 5);
+    window.onload = function() {
+      $('#metabolic-rate-calculator').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var age = $('#age').value;
+        var height = $('#height').value;
+        var weight = $('#weight').value;
+
+        if($('#sex-male').checked) var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age + 5);
         else var rmr = Math.round(9.99 * weight + 6.25 * height - 4.92 * age - 161);
 
         var bmr = Math.round(rmr * 1.2);
-        document.getElementById('metatbolic-rate').innerHTML = `Your RMR is ${rmr} and BMR is ${bmr}.`;
+        $('#metatbolic-rate').innerHTML = `Your RMR is ${rmr} and BMR is ${bmr}.`;
       });
     }
     </script>
   </head>
   <body>
     <main>
-      <section>
-        <header>
-          <h1>Scott Sewards' Portfolio</h1>
-          <h2>About</h2>
-        </header>
-        <p>I am a full-stack and video game developer. A graduate of Edge Hill University. Awarded a BSc in Games Programming. Awarded a MSc in Visual Computing and Games Programming. Awarded a PGCE for Secondary CS and IT with QTS. A Unity Certified Developer. A Cisco Certified Network Associate.</p>
-      </section>
-
+      <h1>Scott Sewards' Portfolio</h1>
+      <article>
+        <h2>About</h2>
+        <p>A full-stack and video game designer and developer. A Cisco Certified Network Associate. A Unity Certified Developer. A graduate of Edge Hill University; awarded a BSc in Games Programming; awarded a MSc in Games Programming and Visual Comuting; awarded a PGCE for Secondary CS and IT with QTS.</p>
+      </article>
       <section>
         <h2>Projects</h2>
         <article id='pompay'>
           <h3>PomPay</h3>
           <q>Where Patreon meets cryptocurrency.</q>
-          <p>PomPay uses Bootstrap for front-end and a custom PHP back-end.</p>
-          <button type='button' name='visit-pompay' onclick="window.open('https://pompay.co.uk/')">Visit PomPay</button>
+          <p>PomPay implements Bootstrap for front-end development, a custom PHP solution for back-end functionality and various APIs for cryptocurrency and PayPal transactions. <a href='https://pompay.co.uk/'>Visit PomPay</a>.</p>
         </article>
-        <article id='hot-pot'>
-          <h3>Hot Pot</h3>
-          <q>A social hub for social media.</q>
-          <p>Hot Pot uses Simple for front-end and a custom PHP back-end.</p>
-          <button type='button' name='preview-hot-pot' onclick="window.open('https://sewards.me/')">Preview Hot Pot</button>
+        <hr>
+        <article id='hotpot'>
+          <h3>HotPot</h3>
+          <q>A community-based forum.</q>
+          <p>HotPot deploys Simple - a custom layout and content framework - for front-end development and a custom PHP back-end for forum functionality. <a href='https://sewards.me'>Preview HotPot</a>.</p>
         </article>
+        <hr>
         <article id='simple'>
           <h3>Simple</h3>
           <q>A modern framework for modern browsers.</q>
-          <p>Simple is a custom layout and content framework for content that is accessible and usable. It implements the latest HTML, CSS, and JavaScript features.</p>
-          <button type='button' name='preview-simple' onclick="window.location.href='simple.html'">Preview Simple</button>
+          <p>Simple is an accessible, easy-to-use, and customisable mobile-first layout and content framework used for this website. It implements the latest HTML, CSS and JavaScript features for rich functionality.</p>
         </article>
-        <article id='fat-track'>
-          <h3>Fat Track</h3>
-          <q>Get healthy, the healthy way.</q>
+        <hr>
+        <article id='fattrack'>
+          <h3>FatTrack</h3>
+          <q>Be healthy, the healthy way.</q>
+          <p>FatTrack is a mobile app for Android and iOS built with Flutter. Users can calculate their metabolic rate, count calories and track their progress. It will be available sometime in 2021.</p>
+          <h4>Resting and Basal Metabolic Calculator</h4>
           <form id='metabolic-rate-calculator'>
+            <div class='inline'>
+              <label for='equation'>Equation</label>
+              <select id='equation' name='equation' required>
+                <option value='0'>Harris-Benedict equation (default)</option>
+              </select>
+            </div>
             <fieldset>
-              <legend>Metabolic Rate Calculator</legend>
-              <div class='inline'>
-                <label for='equation'>Equation</label>
-                <select id='equation' name='equation' required>
-                  <option value='0'>Harris-Benedict equation (default)</option>
-                </select>
-              </div>
-              <p>Sex</p>
+              <legend>Sex</legend>
               <div class='inline'>
                 <div class='inline'>
                   <input id='sex-male' type='radio' name='sex' value='0' required checked/>
@@ -86,41 +84,46 @@
                   <label for='sex-female'>I am female</label>
                 </div>
               </div>
-              <div class='inline'>
-                <label for='age'>My age is</label>
-                <input id='age' type='number' name='age' min='10' max='100' required/>
-              </div>
-              <div class='inline'>
-                <label for='height'>Height (cm)</label>
-                <input id='height' type='number' name='height' min='30' max='300' required/>
-              </div>
-              <div class='inline'>
-                <label for='weight'>Weight (kg)</label>
-                <input id='weight' type='number' name='weight' min='25' max='500' required/>
-              </div>
-              <div class='inline'>
-                <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
-                <output id='metatbolic-rate'></output>
-              </div>
             </fieldset>
+            <div class='inline'>
+              <label for='age'>My age is</label>
+              <input id='age' type='number' name='age' min='10' max='100' required/>
+            </div>
+            <div class='inline'>
+              <label for='height'>Height (cm)</label>
+              <input id='height' type='number' name='height' min='30' max='300' required/>
+            </div>
+            <div class='inline'>
+              <label for='weight'>Weight (kg)</label>
+              <input id='weight' type='number' name='weight' min='25' max='500' required/>
+            </div>
+            <div class='inline'>
+              <input type='submit' name='calculate-metatbolic-rate' value='Calculate'/>
+              <output id='metatbolic-rate'></output>
+            </div>
           </form>
-          <p>Fat Track is a progressive web application for calculating metabolic rates, counting calories, and graphing weight fluctuations. It will be available in December.</p>
-          <button type='button' name='preview-fat-track' onclick="" disabled>Preview Fat Track</button>
         </article>
+        <hr>
         <article id='codechart'>
-          <h3>codechart.app</h3>
-          <q>Test your code with flowcharts.</q>
-          <p>Codechart is a web-based desktop application for testing algorithms written in pseudocode that adheres to the GCSE specifications. It uses jQuery and Electron to deploy on desktop.</p>
-          <button type='button' name='test-codechart' onclick="" disabled>Test Codechart</button>
+          <h3>Codechart</h3>
+          <q>Run pseudocode with flowcharts.</q>
+          <p>Codechart is a web-based application built with jQuery. Users can executre algorithms written in pseudocode that follows GCSE specifications. The app will be available in 2021.</p>
+        </article>
+        <hr>
+        <article id='more-projects'>
+          <h3>More Projects</h3>
+          <p>You can see other work I have made on ArtStation, GitHub, and Scratch by clicking the links in the footer.</p>
         </article>
       </section>
     </main>
     <footer class='invert'>
-      <p><a href='https://www.artstation.com/scottsewards'>Visit ArtStation</a> for hard-surface models modelled in Blender.</p>
-      <p><a href='https://github.com/scottsewards'>Visit GitHub</a> for personal and non-proprietary professional projects.</p>
-      <p><a href='https://scratch.mit.edu/users/ScottSewards/'>Visit Scratch</a> for block-based projects for computer science classes.</p>
-      <p>Contact me via email available at <a href='mailto:scott.sewards@outlook.com'>scott.sewards@outlook.com</a>.</p>
-      <p>Contact me via phone at <a href='tel:+447388933973'>+447338933973</a>.</p>
+      <div>
+        <p><a href='https://www.artstation.com/scottsewards'>Visit ArtStation</a> for hard-surface models modelled in Blender.</p>
+        <p><a href='https://github.com/scottsewards'>Visit GitHub</a> for personal and non-proprietary professional projects.</p>
+        <p><a href='https://scratch.mit.edu/users/ScottSewards/'>Visit Scratch</a> for block-based projects for computer science classes.</p>
+        <p>Contact me via email available at <a href='mailto:scott.sewards@outlook.com'>scott.sewards@outlook.com</a>.</p>
+        <p>Contact me via phone at <a href='tel:+447388933973'>+447338933973</a>.</p>
+      </div>
     </footer>
   </body>
 </html>
