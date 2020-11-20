@@ -22,7 +22,7 @@ function setCookie(name, value, log) {
 
 
 window.onload = function() {
-  var slideshowTimer = 1000;
+  var slideshowTimer = 3000;
   var articles = $$(".simple-grid-article");
   articles[0].classList.add("simple-grid-article-s");
   articles[articles.length - 2].classList.add("simple-grid-article-m-2");

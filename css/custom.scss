@@ -8,15 +8,16 @@
   grid-area: login;
 }
 [class*='-article'] {
+  --col-border: rgba(12, 12, 12, 0.1);
   cursor: pointer;
   display: none;
-  box-shadow: 0 0 0 0 grey;
-  border: 0.1rem solid grey;
+  box-shadow: 0 0 0 0 var(--col-border);
+  border: 0.1rem solid var(--col-border);
   border-radius: 0.3rem;
   transition: box-shadow 0.1s;
 }
 [class*='-article']:hover {
-  box-shadow: 0 0 0 0.3rem grey;
+  box-shadow: 0 0 0 0.3rem var(--col-border);
 }
 [class*='simple-grid-article-s'] {
   grid-area: artia;
@@ -28,13 +29,18 @@
   "login"
   "artia";
   grid-template-columns: 100%;
-  grid-gap: 2rem;
-  padding: 5rem;
+  grid-gap: 1rem;
+  padding: 1rem 4rem;
   margin: auto;
   width: 100%;
   max-width: 60rem;
   overflow: auto !important;
 }
+
+.simple-grid > * {
+
+}
+
 
 @media(min-width: 35rem) {
   [class*='simple-grid-article-s'] {
@@ -104,7 +110,7 @@
 }
 .article-information {
   box-sizing: border-box;
-  height: auto;
+  height: 180px;
   padding: 1rem;
 }
 .article-url {
@@ -112,9 +118,16 @@
 }
 .article-title {
   color: #6B8DCF;
-  font-size: 1.5rem;
+  font-size: 17px;
+  line-height: 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .article-content {
+  font-size: 14px;
+  line-height: 20px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
