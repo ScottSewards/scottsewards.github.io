@@ -30,17 +30,13 @@
   "artia";
   grid-template-columns: 100%;
   grid-gap: 1rem;
-  padding: 1rem 4rem;
+  padding: 2rem 4rem;
   margin: auto;
+  height: 100%;
   width: 100%;
-  max-width: 80rem;
-  overflow: auto !important;
+  max-width: 100vh;
+  overflow: hidden !important;
 }
-
-.simple-grid > * {
-
-}
-
 
 @media(min-width: 35rem) {
   [class*='simple-grid-article-s'] {
@@ -64,6 +60,9 @@
   }
   [class*='simple-grid-article-m-3'] {
     grid-area: artic;
+  }
+  [class*='-article'] {
+    margin: auto;
   }
 }
 
@@ -110,24 +109,24 @@
 }
 .article-information {
   box-sizing: border-box;
-  height: 180px;
-  padding: 1rem;
+  min-height: 15vh;
+  padding: 1vh;
 }
 .article-url {
   display: none;
 }
 .article-title {
   color: #6B8DCF;
-  font-size: 17px;
-  line-height: 24px;
+  font-size: 2vh;
+  line-height: 2.2vh;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 .article-content {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1.5vh;
+  line-height: 1.7vh;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
