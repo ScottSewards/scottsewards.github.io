@@ -1,8 +1,11 @@
+.grid-item-login {
+    justify-content: center;
+}
 #logo {
-  top: 0vh !important;
+  top: 1vh !important;
 }
 #login-form {
-  top: 1vh;
+  top: 2vh;
 }
 [class*='-login'] {
   grid-area: login;
@@ -19,6 +22,11 @@
 [class*='-article']:hover {
   box-shadow: 0 0 0 0.3rem var(--col-border);
 }
+[class*='simple-grid-'] {
+  height: 298px;
+  width: 216px;
+}
+
 [class*='simple-grid-article-s'] {
   grid-area: artia;
   display: block;
@@ -32,13 +40,16 @@
   grid-gap: 1rem;
   padding: 2rem 4rem;
   margin: auto;
-  height: 100%;
-  width: 100%;
-  max-width: 100vh;
+  width: auto;
   overflow: hidden !important;
 }
 
 @media(min-width: 35rem) {
+  [class*='simple-grid-'] {
+    height: 299px;
+    width: 219px;
+    margin: auto;
+  }
   [class*='simple-grid-article-s'] {
     display: none;
   }
@@ -61,12 +72,9 @@
   [class*='simple-grid-article-m-3'] {
     grid-area: artic;
   }
-  [class*='-article'] {
-    margin: auto;
-  }
 }
 
-@media(min-width: 60rem) {
+@media(min-width: 50em) {
   .simple-grid {
     grid-template-areas:
     "artia login artib"
@@ -75,7 +83,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
-  [class*='simple-grid-article'] {
+  [class*='simple-grid-'] {
+    height: 298px;
+    width: 216px;
     display: block !important;
   }
   [class*='simple-grid-article']:nth-child(1) {
@@ -104,29 +114,36 @@
   }
 }
 
+@media(min-width: 65em) {
+  [class*='simple-grid-'] {
+    height: 338px;
+    width: 296px;
+  }
+}
+
 .article-thumbnail {
   width: 100%;
 }
 .article-information {
   box-sizing: border-box;
-  min-height: 15vh;
-  padding: 1vh;
+  min-height: 180px;
+  padding: 1rem;
 }
 .article-url {
   display: none;
 }
 .article-title {
   color: #6B8DCF;
-  font-size: 2vh;
-  line-height: 2.2vh;
+  font-size: 20px;
+  line-height: 24px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 .article-content {
-  font-size: 1.5vh;
-  line-height: 1.7vh;
+  font-size: 17px;
+  line-height: 20px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
