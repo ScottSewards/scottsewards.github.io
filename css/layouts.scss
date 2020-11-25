@@ -13,7 +13,6 @@ body {
   grid-template-columns: 100%;
   grid-template-areas:
   "navi"
-  "side"
   "main"
   "foot";
   margin: 0;
@@ -22,35 +21,25 @@ body {
 
 nav {
   user-select: none;
-  background: var(--col-theme);
+  background: var(--col-white);
   color: var(--col-black);
+  border-bottom: 0.1rem solid var(--col-black);
   font-weight: bold;
   z-index: 100;
-  position: sticky;
-  top: 0;
+  &.sticky {
+    position: sticky;
+    top: 0;
+  }
   display: flex;
   justify-content: space-between;
   grid-area: navi;
-  padding: 0 var(--space);
+  padding: 0.5rem var(--space);
   width: 100%;
   div {
     position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    a, p {
-      color: inherit;
-      display: block;
-      padding: 1rem;
-      margin: 0;
-      text-decoration: none;
-      white-space: nowrap;
-      &:hover + div {
-        display: flex;
-      }
-      &:hover, &.active {
-      }
-    }
     div {
       background: var(--col-theme);
       position: absolute;
@@ -63,14 +52,19 @@ nav {
       &:hover { display: flex; }
     }
   }
-}
-
-aside#content {
-  background: #EEE;
-  grid-area: cont;
-  margin: auto;
-  width: 100%;
-  max-width: var(--character-limit);
+  a {
+    color: inherit;
+    display: block;
+    padding: 1rem;
+    margin: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    &:hover + div {
+      display: flex;
+    }
+    &:hover, &.active {
+    }
+  }
 }
 
 main {
@@ -81,15 +75,9 @@ main {
   max-width: var(--character-limit);
 }
 
-aside#sidebar {
-  background: #EEE;
-  grid-area: side;
-  margin: auto;
-  width: 100%;
-  max-width: var(--character-limit);
-}
-
 footer {
+  background: var(--col-const-black);
+  color: var(--col-const-white);
   display: block;
   grid-area: foot;
   width: 100%;
@@ -97,115 +85,4 @@ footer {
     margin: auto;
     max-width: var(--character-limit);
   }
-}
-
-//min-width MUST EQUAL --character-limit
-@media(min-width: 65ch) {
-  body {
-
-  }
-}
-@media(min-width: 80ch) {
-  body {
-    //background: #00FF0040;
-  }
-  nav div ul {
-    flex-direction: row;
-  }
-}
-@media(min-width: 1250px) {
-  body {
-    //background: #0000FF40;
-  }
-}
-
-
-
-/*
-//COLUMN 2
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "navigation"
-    "contents"
-    "main"
-    "footer";
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "navigation navigation"
-    "contents main"
-    "footer footer";
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 0.6fr 1.4fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "navigation navigation navigation navigation"
-    ". contents main ."
-    "footer footer footer footer";
-}
-
-body.col-3 {
-
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "navigation"
-    "contents"
-    "main"
-    "sidebar"
-    "footer";
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "navigation navigation"
-    "contents main"
-    "sidebar main"
-    "footer footer";
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "navigation navigation navigation"
-    "contents main sidebar"
-    "footer footer footer";
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "navigation navigation navigation navigation navigation"
-    ". contents main sidebar ."
-    "footer footer footer footer footer";
-}
-
-
-*/
-
-.invert {
-  background: var(--col-black);
-  color: var(--col-white);
 }

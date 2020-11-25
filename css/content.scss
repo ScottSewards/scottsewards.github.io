@@ -25,7 +25,7 @@ source { }
 ///////////
 // FORMS //
 ///////////
-form {
+form:not(.formless) {
   color: var(--col-const-white);
   background: var(--col-theme);
   padding: var(--space);
@@ -67,6 +67,7 @@ button, input, select, textarea {
   margin: 0;
   margin-top: var(--space);
   width: 100%;
+  outline: 0;
   transition: background-color 0.1s;
   &:not(:disabled):hover, &:not(:disabled):focus {
     background: var(--col-hover);
@@ -235,14 +236,14 @@ footer {
 }
 
 h1, h2, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+  //font-weight: bold;
   text-align: center;
 }
-h1 { font-size: 120%; }
-h2 { font-size: 116%; }
-h3 { font-size: 112%; }
-h4 { font-size: 108%; }
-h5 { font-size: 104%; }
+h1 { font-size: 125%; }
+h2 { font-size: 120%; }
+h3 { font-size: 115%; }
+h4 { font-size: 110%; }
+h5 { font-size: 105%; }
 h6 { font-size: 100%; }
 h1, h2, h3, h4, h5, h6, p {
   margin: var(--space) auto;
@@ -307,7 +308,15 @@ td { }
 // TEXT //
 //////////
 a {
-  color: inherit;
+  color: var(--col-theme);
+  font-weight: bold;
+  text-decoration: none;
+  outline: 0;
+  &:focus-visible {
+    background-color: var(--col-marked);
+    color: var(--col-const-white);
+    box-shadow: 0 0 0 0.5rem var(--col-marked);
+  }
 }
 
 abbr, acronym {

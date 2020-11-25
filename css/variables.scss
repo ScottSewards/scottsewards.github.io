@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
 :root {
-  --col-const-white: #FFF;
+  --col-const-white: #EEE;
   --col-const-black: #111;
   --col-white: var(--col-const-white);
   --col-black: var(--col-const-black);
 
-  --col-theme-hue: 341;
+  --col-theme-hue: 151;
   --col-theme: hsl(var(--col-theme-hue), 50%, 45%);
   --col-dark-theme: hsl(var(--col-theme-hue), 30%, 50%, 50%); /*DARKER THAN --col-theme*/
 
@@ -13,29 +13,21 @@
   --col-disabled: #CCC;
   --col-hover: #999;
   --col-inserted: rgba(0, 255, 0, 0.6);
-  --col-marked: rgba(255, 255, 0, 0.6);
+  --col-marked: var(--col-theme);
   --col-warned: #BB2B2B;
 
-  --font: 'Roboto Slab', serif;
+  --font: "Roboto Slab", sans-serif;
   --font-size: 16px;
   --font-script-size: 70%;
 
-  --space: 0.8rem;
+  --space: 1rem;
   --inline-space: 0.1rem 0.2rem;
   --list-space: calc(var(--space) * 2);
 
   --character-limit: 65ch;
   --content-width: 65rem;
-  --transition-time: 0.125s;
+  --transition-time: 0.1s;
 }
-
-* {
-  outline: 0;
-  &:focus {
-    box-shadow: 0 0 0 0.1rem black;
-  }
-}
-
 
 ::-webkit-calendar-picker-indicator { filter: invert(1); }
 
@@ -50,72 +42,27 @@
   background: var(--col-disabled);
 }
 
-::selection { background: var(--col-marked); }
-/*
-::-webkit-scrollbar { width: auto; }
-::-webkit-scrollbar-track { background: #222; }
+::selection {
+  background: var(--col-marked);
+  color: var(--col-const-white);
+}
+
+::-webkit-scrollbar {
+  width: 1.2rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--col-black);
+}
 ::-webkit-scrollbar-thumb {
   background: var(--col-white);
-  //border-radius: var(--border-radius);
-  //border-top-right-radius: 0;
-  //border-bottom-right-radius: 0;
+  border-left: 0.1rem solid black;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--col-theme); }
-*/
-
-
-
-
-
-
-.picture {
-  margin-top: -5rem;
-  width: 10rem;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--col-theme);
 }
 
-.banner {
-  max-width: 100rem;
-  max-height: 25rem;
-  margin: auto;
-  margin-top: -1rem;
-  width: 100%;
-}
 
-.post {
-  display: flex;
-  img {
-    width: 6rem;
-  }
-  > div {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: var(--space);
-    > div:nth-child(0) {
 
-    }
-    > div:nth-child(0) {
-
-    }
-  }
-  p {
-    margin: 0;
-  }
-}
-
-.user, .community {
-  .meta {
-    display: flex;
-    flex-direction: column;
-    background: var(--col-theme);
-    padding: var(--space);
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.users, .communities {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--space);
+.centre {
+  text-align: center;
 }
