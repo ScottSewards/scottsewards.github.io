@@ -80,18 +80,46 @@
   }
 }
 
-@media(min-width: 800px) and (min-height: 980px) {
+@media(min-width: 800px) and (min-height: 700px) {
   .simple-grid {
     grid-template-areas:
     "artia login artib"
-    "artic artid artie"
-    "artif artig artih";
+    "artic artid artie";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
   [class*='simple-grid-'] {
     height: 298px;
     width: 216px;
+  }
+  [class*='simple-grid-article-l'] {
+    display: block;
+  }
+  [class*='simple-grid-article-l-1'] {
+    grid-area: artia;
+  }
+  [class*='simple-grid-article-l-2'] {
+    grid-area: artib;
+  }
+  [class*='simple-grid-article-l-3'] {
+    grid-area: artic;
+  }
+  [class*='simple-grid-article-l-4'] {
+    grid-area: artid;
+  }
+  [class*='simple-grid-article-l-5'] {
+    grid-area: artie;
+  }
+}
+
+@media(min-width: 800px) and (min-height: 980px) {
+  .simple-grid {
+    grid-template-areas:
+    "artia login artib"
+    "artic artid artie"
+    "artif artig artih";
+  }
+  [class*='simple-grid-'] {
     display: block !important;
   }
   [class*='simple-grid-article']:nth-child(1) {
@@ -139,13 +167,16 @@
   display: none;
 }
 .article-title {
-  color: #6B8DCF;
+  color: #111;
   font-size: 20px;
   line-height: 24px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+.simple-grid-article:hover .article-title {
+  color: #6B8DCF;
 }
 .article-content {
   font-size: 17px;
