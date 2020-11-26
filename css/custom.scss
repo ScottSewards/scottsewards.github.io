@@ -43,8 +43,14 @@
   width: auto;
   overflow: hidden !important;
 }
+@media(orientation: landscape) {
+  .simple-grid {
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "artia login";
+  }
+}
 
-@media(min-width: 35rem) {
+@media(min-width: 550px) and (min-height: 700px) {
   [class*='simple-grid-'] {
     height: 299px;
     width: 219px;
@@ -74,7 +80,7 @@
   }
 }
 
-@media(min-width: 50em) {
+@media(min-width: 800px) and (min-height: 980px) {
   .simple-grid {
     grid-template-areas:
     "artia login artib"
@@ -114,7 +120,7 @@
   }
 }
 
-@media(min-width: 65em) {
+@media(min-width: 1050px) and (min-height: 1100px) {
   [class*='simple-grid-'] {
     height: 338px;
     width: 296px;
