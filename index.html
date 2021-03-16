@@ -1,67 +1,77 @@
 <!DOCTYPE html>
-<html lang='en' dir='ltr'>
+<html lang="en" dir="ltr">
   <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width = device-width, initial-scale = 1.0'>
-    <title>Scott Sewards' Portfolio</title>
-    <link rel='stylesheet' href='css/variables.min.css'>
-    <link rel='stylesheet' href='css/layouts.min.css'>
-    <link rel='stylesheet' href='css/content.min.css'>
-    <link rel='stylesheet' href='css/components.min.css'>
-    <script type='text/javascript' src='js/simple.js'></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>Scott Sewards' Site</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/content.min.css">
+    <link rel="stylesheet" href="css/custom.min.css">
+    <script type="text/javascript" src="js/simple.js"></script>
   </head>
   <body>
     <main>
       <h1>Scott Sewards</h1>
-      <p class='centre'>Full-stack web and video game designer and developer.</p>
+      <p class="centre">Web designer and developer.</p>
+      <p class="hide">I am available for work. <a href="">Click to hire me via White Stone Web Design</a>.</p>
       <article>
         <h2>About</h2>
         <p>Cisco Certified Network Associate. Unity Certified Developer. Graduate of Edge Hill University with a BSc in Computing (Games Programming), a MSc in Games Programming and Visual Comuting, and a PGCE for Secondary Computer Science and IT with Qualified Teacher Status.</p>
       </article>
+      <hr>
       <section>
         <h2>Portfolio</h2>
-        <article id='pompay'>
-          <h3>PomPay</h3>
-          <q>Where Patreon meets cryptocurrency.</q>
-          <p>PomPay is a membership platform for content creators to run a subscription service that accepts cryptocurrency or PayPal transfers. It is similar to Patreon with the inclusion of cryptocurrency and cryptocurrency related features such as an exchange.</p>
-          <p>The website uses Bootstrap on the front-end and a custom PHP solution is deployed on the back-end.</p>
-          <p class='centre'><a href='https://pompay.co.uk/'>Visit PomPay</a></p>
+        <article id="scotts-stylesheets">
+          <h3>Scott's Stylesheets</h3>
+          <q>Modern style for modern browsing.</q>
+          <div class="tags">
+            <span class="tag">SCSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <p>Scott's Stylesheets provide an accessible and responsive layout and content framework utilising the latest CSS and JavaScript features.</p>
+          <p class="centre"><a href="https://scottsewards.github.io/scotts-Stylesheets/">See Scott's Stylesheets</a></p>
         </article>
-        <hr>
-        <article id='hotpot'>
+        <article id="hotpot">
           <h3>HotPot</h3>
-          <q>A community-based forum.</q>
-          <p>HotPot is a developing community-based public forum where community moderators are elected by users. It is a blend of Reddit and vBulletin.</p>
-          <p>The website uses custom frameworks for front-end and back-end. In fact, Super Simple was made because HotPot needed a clean, modern look for a text heavy website.</p>
-          <p class='centre'><a href='https://hotpot.one'>Preview HotPot</a></p>
+          <q>A community-driven forum.</q>
+          <div class="tags">
+            <span class="tag">PHP</span>
+          </div>
+          <p>HotPot is a community-based public forum where community moderators are elected by users. It is a mix of Reddit and old school forums like vBulletin.</p>
+          <p class="centre">Offline</p>
         </article>
-        <hr>
-        <article id='simple'>
-          <h3>Super Simple</h3>
-          <q>A modern framework for modern browsers.</q>
-          <p>Super Simple is a developing accessible, responsive layout and content framework where styles are applied to elements and classes are few.</p>
-          <p>The framework implements the latest HTML, CSS and JavaScript features so old browsers are not supported.</p>
-          <p class='centre'><a href='https://scottsewards.github.io/super-simple/'>Preview Super Simple</a></p>
-        </article>
-        <hr>
-        <article id='fat-track'>
+        <article id="fat-track">
           <h3>Fat Track</h3>
-          <p>Fat Track is a developing dieting and fasting tracker where users calculate their metabolic rate, count calories and macros, and plan their fast.</p>
-          <p>The app, made for Android using Material Design and iOS using Cupertino, is built with Flutter and written in Dart.</p>
-          <p class='centre'>Fat Track will be available soon</p>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Dart</span>
+            <span class="tag">Android</span>
+            <span class="tag">Material Design</span>
+            <span class="tag">iOS</span>
+            <span class="tag">Cupertino</span>
+          </div>
+          <p>Fat Track is a dieting and fasting tracker for calculating various rate, counting calories and macros, and timing fasting. The app will be available on Android and iOS soon.</p>
         </article>
-        <hr>
-        <article id='more-projects'>
+        <article id="more-projects">
           <h3>More</h3>
-          <p>I have more projects in-development. You can find them on <a href='https://www.artstation.com/scottsewards'>ArtStation</a>, <a href='https://github.com/scottsewards'>GitHub</a> and <a href='https://scratch.mit.edu/users/ScottSewards/'>Scratch</a>.</p>
+          <p>I have more available on <a href="https://www.artstation.com/scottsewards">ArtStation</a>, <a href="https://github.com/scottsewards">GitHub</a> and <a href="https://scratch.mit.edu/users/ScottSewards/">Scratch</a>.</p>
         </article>
       </section>
     </main>
-    <footer>
-      <div>
-        <p>Call me on <a href='tel:+447388933973'>+447338933973</a>.</p>
-        <p>Email at <a href='mailto:scott.sewards@outlook.com'>scott.sewards@outlook.com</a>.</p>
+    <div id="links">
+      <div id="link-logos">
+        <img src="images/email.svg" alt="Email Logo">
+        <img src="images/github.svg" alt="GitHub Logo">
+        <img src="images/linkedin.svg" alt="LinkedIn Logo">
+        <img src="images/twitter.svg" alt="Twitter Logo">
       </div>
-    </footer>
+      <div id="link-anchors">
+        <a href="mailto:scott.sewards@outlook.com">Email</a>
+        <a href="https://github.com/scottsewards">GitHub</a>
+        <a href="https://www.linkedin.com/in/scottsewards/">LinkedIn</a>
+        <a href="https://twitter.com/ScottSewards">Twitter</a>
+      </div>
+    </div>
   </body>
 </html>
