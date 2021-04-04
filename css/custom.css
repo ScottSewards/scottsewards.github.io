@@ -74,7 +74,7 @@ h1, h2, h3, h4 {
 }
 #link-logos {
   z-index: 999;
-  border-right: 1rem solid white;
+  border-right: 1rem solid var(--col-white);
 }
 #link-logos:hover + #link-anchors a, #link-anchors:hover a {
   transform: translateX(calc(-100% - 3.5rem));
