@@ -1,21 +1,35 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+/* MODIFY FRAMEWORK HERE TO PREVENT STYLES BEING OVERWRITTEN */
+[id] { scroll-margin-top: var(--scroll-offset); }
 
-.tags {
-  display: flex;
-  flex-direction: row;
+:root {
+  --col-theme-hue: 200;
+  --font-family-header: "Poppins", sans-serif !important;
+  --font-family-content: "Poppins", sans-serif !important;
+  --content-limit: 75ch;
 }
+
+body {
+  letter-spacing: normal;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+  font-weight: bold !important;
+}
+
 .tag {
   color: white;
   display: block;
   background: var(--col-theme);
   padding: var(--space-4) var(--space-2);
   border-radius: var(--border-radius);
-  margin-right: var(--space-2);
+  margin: var(--space-1) 0;
+  white-space: nowrap;
 }
-
-
-
 
 .process {
   position: relative;
@@ -42,15 +56,8 @@
 
 
 
-h1, h2, h3, h4 {
-  text-align: center;
-}
 
 
-
-.gallery {
-
-}
 
 
 
@@ -73,38 +80,22 @@ h1, h2, h3, h4 {
   transform: translateX(calc(-100% - 3.5rem));
 }
 #link-logos img {
-  margin: 1rem 0;
+  margin: var(--space-1) 0;
   height: 2rem;
   width: 2rem;
 }
 #link-anchors {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: var(--space-3);
 }
 #link-anchors a {
   color: inherit;
-  padding: var(--space-1) 0.5rem;
+  padding: calc(var(--space-1) * 0.85) 0.5rem;
   text-align: right;
-  transition: transform var(--transition-time);
+  transition: transform var(--at-duration);
   width: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

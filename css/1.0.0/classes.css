@@ -1,0 +1,108 @@
+/* DARK MODE / OVERRIDES variables.css's prefers-color-scheme */
+.dark {
+  --col-white: var(--col-const-black);
+  --col-black: var(--col-const-white);
+}
+/*.dark ::-webkit-calendar-picker-indicator { filter: invert(1); }*/
+
+.hide { display: none !important; }
+.show { display: block !important; }
+.show-flex { display: flex !important; }
+
+[class^="col"], [class^="row"] {
+  display: flex;
+  margin: var(--space--1) auto;
+}
+[class^="row"] { flex-direction: row; }
+[class^="col"] { flex-direction: column; }
+[class^="row"] > *:not(:first-child) { margin-left: var(--space-1); }
+.row-wrap { flex-wrap: wrap; }
+
+/* COLOURS */
+.back-const-black { background: var(--col-const-black); }
+.back-const-white { background: var(--col-const-white); }
+.back-black { background: var(--col-black); }
+.back-white { background: var(--col-white); }
+.back-theme-light { background: var(--col-theme-light); }
+.back-theme { background: var(--col-theme); }
+.back-theme-dark { background: var(--col-theme-dark); }
+
+.text-const-black { color: var(--col-const-black); }
+.text-const-white { color: var(--col-const-white); }
+.text-black { color: var(--col-black); }
+.text-white { color: var(--col-white); }
+
+/* POSITION */
+.align-items-center { align-items: center; }
+
+.position-sticky { position: sticky; }
+
+/* ALIGNMENT */
+[class^="block-"] { display: block; }
+.block-left { margin-right: auto; }
+.block-centre { margin: auto; }
+.block-right { margin-left: auto; }
+.block-absolute-centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+[class^="flex-"] { display: flex; }
+.flex-centre, .flex-x-centre { justify-content: center; }
+.flex-centre, .flex-y-centre { align-items: center; }
+
+.text-left { text-align: left; }
+.text-centre { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+/* STRIP */
+.no-padding { padding: 0; }
+.no-border { border: 0; }
+.no-margin { margin: 0; }
+.no-list { padding-left: 0; }
+.no-list li { list-style-type: none; }
+
+/* NAVIGATION - DROPDOWN*/
+.drop-down {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+/*.drop-down:focus-within * { background: red; }*/
+.drop-down-button {
+  cursor: pointer;
+  padding-right: 2.75rem;
+}
+.drop-down-button::after {
+  content: "▼"; /*U+25BC*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--space-1);
+  font-size: 100%;
+}
+.drop-down-button.active::after {
+  transform: scaleY(-1);
+}
+.drop-down-inside, .drop-down-outside {
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  font-size: 85%;
+  max-height: 100%;
+}
+.drop-down-outside {
+  position: absolute;
+  top: 100%;
+  min-width: 100%;
+}
+side-nav .drop-down-outside {
+  top: 0;
+  left: 100%;
+}
+side-nav .drop-down-outside + .drop-down-button::after { content: "▶"; /*U+25B6*/ }
+side-nav .drop-down-outside + .drop-down-button.active::after { transform: scaleX(-1); /*U+25B6*/ }

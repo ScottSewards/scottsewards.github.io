@@ -1,0 +1,102 @@
+/*variables.css HANDLES VARIABLES, PREFERENCES AND SETTINGS*/
+:root {
+  /* CONSTANTS */
+  --col-const-black: #333;
+  --col-const-white: #FFF;
+
+  /* THEME */
+  --col-black: var(--col-const-black);
+  --col-white: var(--col-const-white);
+  --col-theme-hue: 200; /* DEFAULT = 336 */
+  --col-theme-light: hsl(var(--col-theme-hue), 70%, 60%);
+  --col-theme: hsl(var(--col-theme-hue), 70%, 50%);
+  --col-theme-dark: hsl(var(--col-theme-hue), 70%, 40%);
+
+  /* FONT */
+  --font-family-header: "Segoe UI", Segoe, Tahoma, Geneva, sans-serif;
+  --font-family-header-weight: 700;
+  --font-family-content: "Segoe UI", Segoe, Tahoma, Geneva, sans-serif;
+  --font-family-code: "Courier New";
+  --font-size: 14px;
+  --font-size-script: 70%;
+  --font-size-code: 100%;
+
+  /* MISC */
+  --col-alert: #FF6666;
+  --col-code: #EEE;
+  --col-footer: none;
+  --col-nav: #111;
+  --col-border: #DDD;
+  --col-border-hover: var(--col-theme);
+  --col-deleted: rgba(255, 0, 0, 0.6);
+  --col-disabled: #CCC;
+  --col-fill: #DDD;
+  --col-link: var(--col-theme);
+  --col-focus: #DDD;
+  --col-empty: #EEE;
+  --col-text-code: #414A47;
+  --col-hover: #CCC;
+  --col-inserted: rgba(0, 255, 0, 0.6);
+  --col-marked: var(--col-theme);
+
+  /* POSITIVE SPACING */
+  --space-1: 1rem;
+  --space-2: 0.75rem;
+  --space-3: 0.5rem;
+  --space-4: 0.25rem;
+  /* NEGATIVE SPACING */
+  --space--1: -1rem;
+  --space--2: -0.75rem;
+  --space--3: -0.5rem;
+  --space--4: -0.25rem;
+
+  /* BOX */
+  --padding: var(--space-1) var(--space-3);
+  --border: var(--border-width) solid var(--col-border);
+  --border-radius: 7px;
+  --border-width: 1px;
+  --margin: var(--space-1) auto;
+  --scroll-offset: var(--space-1); /* SET TO --margin TOP TO SHOW ALL OF TARGET ELEMENT WITHOUT PREVIOUS SIBLING ELEMENT */
+
+  --show-side-nav: 0; /* BOOLEAN / 1 = YES / 0 = NO*/
+  --side-nav-width: 12rem;
+  --content-limit: 80ch;
+  --at-duration: 0.1s; /* DEFAULT ANIMATION AND TRANSFORM DURATION*/
+}
+
+::selection {
+  background: var(--col-marked);
+  color: var(--col-const-white);
+}
+
+::-webkit-calendar-picker-indicator { filter: invert(1); }
+::-webkit-outer-spin-button, ::-webkit-inner-spin-button { -webkit-appearance: none; }
+::-webkit-scrollbar { width: var(--space-1); }
+::-webkit-scrollbar-track { background: var(--col-nav); }
+::-webkit-scrollbar-thumb { background: var(--col-const-white); }
+::-webkit-scrollbar-thumb:hover { background: var(--col-theme); }
+
+/* PREFERENCES */
+@supports(prefers-color-scheme: dark) {
+  @media(prefers-color-scheme: dark) {
+    :root {
+      --col-white: var(--col-const-black);
+      --col-black: var(--col-const-white);
+    }
+  }
+}
+
+/*
+@media(prefers-reduced-data: reduce) {
+
+}
+*/
+
+@supports(prefers-reduced-motion: reduce) {
+  @media(prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
