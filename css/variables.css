@@ -14,10 +14,10 @@
 
   /* FONT */
   --font-family-header: "Segoe UI", Segoe, Tahoma, Geneva, sans-serif;
-  --font-family-header-weight: 700;
+  --font-family-header-weight: 500;
   --font-family-content: "Segoe UI", Segoe, Tahoma, Geneva, sans-serif;
   --font-family-code: "Courier New";
-  --font-size: 14px;
+  --font-size: 16px;
   --font-size-script: 70%;
   --font-size-code: 100%;
 
@@ -53,14 +53,14 @@
   /* BOX */
   --padding: var(--space-1) var(--space-3);
   --border: var(--border-width) solid var(--col-border);
-  --border-radius: 7px;
+  --border-radius: 4px;
   --border-width: 1px;
-  --margin: var(--space-1) auto;
+  --margin: 0 auto var(--space-1) auto;
   --scroll-offset: var(--space-1); /* SET TO --margin TOP TO SHOW ALL OF TARGET ELEMENT WITHOUT PREVIOUS SIBLING ELEMENT */
 
-  --show-side-nav: 0; /* BOOLEAN / 1 = YES / 0 = NO*/
+  --show-side-nav: 1; /* BOOLEAN / 1 = YES / 0 = NO*/
   --side-nav-width: 12rem;
-  --content-limit: 80ch;
+  --content-limit: 82ch;
   --at-duration: 0.1s; /* DEFAULT ANIMATION AND TRANSFORM DURATION*/
 }
 
