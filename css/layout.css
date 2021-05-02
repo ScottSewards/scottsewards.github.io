@@ -25,6 +25,7 @@ nav, side-nav {
 }
 :is(nav, side-nav) :is(p, a) {
   color: inherit;
+  display: block;
   padding: var(--space-1);
   margin: 0;
   text-decoration: none;
