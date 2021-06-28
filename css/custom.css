@@ -14,50 +14,17 @@ h1, h2, h3, h4 {
   text-align: center;
   font-weight: bold !important;
 }
-h3 { margin-bottom: var(--space-3); }
+h2, h3 { margin-bottom: var(--space-4); }
 
 .tag {
   color: white;
   display: block;
-  background: var(--col-theme);
+  background: linear-gradient(90deg, #236267, #2F4172);
   padding: var(--space-4) var(--space-2);
   border-radius: var(--border-radius);
   margin: 0 0 var(--space-1) 0;
   white-space: nowrap;
 }
-
-.process {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.process p {
-  position: relative;
-  padding: 0.5rem 1rem;
-  border: 1px solid black;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-.process p:not(:first-child):before {
-  position: absolute;
-  border-left: 1px dashed black;
-  content: " ";
-  display: block;
-  top: -1.1rem;
-  left: 50%;
-  height: 1.1rem;
-  width: 1px;
-}
-
-
-
-
-
-
-
-
-
-
 
 
 #links {
@@ -86,7 +53,7 @@ h3 { margin-bottom: var(--space-3); }
 }
 #link-anchors a {
   color: inherit;
-  padding: calc(var(--space-1) * 0.85) 0.5rem;
+  padding: calc(var(--space-1) * 0.7) 0.5rem;
   text-align: right;
   transition: transform var(--at-duration);
   width: auto;

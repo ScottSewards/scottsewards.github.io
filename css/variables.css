@@ -7,10 +7,10 @@
   /* THEME */
   --col-black: var(--col-const-black);
   --col-white: var(--col-const-white);
-  --col-theme-hue: 200; /* DEFAULT = 336 */
-  --col-theme-light: hsl(var(--col-theme-hue), 70%, 60%);
-  --col-theme: hsl(var(--col-theme-hue), 70%, 50%);
-  --col-theme-dark: hsl(var(--col-theme-hue), 70%, 40%);
+  --col-theme-hue: 184; /* DEFAULT = 336 */
+  --col-theme-light: hsl(var(--col-theme-hue), 49%, 37%);
+  --col-theme: hsl(var(--col-theme-hue), 49%, 27%);
+  --col-theme-dark: hsl(var(--col-theme-hue), 49%, 17%);
 
   /* FONT */
   --font-family-header: "Segoe UI", Segoe, Tahoma, Geneva, sans-serif;
