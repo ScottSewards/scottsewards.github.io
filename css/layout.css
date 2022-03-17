@@ -1,52 +1,46 @@
 *, *::before, *::after { box-sizing: border-box; }
-* { outline-offset: var(--outline-offset); }
 body {
-  background: var(--col-white);
-  color: var(--col-black);
   font-family: var(--font-family-content);
   font-kerning: normal;
   font-size: var(--font-size);
-  letter-spacing: 0.01rem;
   display: block;
   margin: 0;
   margin-left: calc(var(--show-side-nav) * var(--side-nav-width));
 }
-
 nav, side-nav {
-  user-select: none;
-  background: var(--col-nav);
-  color: var(--col-const-white);
-  z-index: 100;
+  background-color: var(--col-nav);
+  color: white;
+  font-family: var(--font-family-heading);
+  z-index: 1;
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-family: var(--font-family-heading);
 }
 :is(nav, side-nav) :is(p, a) {
   color: inherit;
   display: block;
-  padding: var(--space-1);
+  padding: 1rem;
   margin: 0;
   text-decoration: none;
   white-space: nowrap;
 }
-:is(nav, side-nav) :is(p, a):hover { background: var(--col-theme-dark); }
+:is(nav, side-nav) :is(p, a):hover { background: var(--col-theme-light); }
 side-nav {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: var(--side-nav-width) !important;
+  width: var(--side-nav-width);
 }
 side-nav::after {
   content: "👁"; /*U+1F441*/
   opacity: 0.2;
-  position: absolute;
   background: var(--col-nav);
-  bottom: var(--space-1);
+  position: absolute;
+  bottom: 1rem;
   left: var(--side-nav-width);
-  padding: var(--space-1);
+  padding: 1rem;
 }
 side-nav:hover::after { opacity: 1; }
 @media(max-width: 40rem) {
@@ -58,35 +52,7 @@ side-nav:hover::after { opacity: 1; }
   nav { flex-direction: row; }
   side-nav::after { display: none; }
 }
-
-main {
-  padding: var(--space-1);
-  margin: auto;
-  width: 100%;
-  max-width: var(--content-limit);
-}
-/*
-main {
-  display: grid;
-  grid-template-columns: 1fr min(var(--character-limit), 100%) 1fr;
-}
-main > * { grid-column: 2; }
-.bleed {
-  width: 100%;
-  grid-column: 1 / -1;
-}
-*/
-
-footer {
-  background: var(--col-footer);
+main, footer {
   display: block;
-  padding: 1px var(--space-1);
-  margin: var(--margin);
-  margin-bottom: 0;
   width: 100%;
-}
-#footer-wrapper {
-  padding: 0 var(--space-1);
-  margin: auto;
-  max-width: var(--content-limit);
 }
