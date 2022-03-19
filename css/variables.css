@@ -1,3 +1,4 @@
+/* Creative Commons Attribution-NonCommercial 4.0 International Public License */
 :root {
   /* CONSTANTS */
   --col-const-black: #222;
@@ -18,7 +19,7 @@
   --col-deleted: rgba(255, 0, 0, 0.6);
   --col-disabled: #CCC;
   --col-fill: #DDD;
-  --col-link: var(--col-theme);
+  --col-link: var(--col-theme-dark);
   --col-focus: #DDD;
   --col-empty: #EEE;
   --col-text-code: #414A47;
@@ -37,7 +38,7 @@
   --font-size-code: 100%;
   /* BOX */
   --border: 1px solid var(--col-border);
-  --border-radius: 4px;
+  --border-radius: 7px;
   --outline: 1px solid var(--col-theme);
   --outline-offset: 0.25rem;
   --scroll-offset: -0.5rem;

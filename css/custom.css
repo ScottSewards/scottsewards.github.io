@@ -6,6 +6,7 @@
   --font-family-content: "Poppins", sans-serif !important;
   --content-limit: 75ch;
   --show-side-nav: 0;
+  --col-link: var(--col-theme-dark);
 }
 body { letter-spacing: normal; }
 main {
