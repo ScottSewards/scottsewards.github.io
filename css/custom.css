@@ -2,9 +2,9 @@
 [id] { scroll-margin-top: var(--scroll-offset); }
 :root {
   --col-theme-hue: 184;
-  --col-theme-light: hsl(var(--col-theme-hue), 49%, 37%);
-  --col-theme: hsl(var(--col-theme-hue), 49%, 32%);
-  --col-theme-dark: hsl(var(--col-theme-hue), 49%, 27%);
+  --col-theme-light: hsl(var(--col-theme-hue), 49%, 40%);
+  --col-theme: hsl(var(--col-theme-hue), 49%, 35%);
+  --col-theme-dark: hsl(var(--col-theme-hue), 49%, 30%);
   --font-family-header: "Poppins", sans-serif !important;
   --font-family-content: "Poppins", sans-serif !important;
   --content-limit: 75ch;
