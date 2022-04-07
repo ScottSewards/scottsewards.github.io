@@ -11,29 +11,6 @@
     <link rel="stylesheet" href="css/classes.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/css/splide.min.css">
-    <style media="screen">
-    .splide__track {
-      position: relative;
-      cursor: grab;
-    }
-    .splide__track::before, .splide__track::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 9%;
-      height: 100%;
-    }
-    .splide__track::before {
-      z-index: 999;
-      left: 0;
-      background: linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.987) 8.1%, hsla(0, 0%, 100%, 0.951) 15.5%, hsla(0, 0%, 100%, 0.896) 22.5%, hsla(0, 0%, 100%, 0.825) 29%, hsla(0, 0%, 100%, 0.741) 35.3%, hsla(0, 0%, 100%, 0.648) 41.2%, hsla(0, 0%, 100%, 0.55) 47.1%, hsla(0, 0%, 100%, 0.45) 52.9%, hsla(0, 0%, 100%, 0.352) 58.8%, hsla(0, 0%, 100%, 0.259) 64.7%, hsla(0, 0%, 100%, 0.175) 71%, hsla(0, 0%, 100%, 0.104) 77.5%, hsla(0, 0%, 100%, 0.049) 84.5%, hsla(0, 0%, 100%, 0.013) 91.9%, hsla(0, 0%, 100%, 0) 100%);
-    }
-    .splide__track::after {
-      right: 0;
-      background: linear-gradient(to left, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.987) 8.1%, hsla(0, 0%, 100%, 0.951) 15.5%, hsla(0, 0%, 100%, 0.896) 22.5%, hsla(0, 0%, 100%, 0.825) 29%, hsla(0, 0%, 100%, 0.741) 35.3%, hsla(0, 0%, 100%, 0.648) 41.2%, hsla(0, 0%, 100%, 0.55) 47.1%, hsla(0, 0%, 100%, 0.45) 52.9%, hsla(0, 0%, 100%, 0.352) 58.8%, hsla(0, 0%, 100%, 0.259) 64.7%, hsla(0, 0%, 100%, 0.175) 71%, hsla(0, 0%, 100%, 0.104) 77.5%, hsla(0, 0%, 100%, 0.049) 84.5%, hsla(0, 0%, 100%, 0.013) 91.9%, hsla(0, 0%, 100%, 0) 100%);
-    }
-    .splide__track:active { cursor: grabbing; }
-    </style>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/js/splide.min.js" type="text/javascript"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -48,7 +25,7 @@
         padding: { left: "10%", right: "10%" },
         pagination: false,
         pauseOnHover: true,
-        perPage: 1,
+        perPage: 2,
         type: "loop",
       }).mount();
     });
@@ -59,14 +36,14 @@
       <section id="about">
         <h1 class="text-middle font-weight-bold">Scott Sewards</h1>
         <p class="flex justify-content-middle">
-          <img class="m-0" src="images/microsoft-word.webp" style="max-width: var(--font-size); filter: brightness(1.1);" alt="Microsoft Word Icon">
           <a href="docs/my-resume.docx" download>Download My Résumé</a>
+          <img class="b-r-0 m-0" src="images/microsoft-word.webp" style="max-width: var(--font-size);" alt="Microsoft Word Icon">
         </p>
         <h2 class="text-middle font-weight-bold">About</h2>
         <p class="text-middle">I make websites.</p>
         <article>
           <h3 class="text-middle font-weight-bold">Experience & Employment</h3>
-          <p class="text-middle">Computer Science and IT Teacher at The Studio Liverpool.<br><span class="text-theme-dark">IT Developer at Red Diamond IT.</span><br>Web/WordPress Developer at The Hatch Group.</p>
+          <p class="text-middle">Computer Science and IT Teacher at The Studio Liverpool.<br><span class="text-theme-dark">PHP Developer at Red Diamond  IT.</span><br>WordPress Developer at The Hatch Group.</p>
         </article>
         <article>
           <h3 class="text-middle font-weight-bold">Certifications & Qualifications</h3>
@@ -76,12 +53,45 @@
       <hr>
       <section id="work-portfolio">
         <h2 class="text-middle font-weight-bold">Portfolio</h2>
+        <article id="scotts-stylesheets">
+          <h3 class="text-middle font-weight-bold">Scott's Stylesheets</h3>
+          <p class="text-middle">A responsive, performant layout and content front-end web framework.</p>
+          <p class="text-end"><a href="https://scottsewards.github.io/scotts-stylesheets/">See Scott's Stylesheets</a> ></p>
+          <div class="flex flex-wrap justify-content-middle mb-2">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </article>
+        <article id="red-diamond-it">
+          <h3 class="text-middle font-weight-bold">Red Diamond IT</h3>
+          <div id="uwms">
+            <h4 class="text-middle font-weight-bold">Underwriting Management System (Legacy)</h4>
+            <p class="text-middle">A old, obsolete underwriting manager I maintained.</p>
+            <div class="flex flex-wrap justify-content-middle mb-2">
+              <span class="tag">Microsoft Access</span>
+              <span class="tag">Visual Basic</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+          <div id="uwms">
+            <h4 class="text-middle font-weight-bold">Underwriting Management System (Rebuild)</h4>
+            <p class="text-middle">A bespoke self-maintaining underwriting manager built for Red Diamond IT designed to remove dependency on developers to add configurations for new insurers and/or classes of business.</p>
+            <div class="flex flex-wrap justify-content-middle mb-2">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">jQuery</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Visual Basic</span>
+            </div>
+          </div>
+        </article>
         <article id="the-hatch-group">
           <h3 class="text-middle font-weight-bold">The Hatch Group</h3>
-          <p>Websites I worked on still in development include Diverse Training, Entire Training, FastPay, iFoodi, Just Glass, Lancashire Police Museum, Lynx Avionics, Sadolin, Sandtex, Smylies, SOV Group, SRSCC, The Appliance Store, and The Energy Desk.</p>
-          <div id="wordpress-websites">
-            <h4 class="text-middle font-weight-bold">WordPress Websites</h4>
-            <div id="image-slider" class="splide mb-2">
+          <div id="wordpress-websites" style="margin-left: -10rem; margin-right: -10rem;">
+            <div id="image-slider" class="splide mb-2 hide">
               <div class="splide__track">
             		<ul class="splide__list">
             			<li class="splide__slide">
@@ -93,30 +103,23 @@
               </div>
             </div>
           </div>
-        </article>
-        <article id="red-diamond-it">
-          <h3 class="text-middle font-weight-bold">Red Diamond IT</h3>
-          <div id="uwms">
-            <h4 class="text-middle font-weight-bold">Underwriting Management System</h4>
-            <p class="text-middle">A bespoke self-maintaining underwriting manager built for Red Diamond IT designed to remove dependency on developers to add configurations for new insurers and/or classes of business.</p>
-            <div class="flex flex-wrap justify-content-middle mb-2">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">jQuery</span>
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-            </div>
+          <div class="flex flex-wrap justify-content-middle mb-2">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">jQuery</span>
+            <span class="tag">PHP</span>
           </div>
         </article>
-        <article id="scotts-stylesheets">
-          <h3 class="text-middle font-weight-bold">Scott's Stylesheets</h3>
-          <p class="text-middle">A responsive and performant layout and content framework.</p>
+        <article id="puzzle-bundle">
+          <h3 class="text-middle font-weight-bold">Puzzle Bundle</h3>
+          <p class="text-middle">A simple bundle of puzzle games..</p>
           <div class="flex flex-wrap justify-content-middle mb-2">
+            <span class="tag">HTML</span>
             <span class="tag">CSS</span>
             <span class="tag">JavaScript</span>
           </div>
-          <p class="text-end"><a href="https://scottsewards.github.io/scotts-stylesheets/">See Scott's Stylesheets</a> ></p>
+          <p class="text-end"><a href="https://scottsewards.github.io/puzzle-bundle/">See Puzzle Bundle</a> ></p>
         </article>
       </section>
       <hr>
@@ -124,17 +127,13 @@
         <article id="more-projects">
           <h3 class="text-middle font-weight-bold">Other Platforms and Projects</h3>
           <div class="row">
-            <div class="col-12 md_col-4">
+            <div class="col-12 md_col-6">
               <h4 class="text-middle font-weight-bold">ArtStation</h4>
-              <p class="text-middle ml-2"><a href="https://www.artstation.com/scottsewards">See ArtStation account</a> ></p>
+              <p class="text-end"><a href="https://www.artstation.com/scottsewards">See ArtStation account</a> ></p>
             </div>
-            <div class="col-12 md_col-4">
+            <div class="col-12 md_col-6">
               <h4 class="text-middle font-weight-bold">GitHub</h4>
-              <p class="text-middle ml-2"><a href="https://github.com/scottsewards">See GitHub account</a> ></p>
-            </div>
-            <div class="col-12 md_col-4">
-              <h4 class="text-middle font-weight-bold">Scratch</h4>
-              <p class="text-middle ml-2"><a href="https://scratch.mit.edu/users/ScottSewards">See Scratch account</a> ></p>
+              <p class="text-end"><a href="https://github.com/scottsewards">See GitHub account</a> ></p>
             </div>
           </div>
         </article>

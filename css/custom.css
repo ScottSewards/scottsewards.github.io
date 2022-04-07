@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 [id] { scroll-margin-top: var(--scroll-offset); }
 :root {
-  --col-theme-hue: 200;
+  --col-theme-hue: 184;
+  --col-theme-light: hsl(var(--col-theme-hue), 49%, 37%);
+  --col-theme: hsl(var(--col-theme-hue), 49%, 32%);
+  --col-theme-dark: hsl(var(--col-theme-hue), 49%, 27%);
   --font-family-header: "Poppins", sans-serif !important;
   --font-family-content: "Poppins", sans-serif !important;
   --content-limit: 75ch;
   --show-side-nav: 0;
   --col-link: var(--col-theme-dark);
 }
+
 body { letter-spacing: normal; }
 main {
   max-width: var(--content-limit);
   padding: 1rem;
   margin: auto;
 }
+
 .tag {
   color: white;
   display: block;
@@ -22,3 +27,25 @@ main {
   border-radius: var(--border-radius);
   white-space: nowrap;
 }
+
+.splide__track {
+  position: relative;
+  cursor: grab;
+}
+.splide__track::before, .splide__track::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 9%;
+  height: 100%;
+}
+.splide__track::before {
+  z-index: 999;
+  left: 0;
+  background: linear-gradient(to right, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.987) 8.1%, hsla(0, 0%, 100%, 0.951) 15.5%, hsla(0, 0%, 100%, 0.896) 22.5%, hsla(0, 0%, 100%, 0.825) 29%, hsla(0, 0%, 100%, 0.741) 35.3%, hsla(0, 0%, 100%, 0.648) 41.2%, hsla(0, 0%, 100%, 0.55) 47.1%, hsla(0, 0%, 100%, 0.45) 52.9%, hsla(0, 0%, 100%, 0.352) 58.8%, hsla(0, 0%, 100%, 0.259) 64.7%, hsla(0, 0%, 100%, 0.175) 71%, hsla(0, 0%, 100%, 0.104) 77.5%, hsla(0, 0%, 100%, 0.049) 84.5%, hsla(0, 0%, 100%, 0.013) 91.9%, hsla(0, 0%, 100%, 0) 100%);
+}
+.splide__track::after {
+  right: 0;
+  background: linear-gradient(to left, hsl(0, 0%, 100%) 0%, hsla(0, 0%, 100%, 0.987) 8.1%, hsla(0, 0%, 100%, 0.951) 15.5%, hsla(0, 0%, 100%, 0.896) 22.5%, hsla(0, 0%, 100%, 0.825) 29%, hsla(0, 0%, 100%, 0.741) 35.3%, hsla(0, 0%, 100%, 0.648) 41.2%, hsla(0, 0%, 100%, 0.55) 47.1%, hsla(0, 0%, 100%, 0.45) 52.9%, hsla(0, 0%, 100%, 0.352) 58.8%, hsla(0, 0%, 100%, 0.259) 64.7%, hsla(0, 0%, 100%, 0.175) 71%, hsla(0, 0%, 100%, 0.104) 77.5%, hsla(0, 0%, 100%, 0.049) 84.5%, hsla(0, 0%, 100%, 0.013) 91.9%, hsla(0, 0%, 100%, 0) 100%);
+}
+.splide__track:active { cursor: grabbing; }
