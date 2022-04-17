@@ -7,17 +7,11 @@
   --col-theme-dark: hsl(var(--col-theme-hue), 49%, 30%);
   --font-family-header: "Poppins", sans-serif !important;
   --font-family-content: "Poppins", sans-serif !important;
-  --content-limit: 75ch;
+  --content-limit: 70ch;
   --show-side-nav: 0;
-  --col-link: var(--col-theme-dark);
 }
 
-body { letter-spacing: normal; }
-main {
-  max-width: var(--content-limit);
-  padding: 1rem;
-  margin: auto;
-}
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 .tag {
   color: white;

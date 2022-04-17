@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
     <meta http-equiv="Cache-control" content="private">
-    <meta name="keyword" content="HTML, CSS, JavaScript, jQuery, PHP, MySQL, website design, website development">
-    <meta name="description" content="A freelance website designer and developer, adept in JavaScript and PHP.">
+    <meta name="description" content="Freelance website developer, adept in HTML, CSS, JavaScript, PHP, and MySQL.">
+    <meta name="keyword" content="HTML, CSS, SASS, SCSS, JavaScript, jQuery, PHP, MySQL, Python, Java, Visual Basic, web design, website design, web dev, web development, website development">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scott Sewards</title>
     <link rel="shortcut icon" href="images/swimming-george.webp">
     <link rel="stylesheet" href="css/variables.css">
@@ -15,37 +15,31 @@
     <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
-    <main>
+    <main class="container">
       <section id="about">
-        <h1 class="text-middle font-weight-bold">Scott Sewards</h1>
-        <p class="flex justify-content-middle">
-          <a href="docs/my-resume.docx" download>Download My Résumé</a>
-          <img class="b-r-0 m-0" style="max-width: var(--font-size);" src="images/microsoft-word.webp" height="16" width="16" alt="Microsoft Word Icon">
-        </p>
-        <h2 class="text-middle font-weight-bold">About</h2>
-        <p class="text-middle">I make websites.</p>
+        <h1 class="text-middle">Scott Sewards</h1>
+        <p class="text-middle">Web developer.</p>
         <article>
-          <h3 class="text-middle font-weight-bold">Experience & Employment</h3>
-          <p class="text-middle" style="margin-bottom: 0;">Computer Science and IT Teacher at The Studio Liverpool.</p>
-          <p class="text-middle text-theme" style="margin-bottom: 0;">PHP Developer at Red Diamond IT.</p>
+          <h2 class="text-middle">Experience & Employment</h2>
+          <p class="mb-0 text-middle">Computer Science and IT Teacher at The Studio Liverpool.</p>
+          <p class="mb-0 text-middle text-theme">IT Developer at Red Diamond IT.</p>
           <p class="text-middle">WordPress Developer at The Hatch Group.</p>
         </article>
         <article>
-          <h3 class="text-middle font-weight-bold" style="margin-bottom: 0;">Certifications & Qualifications</h3>
-          <p class="text-middle" style="margin-bottom: 0;">Cisco Certified Network Associate.</p>
-          <p class="text-middle text-theme" style="margin-bottom: 0;">Computing (Games Programming) BSc.</p>
-          <p class="text-middle" style="margin-bottom: 0;">Games Programming and Visual Computing MSc.</p>
-          <p class="text-middle text-theme" style="margin-bottom: 0;">Unity Certified Developer.</p>
+          <h2 class="mb-0 text-middle">Certifications & Qualifications</h2>
+          <p class="mb-0 text-middle">Cisco Certified Network Associate.</p>
+          <p class="mb-0 text-middle text-theme">Computing (Games Programming) BSc.</p>
+          <p class="mb-0 text-middle">Games Programming and Visual Computing MSc.</p>
+          <p class="mb-0 text-middle text-theme">Unity Certified Developer.</p>
           <p class="text-middle">Secondary Computer Science and IT PGCE with QTS.</p>
         </article>
       </section>
       <hr>
-      <section id="work-portfolio">
-        <h2 class="text-middle font-weight-bold">Portfolio</h2>
+      <section id="portfolio">
+        <h2 class="text-middle">Portfolio</h2>
         <article id="scotts-stylesheets">
-          <h3 class="text-middle font-weight-bold">Scott's Stylesheets</h3>
-          <p class="text-middle">A responsive, performant layout and content front-end web framework.</p>
-          <p class="text-end"><a href="https://scottsewards.github.io/scotts-stylesheets/">See Scott's Stylesheets</a> ></p>
+          <h3 class="text-middle">Scott's Stylesheets</h3>
+          <p class="text-middle">A responsive, performant front-end layout and content framework. <a href="https://scottsewards.github.io/scotts-stylesheets/">Click here to see Scott's Stylesheets</a>.</p>
           <div class="flex flex-wrap justify-content-middle mb-2">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
@@ -53,9 +47,9 @@
           </div>
         </article>
         <article id="red-diamond-it">
-          <h3 class="text-middle font-weight-bold">Red Diamond IT</h3>
+          <h3 class="text-middle font-weight-bold text-theme">Red Diamond IT</h3>
           <div id="ums">
-            <h4 class="text-middle font-weight-bold text-theme">UMS</h4>
+            <h4 class="text-middle text-theme">UMS</h4>
             <p class="text-middle">An old underwriting manager I maintained while rebuilding as UWMS.</p>
             <div class="flex flex-wrap justify-content-middle mb-2">
               <span class="tag">Microsoft Access</span>
@@ -64,9 +58,8 @@
             </div>
           </div>
           <div id="uwms">
-            <h4 class="text-middle font-weight-bold text-theme">UWMS</h4>
-            <p class="text-middle">A bespoke self-maintaining underwriting manager designed to remove developer dependency to add new insurer and classes of business configurations.</p>
-            <p class="text-end">Demo available.</p>
+            <h4 class="text-middle text-theme">UWMS</h4>
+            <p class="text-middle">A bespoke self-maintaining underwriting manager designed to remove developer dependency to add new insurer and classes of business configurations. A demo is available.</p>
             <div class="flex flex-wrap justify-content-middle mb-2">
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
@@ -78,8 +71,8 @@
           </div>
         </article>
         <article id="the-hatch-group">
-          <h3 class="text-middle font-weight-bold">The Hatch Group</h3>
-          <p class="text-middle">Dozens of WordPress websites made or maintained in Elementor or bespoke.</p>
+          <h3 class="text-middle">The Hatch Group</h3>
+          <p class="text-middle">WordPress websites made bespoke or made and maintained in Elementor.</p>
           <!--div id="wordpress-websites" style="margin-left: -10rem; margin-right: -10rem;">
             <div id="image-slider" class="splide mb-2 hide">
               <div class="splide__track">
@@ -93,7 +86,6 @@
               </div>
             </div>
           </div-->
-          <p class="text-end">Links available.</p>
           <div class="flex flex-wrap justify-content-middle mb-2">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
@@ -103,29 +95,12 @@
           </div>
         </article>
         <article id="puzzle-bundle">
-          <h3 class="text-middle font-weight-bold">Puzzle Bundle</h3>
-          <p class="text-middle">A simple bundle of puzzle games..</p>
-          <div class="flex flex-wrap justify-content-middle mb-2">
+          <h3 class="text-middle">Puzzle Bundle</h3>
+          <p class="text-middle">A bundle of simple puzzle games. <a href="https://scottsewards.github.io/puzzle-bundle/">Click here to play Puzzle Bundle</a>.</p>
+          <div class="flex flex-wrap justify-content-middle">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
             <span class="tag">JavaScript</span>
-          </div>
-          <p class="text-end"><a href="https://scottsewards.github.io/puzzle-bundle/">See Puzzle Bundle</a> ></p>
-        </article>
-      </section>
-      <hr>
-      <section>
-        <article id="more-projects">
-          <h3 class="text-middle font-weight-bold">Other Platforms and Projects</h3>
-          <div class="row">
-            <div class="col-12 md_col-6">
-              <h4 class="text-middle font-weight-bold">ArtStation</h4>
-              <p class="text-end"><a href="https://www.artstation.com/scottsewards">See ArtStation account</a> ></p>
-            </div>
-            <div class="col-12 md_col-6">
-              <h4 class="text-middle font-weight-bold">GitHub</h4>
-              <p class="text-end"><a href="https://github.com/scottsewards">See GitHub account</a> ></p>
-            </div>
           </div>
         </article>
       </section>

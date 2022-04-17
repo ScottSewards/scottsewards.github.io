@@ -22,7 +22,7 @@
 }
 .container {
   margin: auto;
-  max-width: 85ch;
+  max-width: var(--content-limit);
 }
 .box {
   display: block;
@@ -170,6 +170,7 @@
 .justify-content-end { justify-content: flex-end; }
 .justify-content-space-around { justify-content: space-around; }
 .justify-content-space-between { justify-content: space-between; }
+.justify-content-space-evenly { justify-content: space-evenly; }
 .align-items-start { align-items: flex-start; }
 .align-items-middle { align-items: center; }
 .align-items-end { align-items: flex-end; }
