@@ -7,7 +7,7 @@
   --col-theme-dark: hsl(var(--col-theme-hue), 49%, 30%);
   --font-family-header: "Poppins", sans-serif !important;
   --font-family-content: "Poppins", sans-serif !important;
-  --content-limit: 70ch;
+  --content-limit: 72ch;
   --show-side-nav: 0;
 }
 
