@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Cache-control" content="private">
-    <meta name="description" content="Freelance website developer, adept in HTML, CSS, JavaScript, PHP, WordPress, Elementor, and MySQL.">
-    <meta name="keyword" content="HTML, CSS, SCSS, JavaScript, jQuery, PHP, WordPress, Elementor, MySQL, Python, Java, Visual Basic, Web Design, Website Design, Web Dev, Web Development, Website Development">
+    <meta name="description" content="Freelancing website developer skilled with HTML, CSS, Sass, Bootstrap, JavaScript, PHP, Composer, WordPress, Elementor, MySQL, Python, and Django.">
+    <meta name="keyword" content="HTML, HyperText Markup Language, CSS, Cascading Stylesheets, Sass, Bootstrap, JavaScript, jQuery, PHP, Hypertext Processor, WordPress, Custom Themes, Elementor, MySQL, Python, Django, Heroku, Java, VB, Visual Basic, Web Design, Website Design, Web Dev, Web Development, Website Development, Microsoft Word, Microsoft Excel, Microsoft Access, Red Diamond IT, The Hatch Group, MonkeyFish Marketing, Flying Boat Media, Hopeful Studio, Studio Coact">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scott Sewards - Web Developer</title>
-    <link rel="shortcut icon" href="images/swimming-george.webp">
+    <title>Scott Sewards - Website Developer</title>
+    <link rel="shortcut icon" href="images/george-swimming.webp">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/content.css">
@@ -15,100 +15,51 @@
     <link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
-    <main class="container">
-      <section id="about">
-        <h1 class="text-middle">Scott Sewards</h1>
-        <p class="text-middle">Web developer.</p>
-        <article>
-          <h2 class="text-middle">Experience & Employment</h2>
-          <p class="mb-0 text-middle">Computer Science and IT Teacher at The Studio Liverpool.</p>
-          <p class="mb-0 text-middle text-theme">IT Developer at Red Diamond IT.</p>
-          <p class="text-middle">WordPress Developer at The Hatch Group.</p>
-        </article>
-        <article>
-          <h2 class="mb-0 text-middle">Certifications & Qualifications</h2>
-          <p class="mb-0 text-middle">Cisco Certified Network Associate.</p>
-          <p class="mb-0 text-middle text-theme">Computing (Games Programming) BSc.</p>
-          <p class="mb-0 text-middle">Games Programming and Visual Computing MSc.</p>
-          <p class="mb-0 text-middle text-theme">Unity Certified Developer.</p>
-          <p class="text-middle">Secondary Computer Science and IT PGCE with QTS.</p>
-        </article>
-      </section>
-      <hr>
-      <section id="portfolio">
-        <h2 class="text-middle">Portfolio</h2>
-        <article id="scotts-stylesheets">
-          <h3 class="text-middle">Scott's Stylesheets</h3>
-          <p class="text-middle">A responsive, performant front-end layout and content framework. <a href="https://scottsewards.github.io/scotts-stylesheets/">Click here to see</a>.</p>
-          <div class="flex flex-wrap justify-content-middle mb-2">
+    <main class="grid g-0">
+      <div class="cell jc-end ai-end">
+        <div id="about" class="p-2 mw-65-ch text-end">
+          <h1>Scott Sewards</h1>
+          <p>WordPress Developer at <a href="https://www.studiocoact.co.uk/">Studio Coact</a></p>
+          <p class="mb-0">I am available for freelance work</p>
+        </div>
+      </div>
+      <div class="cell position-relative">
+        <img class="screenshot" src="images/fastpay.webp" alt="Fastpay">
+        <img class="screenshot" src="images/sandtex-paints.webp" alt="Sandtex Paints">
+        <img class="screenshot" src="images/msif.webp" alt="MSIF">
+        <img class="screenshot" src="images/sharp-engineering.webp" alt="Sharp Engineering">
+        <img class="screenshot" src="images/nlcbf.webp" alt="National Leaving Care Benchmarking Forum">
+        <img class="screenshot" src="images/elle-decoration-lookbook.webp" alt="Elle Decoration">
+      </div>
+      <div class="cell js-start ai-end">
+        <div id="skill" class="p-2 mw-65-ch text-end">
+          <h2>Skills</h2>
+          <div class="flex flex-wrap jc-end mb-2">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
-            <span class="tag">SCSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </article>
-        <article id="red-diamond-it">
-          <h3 class="text-middle font-weight-bold text-theme">Red Diamond IT</h3>
-          <div id="ums">
-            <h4 class="text-middle text-theme">UMS</h4>
-            <p class="text-middle">A hard-coded underwriting manager I maintained while building UWMS.</p>
-            <div class="flex flex-wrap justify-content-middle mb-2">
-              <span class="tag">Microsoft Access</span>
-              <span class="tag">Visual Basic</span>
-              <span class="tag">SQL</span>
-            </div>
-          </div>
-          <div id="uwms">
-            <h4 class="text-middle text-theme">UWMS</h4>
-            <p class="text-middle">A bespoke underwriting manager I built eliminating dependency on developers to add insurance configurations. A demo is available.</p>
-            <div class="flex flex-wrap justify-content-middle mb-2">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">jQuery</span>
-              <span class="tag">PHP</span>
-              <span class="tag">Composer</span>
-              <span class="tag">MySQL</span>
-            </div>
-          </div>
-        </article>
-        <article id="the-hatch-group">
-          <h3 class="text-middle">The Hatch Group</h3>
-          <p class="text-middle">WordPress websites made bespoke or with Elementor. Links are available.</p>
-          <!--div id="wordpress-websites" style="margin-left: -10rem; margin-right: -10rem;">
-            <div id="image-slider" class="splide mb-2 hide">
-              <div class="splide__track">
-            		<ul class="splide__list">
-            			<li class="splide__slide">
-            				<!--img class="mb-2" data-splide-lazy="images/placeholder.webp" width="100%" alt="Placeholder Screenshot">
-                    <p class="text-middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p class="text-end"><a href="#">Visit ${placeholder}</a> ></p>
-            			</li>
-            		</ul>
-              </div>
-            </div>
-          </div-->
-          <div class="flex flex-wrap justify-content-middle mb-2">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
+            <span class="tag">Sass</span>
+            <span class="tag">Bootstrap</span>
             <span class="tag">JavaScript</span>
             <span class="tag">jQuery</span>
             <span class="tag">PHP</span>
+            <span class="tag">Composer</span>
             <span class="tag">WordPress</span>
+            <span class="tag">Custom Themes</span>
             <span class="tag">Elementor</span>
-            <span class="tag">Magento</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Django</span>
           </div>
-        </article>
-        <article id="puzzle-bundle">
-          <h3 class="text-middle">Puzzle Bundle</h3>
-          <p class="text-middle">A collection of puzzle games. <a href="https://scottsewards.github.io/puzzle-bundle/">Click here to play</a>.</p>
-          <div class="flex flex-wrap justify-content-middle">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </article>
-      </section>
+        </div>
+      </div>
+      <div class="cell js-start ai-start">
+        <div id="links" class="p-2 mw-65-ch">
+          <h2>Links</h2>
+          <p><a href="https://www.artstation.com/scottsewards">See ArtStation account</a></p>
+          <p><a href="https://github.com/ScottSewards">GitHub</a></p>
+          <p><a href="https://www.linkedin.com/in/scottsewards/">LinkedIn</a></p>
+        </div>
+      </div>
     </main>
   </body>
 </html>

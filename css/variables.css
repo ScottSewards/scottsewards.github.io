@@ -1,7 +1,7 @@
 /* Creative Commons Attribution-NonCommercial 4.0 International Public License */
 :root {
   /* CONSTANTS */
-  --col-const-black: #222;
+  --col-const-black: #111;
   --col-const-white: #FFF;
   /* THEME */
   --col-theme-hue: 336; /* DEFAULT = 336 */
