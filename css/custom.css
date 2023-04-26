@@ -34,7 +34,7 @@ main.grid > .cell:nth-child(2) {
   position: absolute;
   border-radius: 0;
   width: 210px;
-  min-height: 105%;
+  min-height: 100%;
   top: -1%;
 }
 .screenshot:nth-child(even) { z-index: 1; }
