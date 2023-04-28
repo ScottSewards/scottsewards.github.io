@@ -1026,34 +1026,38 @@ main.grid > .cell:nth-child(2) {
   min-height: 100%;
   top: -1%;
 }
-.screenshot:nth-child(even) { z-index: 1; }
+.screenshot:nth-child(even) {
+  z-index: 1;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
 .screenshot:nth-child(odd) { z-index: 0; }
 .screenshot:nth-child(1) {
-  left: -6%;
-  transform: rotatez(-3deg);
+  left: -5%;
+  transform: rotatez(-1.5deg);
 }
 .screenshot:nth-child(2) {
-  left: 10%;
-  transform: rotatez(1deg);
+  left: 8%;
+  transform: rotatez(0.5deg);
 }
 .screenshot:nth-child(3) {
-  left: 29%;
-  transform: rotatez(-2deg);
+  left: 28%;
+  transform: rotatez(-1.25deg);
 }
 .screenshot:nth-child(4) {
-  left: 44%;
-  transform: rotatez(0);
+  left: 46%;
+  transform: rotatez(0.75deg);
 }
 .screenshot:nth-child(5) {
-  left: 63%;
-  transform: rotatez(2deg);
+  left: 65%;
+  transform: rotatez(-1.25deg);
 }
 .screenshot:nth-child(6) {
-  left: 81%;
-  transform: rotatez(-2deg);
+  left: 84%;
+  transform: rotatez(0.75deg);
 }
 
-.tag {
+.tags > span {
   color: white;
   display: block;
   background: linear-gradient(90deg, #236267, #2F4172);
