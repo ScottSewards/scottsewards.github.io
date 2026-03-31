@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		autoScroll: {
 			pauseOnFocus: false,
 			pauseOnHover: false,
-			speed: 1,
+			speed: 0.5,
 		},
 		autoHeight: true,
 		direction: 'ttb',
-		drag: false,
+		drag: true,
 		gap: '0.5rem',
 		height: '100%',
 		pagination: false,
